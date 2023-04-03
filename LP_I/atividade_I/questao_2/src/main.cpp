@@ -1,8 +1,24 @@
 #include <iostream>
 #include <vector>
-#include <string>
+#include <cstring>
 #include <Zoo.h>
 #include <Animal.h>
+
+
+Zoo removerIdade(Zoo entrada, int idade) {
+    Zoo novo;
+    std::vector<Animal> animais;    
+    for( Animal a : entrada.getAnimais()) {
+        if(a.getIdade() >= idade){
+            continue;
+        }
+        animais.push_back(a);
+    }
+
+    novo.setAnimais(animais);
+
+    return novo;
+}
 
 int main() {
     Zoo z1;
@@ -17,7 +33,7 @@ int main() {
         animais.push_back(entrada);
 
         entrada.setNome(nome[5-i]);
-        entrada.setEspecie(especie[3-i]);
+        entrada.setEspecie(especie[2-i]);
         entrada.setIdade(idade[5-i]);
 
         animais.push_back(entrada);
@@ -31,8 +47,11 @@ int main() {
         std::cout << std::endl;
     }
 
+    z1 = removerIdade(z1, 40);
 
-
+    for( Animal a : z1.getAnimais()) {
+        std::cout << a.getNome() << " " << a.getEspecie() << " " << a.getIdade() << std::endl;
+    }
 
     return 0;
 }

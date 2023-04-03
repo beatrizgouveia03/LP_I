@@ -48,7 +48,7 @@ int main() {
         funcionarios.push_back(entrada);
     }
 
-    for(std::string d :  departamento){
+    for(auto d :  departamento){
         porDepartamento(d, funcionarios);
         std::cout << std::endl;
     }

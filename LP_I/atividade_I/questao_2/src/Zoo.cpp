@@ -21,3 +21,7 @@ void Zoo::getEspecie(std::string especie) {
         }
     }
 }
+
+std::vector<Animal> Zoo::getAnimais() {
+    return this->animais;
+}

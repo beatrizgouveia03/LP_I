@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/panda/codigos/LP_I/atividade_I/questao1/src/Funcionario.cpp" "CMakeFiles/program.dir/src/Funcionario.cpp.o" "gcc" "CMakeFiles/program.dir/src/Funcionario.cpp.o.d"
-  "/home/panda/codigos/LP_I/atividade_I/questao1/src/main.cpp" "CMakeFiles/program.dir/src/main.cpp.o" "gcc" "CMakeFiles/program.dir/src/main.cpp.o.d"
+  "/home/panda/codigos/LP_I/atividade_I/questao_1/src/Funcionario.cpp" "CMakeFiles/program.dir/src/Funcionario.cpp.o" "gcc" "CMakeFiles/program.dir/src/Funcionario.cpp.o.d"
+  "/home/panda/codigos/LP_I/atividade_I/questao_1/src/main.cpp" "CMakeFiles/program.dir/src/main.cpp.o" "gcc" "CMakeFiles/program.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

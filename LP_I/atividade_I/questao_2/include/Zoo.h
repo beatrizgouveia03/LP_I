@@ -16,6 +16,7 @@ public:
     void setAnimais(std::vector<Animal> animais);
 
     void getEspecie(std::string especie);
+    std::vector<Animal> getAnimais();
     
 };
 

@@ -566,6 +566,9 @@ CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   ../include/Zoo.h \
   ../include/Animal.h
 
