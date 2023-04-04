@@ -1,5 +1,5 @@
 CMakeFiles/program.dir/src/main.cpp.o: \
- /home/beatriz/Github/LP_I/atividade_I/questao_3/src/main.cpp \
+ /home/panda/codigos/LP_I/atividade_I/questao_3/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -170,7 +170,7 @@ CMakeFiles/program.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/cstring \
  /usr/include/string.h /usr/include/strings.h \
- /home/beatriz/Github/LP_I/atividade_I/questao_3/include/Livro.h \
+ /home/panda/codigos/LP_I/atividade_I/questao_3/include/Livro.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \

@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "program::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-program-57166d70f79d69b040fd.json",
+					"jsonFile" : "target-program-602ab4e5f80343f91af8.json",
 					"name" : "program",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/beatriz/Github/LP_I/atividade_I/questao_3/build",
-		"source" : "/home/beatriz/Github/LP_I/atividade_I/questao_3"
+		"build" : "/home/panda/codigos/LP_I/atividade_I/questao_3/build",
+		"source" : "/home/panda/codigos/LP_I/atividade_I/questao_3"
 	},
 	"version" : 
 	{

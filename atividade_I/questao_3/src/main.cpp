@@ -49,6 +49,8 @@ void cadastrarLivro(std::vector<Livro> *base)
 void obterInfo(std::vector<Livro> base)
 {
     int livro, n = 1;
+    std::string entrada;
+
     std::cout << "Escolha o livro: \n";
     if (base.size() == 0)
     {
@@ -61,8 +63,14 @@ void obterInfo(std::vector<Livro> base)
         n++;
     }
 
-    std::cin >> livro;
+    getline(std::cin, entrada);
+    std::istringstream ss(entrada);
+    ss >> livro;
+
     std::vector<Livro>::iterator ind = base.begin() + (livro - 1);
+
+    if(ind >= base.end()){ std::cout << "Opção escolhida inválida\n\n"; return;}
+
     std::cout << std::endl;
     std::cout << "Título: " << ind->getTitulo() << std::endl;
     std::cout << "Autor: " << ind->getAutor() << std::endl;
@@ -83,6 +91,8 @@ int main()
     {
         std::cout << "Escolha uma acao: \n 1-Criar livro\n 2-Obter info de um livro\n 3-Sair\n";
         getline(std::cin, entrada);
+
+        std::cout << entrada;
 
         std::istringstream ss(entrada);
         ss >> acao;
