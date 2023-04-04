@@ -3,9 +3,9 @@
 #include <cstring>
 #include <Funcionario.h>
 
-void porDepartamento(auto departamento, auto funcionarios) {
+void porDepartamento(std::string departamento, std::vector<Funcionario> funcionarios) {
     std::cout << departamento << std::endl;  
-    for( Funcionario f : funcionarios) {
+    for(Funcionario f : funcionarios) {
         auto dep = f.getDepartamento();
         if(!strcmp(dep.c_str(), departamento.c_str())) {
             std::cout << f.getNome() << std::endl;
@@ -14,18 +14,17 @@ void porDepartamento(auto departamento, auto funcionarios) {
 }
 
 
-void aumentoSalario(auto departamento, auto funcionarios,  int porcentagem) {
-    for (Funcionario f : *funcionarios)
+void aumentoSalario(std::string departamento,  std::vector<Funcionario> *funcionarios,  int porcentagem) {
+    for (auto i = funcionarios->begin(); i != funcionarios->end(); ++i)
     {
-        std::string dep = f.getDepartamento();
+        std::vector<Funcionario>::iterator funcio = i;
+        std::string dep = funcio->getDepartamento();
         if (!strcmp(dep.c_str(), departamento.c_str()))
         {   
-            double salario = f.getSalario();
+            double salario = funcio->getSalario();
             salario += salario*porcentagem/100;            
             
-            f.setSalario(salario);
-
-            std::cout << f.getSalario() << std::endl;
+            funcio->setSalario(salario);
         }
     }
 }
