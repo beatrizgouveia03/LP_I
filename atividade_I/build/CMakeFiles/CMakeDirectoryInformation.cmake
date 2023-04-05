@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/beatriz/Github/LP_I/atividade_I/questao_1")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/beatriz/Github/LP_I/atividade_I/questao_1/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/beatriz/Github/LP_I/atividade_I/build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

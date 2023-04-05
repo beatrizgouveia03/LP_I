@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/beatriz/Github/LP_I/atividade_I/questao_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/beatriz/Github/LP_I/atividade_I/questao_1/build
+CMAKE_BINARY_DIR = /home/beatriz/Github/LP_I/atividade_I/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/program.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/program.dir/progress.make
 include CMakeFiles/program.dir/flags.make
 
 CMakeFiles/program.dir/src/main.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/program.dir/src/main.cpp.o: /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp
 CMakeFiles/program.dir/src/main.cpp.o: CMakeFiles/program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/src/main.cpp.o -MF CMakeFiles/program.dir/src/main.cpp.o.d -o CMakeFiles/program.dir/src/main.cpp.o -c /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/program.dir/src/main.cpp.o"
+	/mnt/c/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/src/main.cpp.o -MF CMakeFiles/program.dir/src/main.cpp.o.d -o CMakeFiles/program.dir/src/main.cpp.o -c /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp
 
 CMakeFiles/program.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp > CMakeFiles/program.dir/src/main.cpp.i
+	/mnt/c/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp > CMakeFiles/program.dir/src/main.cpp.i
 
 CMakeFiles/program.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp -o CMakeFiles/program.dir/src/main.cpp.s
+	/mnt/c/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beatriz/Github/LP_I/atividade_I/questao_1/src/main.cpp -o CMakeFiles/program.dir/src/main.cpp.s
 
 CMakeFiles/program.dir/src/Funcionario.cpp.o: CMakeFiles/program.dir/flags.make
-CMakeFiles/program.dir/src/Funcionario.cpp.o: ../src/Funcionario.cpp
+CMakeFiles/program.dir/src/Funcionario.cpp.o: /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp
 CMakeFiles/program.dir/src/Funcionario.cpp.o: CMakeFiles/program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/Funcionario.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/src/Funcionario.cpp.o -MF CMakeFiles/program.dir/src/Funcionario.cpp.o.d -o CMakeFiles/program.dir/src/Funcionario.cpp.o -c /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/program.dir/src/Funcionario.cpp.o"
+	/mnt/c/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/program.dir/src/Funcionario.cpp.o -MF CMakeFiles/program.dir/src/Funcionario.cpp.o.d -o CMakeFiles/program.dir/src/Funcionario.cpp.o -c /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp
 
 CMakeFiles/program.dir/src/Funcionario.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/program.dir/src/Funcionario.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp > CMakeFiles/program.dir/src/Funcionario.cpp.i
+	/mnt/c/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp > CMakeFiles/program.dir/src/Funcionario.cpp.i
 
 CMakeFiles/program.dir/src/Funcionario.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/program.dir/src/Funcionario.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp -o CMakeFiles/program.dir/src/Funcionario.cpp.s
+	/mnt/c/MinGW/bin/g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp -o CMakeFiles/program.dir/src/Funcionario.cpp.s
 
 # Object files for target program
 program_OBJECTS = \
@@ -109,7 +109,7 @@ program: CMakeFiles/program.dir/src/main.cpp.o
 program: CMakeFiles/program.dir/src/Funcionario.cpp.o
 program: CMakeFiles/program.dir/build.make
 program: CMakeFiles/program.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable program"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable program"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/program.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/program.dir/clean:
 .PHONY : CMakeFiles/program.dir/clean
 
 CMakeFiles/program.dir/depend:
-	cd /home/beatriz/Github/LP_I/atividade_I/questao_1/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/beatriz/Github/LP_I/atividade_I/questao_1 /home/beatriz/Github/LP_I/atividade_I/questao_1 /home/beatriz/Github/LP_I/atividade_I/questao_1/build /home/beatriz/Github/LP_I/atividade_I/questao_1/build /home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles/program.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/beatriz/Github/LP_I/atividade_I/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/beatriz/Github/LP_I/atividade_I/questao_1 /home/beatriz/Github/LP_I/atividade_I/questao_1 /home/beatriz/Github/LP_I/atividade_I/build /home/beatriz/Github/LP_I/atividade_I/build /home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/program.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/program.dir/depend
 

@@ -1,3 +1,3 @@
-/workspaces/LP_I/LP_I/atividade_I/questao_1/build/CMakeFiles/rebuild_cache.dir
-/workspaces/LP_I/LP_I/atividade_I/questao_1/build/CMakeFiles/edit_cache.dir
-/workspaces/LP_I/LP_I/atividade_I/questao_1/build/CMakeFiles/program.dir
+/home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles/program.dir
+/home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles/edit_cache.dir
+/home/beatriz/Github/LP_I/atividade_I/questao_1/build/CMakeFiles/rebuild_cache.dir

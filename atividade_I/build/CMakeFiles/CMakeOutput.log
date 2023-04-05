@@ -1,0 +1,28 @@
+The system is: Linux - 5.10.102.1-microsoft-standard-WSL2 - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /mnt/c/MinGW/bin/g++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is GNU, found in "/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/3.22.1/CompilerIdCXX/a.exe"
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_62638/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_62638.dir/build.make CMakeFiles/cmTC_62638.dir/build
+gmake[1]: Entering directory '/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_62638.dir/testCXXCompiler.cxx.o
+/mnt/c/MinGW/bin/g++.exe    -o CMakeFiles/cmTC_62638.dir/testCXXCompiler.cxx.o -c /home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_62638
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62638.dir/link.txt --verbose=1
+/mnt/c/MinGW/bin/g++.exe CMakeFiles/cmTC_62638.dir/testCXXCompiler.cxx.o -o cmTC_62638 
+gmake[1]: Leaving directory '/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/CMakeTmp'
+
+
+

@@ -1,0 +1,4 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/questao_1",
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
+}
