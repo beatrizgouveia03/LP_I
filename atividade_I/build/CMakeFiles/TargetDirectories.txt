@@ -1,3 +1,0 @@
-/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/program.dir
-/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/edit_cache.dir
-/home/beatriz/Github/LP_I/atividade_I/build/CMakeFiles/rebuild_cache.dir
