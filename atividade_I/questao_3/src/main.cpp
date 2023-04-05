@@ -69,7 +69,11 @@ void obterInfo(std::vector<Livro> base)
 
     std::vector<Livro>::iterator ind = base.begin() + (livro - 1);
 
-    if(ind >= base.end()){ std::cout << "Opção escolhida inválida\n\n"; return;}
+    if (ind >= base.end())
+    {
+        std::cout << "Opção escolhida inválida\n\n";
+        return;
+    }
 
     std::cout << std::endl;
     std::cout << "Título: " << ind->getTitulo() << std::endl;
@@ -78,6 +82,20 @@ void obterInfo(std::vector<Livro> base)
     std::cout << std::endl;
 
     return;
+}
+
+void mediaGeral(std::vector<Livro> base)
+{
+    double media_geral = 0;
+
+    for (Livro l : base)
+    {
+        media_geral += l.getMedia();
+    }
+
+    media_geral /= base.size();
+
+    std::cout << "A média de todas as avaliações de livros dessa biblioteca é: " << std::fixed << std::setprecision(1) << media_geral << "\n\n";
 }
 
 int main()
@@ -89,7 +107,7 @@ int main()
 
     while (!fim)
     {
-        std::cout << "Escolha uma acao: \n 1-Criar livro\n 2-Obter info de um livro\n 3-Sair\n";
+        std::cout << "Escolha uma acao: \n 1-Criar livro\n 2-Obter info de um livro\n 3-Obter média geral\n 4-Sair\n";
         getline(std::cin, entrada);
 
         std::cout << entrada;
@@ -106,6 +124,9 @@ int main()
             obterInfo(Biblioteca);
             break;
         case 3:
+            mediaGeral(Biblioteca);
+            break;
+        case 4:
             fim = true;
             break;
         default:
