@@ -102,22 +102,22 @@ void compararPessoas(std::vector<Pessoa> base)
 
     ss >> p1 >> p2;
 
-    auto pi = *(base.begin()+p1), pf = *(base.begin()+p2);
+    Pessoa pi = base.begin()+p1, pf = base.begin()+p2;
 
     switch (acao)
     {
     case 1:
-        std::cout << "O maior é " << comparar(pi.getNome(), pf.getNome()) << std::endl;
+        std::cout << "O maior é " << comparar(pi->getNome(), pf->getNome()) << std::endl;
         break;
     case 2:
-        std::cout << "O maior é " << comparar(pi.getIdade(), pf.getIdade()) << std::endl;
+        std::cout << "O maior é " << comparar(pi->getIdade(), pf->getIdade()) << std::endl;
         break;
     case 3:
-        std::cout << "O maior é " << comparar(pi.getAltura(), pf.getAltura()) << std::endl;
+        std::cout << "O maior é " << comparar(pi->getAltura(), pf->getAltura()) << std::endl;
         break;
-    case 4:
+    /*case 4:
         std::cout << "O maior é " << comparar(pi, pf) << std::endl;
-        break;
+        break;*/
     default:
         break;
     }
@@ -134,7 +134,7 @@ void imprimirPessoa(std::vector<Pessoa> base) {
     for(Pessoa p : base) {
         std::string nome = p.getNome();
         if(!strcmp(nome.c_str(), entry.c_str())){
-        std::cout << p << std::endl;
+        std::cout << nome << std::endl;
        }
     }
 }

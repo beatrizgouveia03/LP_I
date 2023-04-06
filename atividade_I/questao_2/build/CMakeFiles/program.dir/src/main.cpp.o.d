@@ -160,6 +160,7 @@ CMakeFiles/program.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/sstream \
+ /usr/include/c++/11/bits/sstream.tcc \
  /home/panda/codigos/LP_I/atividade_I/questao_2/include/Zoo.h \
  /home/panda/codigos/LP_I/atividade_I/questao_2/include/Animal.h

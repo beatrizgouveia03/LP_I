@@ -164,7 +164,36 @@ CMakeFiles/program.dir/src/Animal.cpp.o: ../src/Animal.cpp \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
-  /usr/include/c++/11/bits/basic_string.tcc
+  /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/iostream \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/exception \
+  /usr/include/c++/11/bits/exception_ptr.h \
+  /usr/include/c++/11/bits/cxxabi_init_exception.h \
+  /usr/include/c++/11/typeinfo \
+  /usr/include/c++/11/bits/nested_exception.h \
+  /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/bits/locale_classes.h \
+  /usr/include/c++/11/bits/locale_classes.tcc \
+  /usr/include/c++/11/system_error \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/include/c++/11/stdexcept \
+  /usr/include/c++/11/streambuf \
+  /usr/include/c++/11/bits/streambuf.tcc \
+  /usr/include/c++/11/bits/basic_ios.h \
+  /usr/include/c++/11/bits/locale_facets.h \
+  /usr/include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/include/c++/11/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/include/c++/11/bits/locale_facets.tcc \
+  /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc
 
 CMakeFiles/program.dir/src/Zoo.cpp.o: ../src/Zoo.cpp \
   /usr/include/stdc-predef.h \
@@ -336,9 +365,6 @@ CMakeFiles/program.dir/src/Zoo.cpp.o: ../src/Zoo.cpp \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   ../include/Animal.h \
-  /usr/include/c++/11/cstring \
-  /usr/include/string.h \
-  /usr/include/strings.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -569,11 +595,29 @@ CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
   ../include/Zoo.h \
   ../include/Animal.h
 
 
+/usr/include/c++/11/sstream:
+
+/usr/include/string.h:
+
+/usr/include/c++/11/cstring:
+
 ../src/main.cpp:
+
+/usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/c++/11/bits/stl_bvector.h:
+
+/usr/include/c++/11/bits/stl_uninitialized.h:
+
+/usr/include/c++/11/vector:
+
+../src/Zoo.cpp:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -599,6 +643,10 @@ CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
+/usr/include/c++/11/bits/stl_vector.h:
+
+/usr/include/c++/11/system_error:
+
 /usr/include/c++/11/bits/locale_classes.tcc:
 
 /usr/include/c++/11/bits/locale_classes.h:
@@ -612,24 +660,6 @@ CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/exception:
 
 /usr/include/c++/11/ostream:
-
-/usr/include/string.h:
-
-/usr/include/c++/11/cstring:
-
-/usr/include/c++/11/bits/vector.tcc:
-
-/usr/include/c++/11/bits/stl_bvector.h:
-
-/usr/include/c++/11/system_error:
-
-/usr/include/c++/11/bits/stl_vector.h:
-
-/usr/include/c++/11/bits/stl_uninitialized.h:
-
-/usr/include/c++/11/vector:
-
-../src/Zoo.cpp:
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
@@ -952,6 +982,8 @@ CMakeFiles/program.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/ext/new_allocator.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/c++/11/bits/sstream.tcc:
 
 /usr/include/strings.h:
 

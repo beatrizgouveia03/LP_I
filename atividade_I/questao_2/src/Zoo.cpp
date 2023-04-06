@@ -1,27 +1,47 @@
 #include <Zoo.h>
 #include <Animal.h>
-#include <cstring>
+#include <vector>
 #include <iostream>
 
-Zoo::Zoo() {};
+Zoo::Zoo(){};
 
-Zoo::Zoo(std::vector<Animal> animais) {
+Zoo::Zoo(std::vector<Animal> animais, std::vector<std::string> especies)
+{
+    this->animais = animais;
+    this->especies = especies;
+}
+
+void Zoo::setAnimais(std::vector<Animal> animais)
+{
     this->animais = animais;
 }
 
-void Zoo::setAnimais(std::vector<Animal> animais) {
-    this->animais = animais;
+void Zoo::setespecies(std::vector<std::string> especies)
+{
+    this->especies = especies;
 }
 
-void Zoo::getEspecie(std::string especie) {
-    for(auto a : this->animais) {
-        auto esp = a.getEspecie();
-        if(!strcmp(especie.c_str(), esp.c_str())){
-            std::cout << a.getNome() << " " << a.getIdade() << std::endl;
-        }
-    }
+void Zoo::cadastrarAnimal(Animal animal)
+{
+    this->animais.push_back(animal);
 }
 
-std::vector<Animal> Zoo::getAnimais() {
+void Zoo::cadastrarEspecie(std::string especie)
+{
+    this->especies.push_back(especie);
+}
+
+std::vector<std::string> Zoo::getEspecies()
+{
+    return this->especies;
+}
+
+std::vector<Animal> Zoo::getAnimais()
+{
     return this->animais;
+}
+
+void Zoo::retirarAnimal(std::vector<Animal>::iterator animal)
+{
+    this->animais.erase(animal);
 }

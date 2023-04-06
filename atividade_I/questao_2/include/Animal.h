@@ -2,6 +2,7 @@
 #define ANIMAL_H
 
 #include <string>
+#include <iostream>
 
 class Animal
 {
@@ -21,6 +22,15 @@ public:
    void setNome(std::string nome);
    void setEspecie(std::string especie);
    void setIdade(int idade);
+
+   friend std::ostream& operator<<(std::ostream &cout, Animal &a)
+   {
+      std::cout << "Nome: " << a.getNome() << std::endl;
+      std::cout << "Idade: " << a.getIdade() << std::endl;
+      std::cout << "Espécie: " << a.getEspecie() << std::endl;
+
+      return cout;
+   };
 };
 
 #endif

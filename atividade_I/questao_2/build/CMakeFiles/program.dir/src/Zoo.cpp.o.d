@@ -143,7 +143,6 @@ CMakeFiles/program.dir/src/Zoo.cpp.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /home/panda/codigos/LP_I/atividade_I/questao_2/include/Animal.h \
- /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/exception \
  /usr/include/c++/11/bits/exception_ptr.h \
