@@ -1,5 +1,6 @@
-#include <Animal.h>
 #include <iostream>
+
+#include <Animal.h>
 
 Animal::Animal() {};
 
@@ -35,3 +36,12 @@ void Animal::setIdade(int idade)
 {
     this->idade = idade;
 }
+
+std::ostream& operator<<(std::ostream &cout, Animal &a)
+{
+    std::cout << "Nome: " << a.getNome() << std::endl;
+    std::cout << "Idade: " << a.getIdade() << std::endl;
+    std::cout << "Espécie: " << a.getEspecie() << std::endl;
+
+    return cout;
+};

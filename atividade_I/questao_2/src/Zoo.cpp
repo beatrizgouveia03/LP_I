@@ -1,7 +1,8 @@
-#include <Zoo.h>
-#include <Animal.h>
 #include <vector>
 #include <iostream>
+
+#include <Zoo.h>
+#include <Animal.h>
 
 Zoo::Zoo(){};
 
