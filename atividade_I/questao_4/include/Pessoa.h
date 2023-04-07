@@ -21,7 +21,8 @@ public:
     int getIdade();
     double getAltura();
 
-    void getDados();
+    friend std::ostream& operator<<(std::ostream &cout, Pessoa &p);
+    friend bool operator>(Pessoa &p1, Pessoa &p2);
 };
 
 #endif

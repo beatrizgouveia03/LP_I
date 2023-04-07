@@ -35,8 +35,15 @@ double Pessoa::getAltura() {
     return this->altura;
 }
 
-void Pessoa::getDados() {
-    std::cout << "Nome: " << this->getNome() << std::endl;
-    std::cout << "Idade: " << this->getIdade() << std::endl;
-    std::cout << "Altura: " << std::fixed << std::setprecision(2) <<this->getAltura() << "\n\n";
+std::ostream& operator<<(std::ostream &cout, Pessoa &p){
+    std::cout << "Nome: " << p.getNome() << std::endl;
+    std::cout << "Idade: " << p.getIdade() << std::endl;
+    std::cout << "Altura: " << std::fixed << std::setprecision(2) << p.getAltura() << std::endl;
+
+    return cout;
+}
+
+bool operator>(Pessoa &p1, Pessoa &p2)
+{
+   return (p1.getIdade() > p2.getIdade() ? true : false );
 }
