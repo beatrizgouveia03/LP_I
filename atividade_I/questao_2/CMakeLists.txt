@@ -7,6 +7,5 @@ include_directories (include)
 add_executable( program 
                 src/Zoo.cpp
                 src/main.cpp
-                src/Animal.cpp
-                src/utilities.cpp)
+                src/Animal.cpp)
 set_property(TARGET program PROPERTY CXX_STANDARD 20)

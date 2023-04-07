@@ -1,7 +1,7 @@
 CMakeFiles/program.dir/src/Livro.cpp.o: \
- /home/beatriz/Github/LP_I/atividade_I/questao_3/src/Livro.cpp \
+ /home/panda/codigos/LP_I/atividade_I/questao_3/src/Livro.cpp \
  /usr/include/stdc-predef.h \
- /home/beatriz/Github/LP_I/atividade_I/questao_3/include/Livro.h \
+ /home/panda/codigos/LP_I/atividade_I/questao_3/include/Livro.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

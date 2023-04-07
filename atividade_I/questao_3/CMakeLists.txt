@@ -6,7 +6,6 @@ include_directories (include)
 
 add_executable( program 
                 src/main.cpp
-                src/Livro.cpp
-                src/utilities.cpp)
+                src/Livro.cpp)
                 
 set_property(TARGET program PROPERTY CXX_STANDARD 20)

@@ -5,6 +5,18 @@
 
 #include <Funcionario.h>
 
+template <typename T>
+void tratarEntrada(T &var)
+{
+    std::string entrada;
+    getline(std::cin, entrada);
+    std::istringstream ss(entrada);
+
+    ss >> var;
+
+    return;
+}
+
 std::vector<Funcionario> configuracaoInicial()
 {
     std::string nome[] = {"Ana Clara Queiroz", "Matheus França", "Marcia Maria", "João Marcelo", "Beatriz Santana", "Gustavo Homero"};
@@ -35,18 +47,15 @@ void cadastrarFuncionario(std::vector<Funcionario> *funcionarios)
     double salario;
 
     std::cout << "Informe o nome do novo funcionário:\n";
-    getline(std::cin, entrada);
+    tratarEntrada(entrada);
     novo.setNome(entrada);
 
     std::cout << "Informe o departamento:\n";
-    getline(std::cin, entrada);
+    tratarEntrada(entrada);
     novo.setDepartamento(entrada);
 
     std::cout << "Informe o salário:\n";
-    getline(std::cin, entrada);
-    std::istringstream ss(entrada);
-    ss >> salario;
-
+    tratarEntrada(salario);
     novo.setSalario(salario);
 
     funcionarios->push_back(novo);
@@ -60,7 +69,7 @@ void porDepartamento(std::vector<Funcionario> funcionarios)
     std::string departamento;
 
     std::cout << "Digite o nome do departamento:\n";
-    getline(std::cin, departamento);
+    tratarEntrada(departamento);
 
     std::cout << departamento << std::endl;
     for (Funcionario f : funcionarios)
@@ -79,16 +88,13 @@ void porDepartamento(std::vector<Funcionario> funcionarios)
 void aumentoSalario(std::vector<Funcionario> *funcionarios)
 {
     int porcentagem;
-    std::string departamento, entry;
+    std::string departamento;
 
     std::cout << "Informe o departamento:\n";
-    getline(std::cin, departamento);
+    tratarEntrada(departamento);
 
     std::cout << "Informe o aumento a ser feito:(Por exemplo '15' para um aumento de 15%)\n";
-    getline(std::cin, entry);
-    std::istringstream ss(entry);
-
-    ss >> porcentagem;
+    tratarEntrada(porcentagem);
 
     for (auto i = funcionarios->begin(); i != funcionarios->end(); ++i)
     {

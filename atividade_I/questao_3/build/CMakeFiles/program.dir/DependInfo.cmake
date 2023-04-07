@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/beatriz/Github/LP_I/atividade_I/questao_3/src/Livro.cpp" "CMakeFiles/program.dir/src/Livro.cpp.o" "gcc" "CMakeFiles/program.dir/src/Livro.cpp.o.d"
-  "/home/beatriz/Github/LP_I/atividade_I/questao_3/src/main.cpp" "CMakeFiles/program.dir/src/main.cpp.o" "gcc" "CMakeFiles/program.dir/src/main.cpp.o.d"
+  "/home/panda/codigos/LP_I/atividade_I/questao_3/src/Livro.cpp" "CMakeFiles/program.dir/src/Livro.cpp.o" "gcc" "CMakeFiles/program.dir/src/Livro.cpp.o.d"
+  "/home/panda/codigos/LP_I/atividade_I/questao_3/src/main.cpp" "CMakeFiles/program.dir/src/main.cpp.o" "gcc" "CMakeFiles/program.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

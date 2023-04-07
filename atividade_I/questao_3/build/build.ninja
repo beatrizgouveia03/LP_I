@@ -63,13 +63,6 @@ build CMakeFiles/program.dir/src/Livro.cpp.o: CXX_COMPILER__program_Debug /home/
   OBJECT_DIR = CMakeFiles/program.dir
   OBJECT_FILE_DIR = CMakeFiles/program.dir/src
 
-build CMakeFiles/program.dir/src/utilities.cpp.o: CXX_COMPILER__program_Debug /home/panda/codigos/LP_I/atividade_I/questao_3/src/utilities.cpp || cmake_object_order_depends_target_program
-  DEP_FILE = CMakeFiles/program.dir/src/utilities.cpp.o.d
-  FLAGS = -g -std=gnu++20
-  INCLUDES = -I/home/panda/codigos/LP_I/atividade_I/questao_3/include
-  OBJECT_DIR = CMakeFiles/program.dir
-  OBJECT_FILE_DIR = CMakeFiles/program.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target program
@@ -78,7 +71,7 @@ build CMakeFiles/program.dir/src/utilities.cpp.o: CXX_COMPILER__program_Debug /h
 #############################################
 # Link the executable program
 
-build program: CXX_EXECUTABLE_LINKER__program_Debug CMakeFiles/program.dir/src/main.cpp.o CMakeFiles/program.dir/src/Livro.cpp.o CMakeFiles/program.dir/src/utilities.cpp.o
+build program: CXX_EXECUTABLE_LINKER__program_Debug CMakeFiles/program.dir/src/main.cpp.o CMakeFiles/program.dir/src/Livro.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/program.dir
   POST_BUILD = :

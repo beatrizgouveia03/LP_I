@@ -8,10 +8,5 @@
   "directory": "/home/panda/codigos/LP_I/atividade_I/questao_3/build",
   "command": "/usr/bin/g++ -I/home/panda/codigos/LP_I/atividade_I/questao_3/include -g -std=gnu++20 -o CMakeFiles/program.dir/src/Livro.cpp.o -c /home/panda/codigos/LP_I/atividade_I/questao_3/src/Livro.cpp",
   "file": "/home/panda/codigos/LP_I/atividade_I/questao_3/src/Livro.cpp"
-},
-{
-  "directory": "/home/panda/codigos/LP_I/atividade_I/questao_3/build",
-  "command": "/usr/bin/g++ -I/home/panda/codigos/LP_I/atividade_I/questao_3/include -g -std=gnu++20 -o CMakeFiles/program.dir/src/utilities.cpp.o -c /home/panda/codigos/LP_I/atividade_I/questao_3/src/utilities.cpp",
-  "file": "/home/panda/codigos/LP_I/atividade_I/questao_3/src/utilities.cpp"
 }
 ]

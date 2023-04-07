@@ -1,21 +1,15 @@
-#include "utilities.cpp"
+#include <utilities.h>
 
 int main()
 {
     int acao;
-    std::string entrada;
     bool fim = false;
-    std::vector<Livro> Biblioteca;
+    std::vector<Livro> Biblioteca = configuracaoInicial();
 
     while (!fim)
     {
         std::cout << "Escolha uma acao: \n 1-Criar livro\n 2-Obter info de um livro\n 3-Obter média geral\n 4-Sair\n";
-        getline(std::cin, entrada);
-
-        std::cout << entrada;
-
-        std::istringstream ss(entrada);
-        ss >> acao;
+        tratarEntrada(acao);
 
         switch (acao)
         {

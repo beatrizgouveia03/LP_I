@@ -1,4 +1,4 @@
-#include "utilities.cpp"
+#include <utilities.h>
 
 int main()
 {
@@ -10,10 +10,7 @@ int main()
     while (!fim)
     {
         std::cout << "Escolha uma ação: \n 1-Cadastrar animal\n 2-Pesquisar animais por espécie\n 3-Retirar animal por idade\n 4-Listar animais\n 5-Sair\n";
-        getline(std::cin, entrada);
-
-        std::istringstream ss(entrada);
-        ss >> acao;
+        tratarEntrada(acao);
 
         switch (acao)
         {
