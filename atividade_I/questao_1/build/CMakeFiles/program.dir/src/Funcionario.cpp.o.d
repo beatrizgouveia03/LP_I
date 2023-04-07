@@ -1,7 +1,7 @@
 CMakeFiles/program.dir/src/Funcionario.cpp.o: \
- /home/beatriz/Github/LP_I/atividade_I/questao_1/src/Funcionario.cpp \
+ /home/panda/codigos/LP_I/atividade_I/questao_1/src/Funcionario.cpp \
  /usr/include/stdc-predef.h \
- /home/beatriz/Github/LP_I/atividade_I/questao_1/include/Funcionario.h \
+ /home/panda/codigos/LP_I/atividade_I/questao_1/include/Funcionario.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

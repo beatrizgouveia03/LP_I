@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/beatriz/Github/LP_I/atividade_I/questao_1/include
+CXX_INCLUDES = -I/home/panda/codigos/LP_I/atividade_I/questao_1/include
 
 CXX_FLAGS = -std=gnu++20
 

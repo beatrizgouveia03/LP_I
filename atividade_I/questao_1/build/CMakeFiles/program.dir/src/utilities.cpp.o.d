@@ -1,8 +1,7 @@
-CMakeFiles/program.dir/src/main.cpp.o: \
- /home/panda/codigos/LP_I/atividade_I/questao_1/src/main.cpp \
- /usr/include/stdc-predef.h \
- /home/panda/codigos/LP_I/atividade_I/questao_1/include/utilities.h \
- /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
+CMakeFiles/program.dir/src/utilities.cpp.o: \
+ /home/panda/codigos/LP_I/atividade_I/questao_1/src/utilities.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
