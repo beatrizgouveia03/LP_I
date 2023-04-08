@@ -50,7 +50,7 @@ void adicionarAnimal(Zoo *base)
     int idade;
 
     std::cout << "Informe o nome do animal:\n";
-    tratarEntrada(entrada);
+    getline(std::cin, entrada);
     novo.setNome(entrada);
 
     std::cout << "Informe a espécie do animal:\n";
