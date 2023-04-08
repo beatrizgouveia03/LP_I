@@ -57,7 +57,7 @@ void cadastrarPessoa(std::vector<Pessoa> *base)
     }
 
     std::cout << "Informe o nome da pessoa:\n";
-    tratarEntrada(entrada);
+    getline(std::cin, entrada);
     novo.setNome(entrada);
 
     std::cout << "Informe a idade da pessoa:\n";
@@ -79,7 +79,11 @@ void obterInfo(std::vector<Pessoa> base)
     std::string entry;
 
     std::cout << "Informe o nome da pessoa: \n";
-    tratarEntrada(entry);
+    for(Pessoa p : base){
+        std::cout << " *" << p.getNome() << std::endl;
+    }
+
+    getline(std::cin, entry);
 
     for (Pessoa p : base)
     {
@@ -124,7 +128,7 @@ void compararPessoas(std::vector<Pessoa> base)
         break;
     case 4:
         m = comparar(pi, pf);
-        std::cout << "O maior é \n " << m << "\n\n";
+        std::cout << "O maior é \n" << m << "\n";
         break;
     default:
         break;
