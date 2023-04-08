@@ -56,7 +56,7 @@ void cadastrarLivro(std::vector<Livro> *base)
     novo.setTitulo(entrada);
 
     std::cout << "Informe o autor desse livro: \n";
-    tratarEntrada(entrada);
+    getline(std::cin, entrada);
     novo.setAutor(entrada);
 
     std::cout << "Informe as notas de avaliação desse livro:(Escreva todas em uma linha separadas por um espaço) \n";
