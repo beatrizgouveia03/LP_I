@@ -9,7 +9,7 @@ int main()
 
     while (!fim)
     {
-        std::cout << "Escolha uma ação: \n 1-Cadastrar animal\n 2-Pesquisar animais por espécie\n 3-Retirar animal por idade\n 4-Listar animais\n 5-Sair\n";
+        std::cout << "Escolha uma ação:\n 1-Cadastrar animal\n 2-Pesquisar animais por espécie\n 3-Retirar animal por idade\n 4-Listar todos os animais\n 5-Sair\n";
         tratarEntrada(acao);
 
         switch (acao)

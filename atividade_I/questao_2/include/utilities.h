@@ -54,6 +54,10 @@ void adicionarAnimal(Zoo *base)
     novo.setNome(entrada);
 
     std::cout << "Informe a espécie do animal:\n";
+    for (auto e : base->getEspecies())
+    {
+        std::cout << " *"<< e << std::endl;
+    }
     tratarEntrada(entrada);
     novo.setEspecie(entrada);
 
@@ -90,17 +94,20 @@ void pesquisarEspecie(Zoo base)
     std::cout << "Digite o nome da espécie:\n";
     for (auto e : base.getEspecies())
     {
-        std::cout << " " << e << std::endl;
+        std::cout << " *" << e << std::endl;
     }
 
     tratarEntrada(especie);
+
+    std::cout << std::endl;
 
     for (Animal a : base.getAnimais())
     {
         std::string esp = a.getEspecie();
         if (!strcmp(esp.c_str(), especie.c_str()))
         {
-            std::cout << a.getNome() << std::endl;
+            std::cout << "Nome: " << a.getNome() << std::endl;
+            std::cout << "Idade: " << a.getIdade() << "\n\n";
         }
     }
 
@@ -112,21 +119,21 @@ void pesquisarEspecie(Zoo base)
 void removerIdade(Zoo *base)
 {
     int idade;
+    std::vector<Animal> novo, animais = base->getAnimais();
 
     std::cout << "Informe a idade mínima para os animais que serão retirados:\n";
     tratarEntrada(idade);
 
-    std::vector<Animal> animais = base->getAnimais();
-
-    for (auto i = animais.begin(); i != animais.end(); ++i)
+    for (Animal a :animais)
     {
+        int id = a.getIdade();
 
-        if (i->getIdade() >= idade)
-        {
+        if (id >= idade) {   continue;}
 
-            base->retirarAnimal(i);
-        }
+        novo.push_back(a);
     }
+
+    base->setAnimais(novo);
 
     std::cout << "Operação concluída!!\n\n";
 

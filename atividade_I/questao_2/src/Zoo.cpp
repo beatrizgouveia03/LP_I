@@ -41,8 +41,3 @@ std::vector<Animal> Zoo::getAnimais()
 {
     return this->animais;
 }
-
-void Zoo::retirarAnimal(std::vector<Animal>::iterator animal)
-{
-    this->animais.erase(animal);
-}
