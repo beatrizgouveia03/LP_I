@@ -1,8 +1,6 @@
 #include <Musica.hpp>
 
-Musica::Musica(){
-
-}
+Musica::Musica(){}
 
 Musica::Musica(string titulo, string artista){
     this->titulo = titulo;
