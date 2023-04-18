@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/program.dir/src/main.cpp.o CMakeFiles/program.dir/src/Animal.cpp.o CMakeFiles/program.dir/src/Zoo.cpp.o -o program 
