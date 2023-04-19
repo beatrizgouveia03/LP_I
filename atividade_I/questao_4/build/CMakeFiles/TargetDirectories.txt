@@ -1,3 +1,0 @@
-/home/panda/codigos/LP_I/atividade_I/questao_4/build/CMakeFiles/program.dir
-/home/panda/codigos/LP_I/atividade_I/questao_4/build/CMakeFiles/edit_cache.dir
-/home/panda/codigos/LP_I/atividade_I/questao_4/build/CMakeFiles/rebuild_cache.dir
