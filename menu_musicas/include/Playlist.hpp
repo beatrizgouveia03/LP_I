@@ -1,27 +1,30 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
 
-#include <Musica.hpp>
+#include "Musica.hpp"
+#include "Lista.hpp"
 
 class Playlist
 {
 private:
    string nome;
-   /*vetor musicas; IMPLEMENTAR*/ 
+   Lista<Musica> musicas; 
 public:
-    //CONSTRUTORES
     Playlist();
-    Playlist(string nome /*, vetor musicas*/);
-
-    //DESTRUTORRES
+    Playlist(string nome ,Lista<Musica> musicas);
 
     ~Playlist();
 
-    //FUNÇÕES
+    void setNome(string nome);
+    void setMusicas(Lista<Musica> musicas);
+
+    string getNome();
+    Lista<Musica> getMusicas();
+
     void addMusica(Musica m);
     void remMusica(Musica m);
 
-    Musica* findMusica(Musica m);
+    No<Musica>* findMusica(Musica m);
 
 };
 
