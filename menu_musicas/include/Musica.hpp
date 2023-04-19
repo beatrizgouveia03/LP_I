@@ -14,11 +14,15 @@ public:
    Musica();
    Musica(string titulo, string artista);
 
+   ~Musica();
+
    void setTitulo(string titulo);
    void setArtista (string artista);
 
    string getTitulo();
    string getArtista();
+   
+   bool operator==(Musica &musica);
 };
 
 #endif
