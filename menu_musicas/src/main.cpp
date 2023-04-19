@@ -1,22 +1,19 @@
 #include <iostream>
 
-#include "No.hpp"
-#include "Lista.hpp"
-#include "Musica.hpp"
+#include "utilities.hpp"
 
 using namespace std;
 
 int main()
 {
-    Lista<Musica> lista;
+    Lista<Playlist> App = configuracaoInicial();
 
-    Musica musica1("Musica 1", "Artista 1");
+    auto begin = App.getCabeca(), end = App.getCauda();
 
-    lista.inserir(musica1);
-
-    No<Musica> *atual = lista.getCabeca();
-
-    cout << lista.getCabeca()->getValor().getTitulo() << endl;
+    while(begin != end){
+        cout << begin->getValor().getNome() << endl;
+        begin = begin->getProximo();
+    }
 
     return 0;
 }
