@@ -2,6 +2,10 @@
 
 Playlist::Playlist(){}
 
+Playlist::Playlist(string nome){
+    this->nome = nome;    
+}
+
 Playlist::Playlist(string nome, Lista<Musica> musicas) {
     this->nome = nome;
     this->musicas = musicas;
