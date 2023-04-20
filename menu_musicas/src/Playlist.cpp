@@ -10,7 +10,7 @@ Playlist::Playlist(string nome)
 Playlist::Playlist(string nome, Lista<Musica *> *musicas)
 {
     this->nome = nome;
-    this->musicas = *musicas;
+    this->musicas = musicas;
 }
 
 Playlist::~Playlist() {}
@@ -22,7 +22,7 @@ void Playlist::setNome(string nome)
 
 void Playlist::setMusicas(Lista<Musica *> *musicas)
 {
-    this->musicas = *musicas;
+    this->musicas = musicas;
 }
 
 string Playlist::getNome()
@@ -32,29 +32,29 @@ string Playlist::getNome()
 
 Lista<Musica *> *Playlist::getMusicas()
 {
-    return &this->musicas;
+    return this->musicas;
 }
 
 void Playlist::addMusica(Musica *m)
 {
-    this->musicas.inserir(m);
+    this->musicas->inserir(m);
 }
 
 void Playlist::remMusica(Musica *m)
 {
-    this->musicas.remover(m);
+    this->musicas->remover(m);
 }
 
-No<Musica *> *Playlist::findMusica(Musica *m)
+Musica * Playlist::findMusica(Musica *m)
 {
-    auto begin = this->musicas.getCauda();
-    auto end = this->musicas.getCabeca();
+    No<Musica *> *begin = this->musicas->getCauda();
+    No<Musica *> *end = this->musicas->getCabeca();
 
     while (begin != end)
     {
         if (begin->getValor()->getTitulo() == m->getTitulo())
         {
-            return begin;
+            return begin->getValor();
         }
         begin = begin->getProximo();
     }
