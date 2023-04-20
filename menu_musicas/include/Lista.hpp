@@ -18,7 +18,7 @@ public:
     ~Lista();
 
     void inserir(T valor);
-    void inserir(T valor, int posicao);
+    // void inserir(T valor, int posicao);
     void remover(T valor);
 
     void setCabeca(No<T> *cabeca);
@@ -61,43 +61,43 @@ void Lista<T>::inserir(T valor)
 {
     No<T> *novo = new No(valor);
 
-    if (this->cabeca == nullptr)
+    if (this->getCabeca() == nullptr)
     {
-        this->cabeca = novo;
-        this->cauda = novo;
+        this->setCabeca(novo);
+        this->setCauda(novo);
     }
     else
     {
-        this->cauda->setProximo(novo);
-        this->cauda = novo;
+        this->getCauda()->setProximo(novo);
+        this->setCauda(novo);
     }
 }
 
-template <class T>
-void Lista<T>::inserir(T valor, int posicao)
-{
-    No<T> *novo = new No(valor);
+// template <class T>
+// void Lista<T>::inserir(T valor, int posicao)
+// {
+//     No<T> *novo = new No(valor);
 
-    if (posicao == 0)
-    {
-        novo->setProximo(this->cabeca);
-        this->cabeca = novo;
-    }
-    else
-    {
-        No<T> *atual = this->cabeca;
-        No<T> *anterior = nullptr;
+//     if (posicao == 0)
+//     {
+//         novo->setProximo(this->cabeca);
+//         this->cabeca = novo;
+//     }
+//     else
+//     {
+//         No<T> *atual = this->cabeca;
+//         No<T> *anterior = nullptr;
 
-        for (int i = 0; i < posicao; i++)
-        {
-            anterior = atual;
-            atual = atual->getProximo();
-        }
+//         for (int i = 0; i < posicao; i++)
+//         {
+//             anterior = atual;
+//             atual = atual->getProximo();
+//         }
 
-        novo->setProximo(atual);
-        anterior->setProximo(novo);
-    }
-}
+//         novo->setProximo(atual);
+//         anterior->setProximo(novo);
+//     }
+// }
 
 template <class T>
 void Lista<T>::remover(T valor)

@@ -6,9 +6,9 @@ using namespace std;
 
 int main()
 {
-    Lista<Musica> musicas = configuracaoInicialMusicas();
+    Lista<Musica *> musicas = configuracaoInicialMusicas();
     cout << "Musicas configuradas..\n";
-    Lista<Playlist> playlists = configuracaoInicialPlaylists(musicas);
+    Lista<Playlist *> playlists = configuracaoInicialPlaylists(&musicas);
     cout << "Playlists configuradas..\n";
 
     auto itr = playlists.getCabeca();
@@ -16,7 +16,7 @@ int main()
 
     while (itr != end->getProximo())
     {
-        cout << itr->getValor().getNome() << endl;
+        cout << itr->getValor()->getMusicas()->getCabeca()->getValor()->getTitulo() << endl;
 
         itr = itr->getProximo();
     }

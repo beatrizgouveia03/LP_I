@@ -1,12 +1,12 @@
 #include "Lista.hpp"
 #include "Playlist.hpp"
 
-Lista<Musica> configuracaoInicialMusicas()
+Lista<Musica *> configuracaoInicialMusicas()
 {
     string titulo[] = {"I'm good", "I'm believer", "I want it that way", "Alejandro", "Applause", "Californication"};
     string artista[] = {"David Guetta", "Smash Mounth", "Backstreet Boys", "Lady Gaga", "Lady Gaga", "Red Hot Chili Peppers"};
 
-    Lista<Musica> *baseMusicas = new Lista<Musica>();
+    Lista<Musica *> *baseMusicas = new Lista<Musica *>();
 
     for (int i = 0; i < 6; i++)
     {
@@ -14,33 +14,43 @@ Lista<Musica> configuracaoInicialMusicas()
         musica.setTitulo(titulo[i]);
         musica.setArtista(artista[i]);
 
-        baseMusicas->inserir(musica);
+        baseMusicas->inserir(&musica);
     }
 
     return *baseMusicas;
 }
 
-Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> baseMusicas)
+Lista<Playlist *> configuracaoInicialPlaylists(Lista<Musica *> *baseMusicas)
 {
-    Lista<Playlist> *basePlaylists = new Lista<Playlist>();
-    Playlist playlist1("Playlist 1");
-    Playlist playlist2("Playlist 2");
+    Lista<Playlist *> *basePlaylists = new Lista<Playlist *>();
 
     cout << " Configurando playlist...\n";
 
-    auto itr = baseMusicas.getCabeca();
-    auto end = baseMusicas.getCauda();
+    Lista<Musica *> *musicasPlaylist1 = new Lista<Musica *>();
+    Lista<Musica *> *musicasPlaylist2 = new Lista<Musica *>();
 
-    while (itr != end->getProximo())
+    auto itr = baseMusicas->getCabeca();
+    auto end = baseMusicas->getCauda();
+
+    int index = 0;
+
+    while (itr != nullptr)
     {
-        playlist1.addMusica(itr->getValor());
+        if (index % 2 == 0)
+        {
+            musicasPlaylist1->inserir(itr->getValor());
+        }
+        else
+        {
+            musicasPlaylist2->inserir(itr->getValor());
+        }
 
         itr = itr->getProximo();
-
-        playlist2.addMusica(itr->getValor());
-
-        itr = itr->getProximo();
+        index++;
     }
+
+    Playlist *playlist1 = new Playlist("Playlist 1", musicasPlaylist1);
+    Playlist *playlist2 = new Playlist("Playlist 2", musicasPlaylist2);
 
     cout << " Músicas configuradas...\n";
 
