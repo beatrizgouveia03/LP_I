@@ -6,13 +6,19 @@ using namespace std;
 
 int main()
 {
-    Lista<Playlist> App = configuracaoInicial();
+    Lista<Musica> musicas = configuracaoInicialMusicas();
+    cout << "Musicas configuradas..\n";
+    Lista<Playlist> playlists = configuracaoInicialPlaylists(musicas);
+    cout << "Playlists configuradas..\n";
 
-    auto begin = App.getCabeca(), end = App.getCauda();
+    auto itr = playlists.getCabeca();
+    auto end = playlists.getCauda();
 
-    while(begin != end){
-        cout << begin->getValor().getNome() << endl;
-        begin = begin->getProximo();
+    while (itr != end->getProximo())
+    {
+        cout << itr->getValor().getNome() << endl;
+
+        itr = itr->getProximo();
     }
 
     return 0;
