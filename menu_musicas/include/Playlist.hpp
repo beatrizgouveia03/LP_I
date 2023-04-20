@@ -11,6 +11,7 @@ private:
    Lista<Musica> musicas; 
 public:
     Playlist();
+    Playlist(string nome);
     Playlist(string nome ,Lista<Musica> musicas);
 
     ~Playlist();
