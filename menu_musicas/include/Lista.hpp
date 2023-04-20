@@ -1,6 +1,8 @@
 #ifndef LISTA_H
 #define LISTA_H
 
+#include <iostream>
+
 #include "No.hpp"
 
 using namespace std;
@@ -14,20 +16,21 @@ private:
 
 public:
     Lista();
-    Lista(No<T> *no);
+    Lista(T valor);
     ~Lista();
 
     void inserir(T valor);
-    // void inserir(T valor, int posicao);
+    void inserir(T valor, int posicao);
     void remover(T valor);
 
-    void setCabeca(No<T> *cabeca);
-    void setCauda(No<T> *cauda);
+    void setCabeca(No<T>* cabeca);
+    void setCauda(No<T>* cauda);
 
-    No<T> *getCabeca();
-    No<T> *getCauda();
+    No<T>* getCabeca();
+    No<T>* getCauda();
 };
 
+//Construtor padrão 
 template <class T>
 Lista<T>::Lista()
 {
@@ -35,13 +38,16 @@ Lista<T>::Lista()
     this->cauda = nullptr;
 }
 
+// Construtor que inializa a lista com um nó
 template <class T>
-Lista<T>::Lista(No<T> *no)
+Lista<T>::Lista(T valor)
 {
+    No<T>* no = new No<T>(valor);
     this->cabeca = no;
     this->cauda = no;
 }
 
+//Desconstrutor padrão
 template <class T>
 Lista<T>::~Lista()
 {
@@ -56,49 +62,78 @@ Lista<T>::~Lista()
     }
 }
 
+// Métodos setters e getters para o atributo Cabeca
+template <class T>
+void Lista<T>::setCabeca(No<T>* cabeca)
+{
+    this->cabeca = cabeca;
+}
+
+template <class T>
+No<T>* Lista<T>::getCabeca()
+{
+    return this->cabeca;
+}
+
+// Métodos setters e getters para o atributo Cabeca
+template <class T>
+void Lista<T>::setCauda(No<T> *cauda)
+{
+    this->cauda = cauda;
+}
+
+template <class T>
+No<T> *Lista<T>::getCauda()
+{
+    return this->cauda;
+}
+
+// Método para adicionar um nó no final da lista
 template <class T>
 void Lista<T>::inserir(T valor)
 {
     No<T> *novo = new No(valor);
 
-    if (this->getCabeca() == nullptr)
+    if (this->cabeca == nullptr)
     {
         this->setCabeca(novo);
         this->setCauda(novo);
     }
     else
     {
-        this->getCauda()->setProximo(novo);
+        this->cauda->setProximo(novo);
         this->setCauda(novo);
     }
 }
 
-// template <class T>
-// void Lista<T>::inserir(T valor, int posicao)
-// {
-//     No<T> *novo = new No(valor);
+// Método para adicionar um nó em uma posição específica da lista
+template <class T>
+void Lista<T>::inserir(T valor, int posicao)
+{
+    No<T> *novo = new No(valor);
 
-//     if (posicao == 0)
-//     {
-//         novo->setProximo(this->cabeca);
-//         this->cabeca = novo;
-//     }
-//     else
-//     {
-//         No<T> *atual = this->cabeca;
-//         No<T> *anterior = nullptr;
+    if (posicao == 0)
+    {
+        novo->setProximo(this->cabeca);
+        this->cabeca = novo;
+    }
+    else
+    {
+        No<T> *atual = this->cabeca;
+        No<T> *anterior = nullptr;
 
-//         for (int i = 0; i < posicao; i++)
-//         {
-//             anterior = atual;
-//             atual = atual->getProximo();
-//         }
+        for (int i = 0; i < posicao; i++)
+        {
+            anterior = atual;
+            atual = atual->getProximo();
+        }
 
-//         novo->setProximo(atual);
-//         anterior->setProximo(novo);
-//     }
-// }
+        novo->setProximo(atual);
+        anterior->setProximo(novo);
+    }
+}
 
+// Método para remover um nó da lista
 template <class T>
 void Lista<T>::remover(T valor)
 {
@@ -109,9 +144,13 @@ void Lista<T>::remover(T valor)
     {
         if (atual->getValor() == valor)
         {
-            if (anterior == nullptr)
+            if (atual == this->cabeca)
             {
                 this->cabeca = atual->getProximo();
+            }
+            else if(atual == this->cauda){
+                this->cauda = anterior;
+                this->cauda->setProximo(nullptr);
             }
             else
             {
@@ -119,36 +158,13 @@ void Lista<T>::remover(T valor)
             }
 
             delete atual;
-            break;
+            return;
         }
 
         anterior = atual;
         atual = atual->getProximo();
     }
-}
-
-template <class T>
-void Lista<T>::setCabeca(No<T> *cabeca)
-{
-    this->cabeca = cabeca;
-}
-
-template <class T>
-void Lista<T>::setCauda(No<T> *cauda)
-{
-    this->cauda = cauda;
-}
-
-template <class T>
-No<T> *Lista<T>::getCabeca()
-{
-    return this->cabeca;
-}
-
-template <class T>
-No<T> *Lista<T>::getCauda()
-{
-    return this->cauda;
+    cout << "Música não encontrada\n" << endl;
 }
 
 #endif

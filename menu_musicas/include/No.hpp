@@ -8,25 +8,29 @@ class No
 {
 private:
     T valor;
-    No *proximo;
+    No<T> *proximo;
 
 public:
     No();
     No(T valor);
 
     void setValor(T valor);
-    void setProximo(No *proximo);
+    void setProximo(No<T> *proximo);
 
     T getValor();
-    No *getProximo();
+    No<T> *getProximo();
 };
 
+
+// Construtor padrão
 template <class T>
 No<T>::No()
 {
+    this->value = T();
     this->proximo = nullptr;
 }
 
+// Construtor que inicializa o valor do nó
 template <class T>
 No<T>::No(T valor)
 {
@@ -34,6 +38,7 @@ No<T>::No(T valor)
     this->proximo = nullptr;
 }
 
+// Métodos setters e getters para o atributo valor
 template <class T>
 void No<T>::setValor(T valor)
 {
@@ -41,15 +46,16 @@ void No<T>::setValor(T valor)
 }
 
 template <class T>
-void No<T>::setProximo(No<T> *proximo)
-{
-    this->proximo = proximo;
-}
-
-template <class T>
 T No<T>::getValor()
 {
     return this->valor;
+}
+
+// Métodos setters e getters para o atributo proximo
+template <class T>
+void No<T>::setProximo(No<T> *proximo)
+{
+    this->proximo = proximo;
 }
 
 template <class T>
