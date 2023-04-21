@@ -1,12 +1,12 @@
 #include "Lista.hpp"
 #include "Playlist.hpp"
 
-Lista<Musica *> configuracaoInicialMusicas()
+Lista<Musica> configuracaoInicialMusicas()
 {
     string titulo[] = {"I'm good", "I'm believer", "I want it that way", "Alejandro", "Applause", "Californication"};
     string artista[] = {"David Guetta", "Smash Mounth", "Backstreet Boys", "Lady Gaga", "Lady Gaga", "Red Hot Chili Peppers"};
 
-    Lista<Musica *> *baseMusicas = new Lista<Musica *>();
+    Lista<Musica> *baseMusicas = new Lista<Musica>();
 
     for (int i = 0; i < 6; i++)
     {
@@ -14,20 +14,20 @@ Lista<Musica *> configuracaoInicialMusicas()
         musica.setTitulo(titulo[i]);
         musica.setArtista(artista[i]);
 
-        baseMusicas->inserir(&musica);
+        baseMusicas->inserir(musica);
     }
 
     return *baseMusicas;
 }
 
-Lista<Playlist *> configuracaoInicialPlaylists(Lista<Musica *> *baseMusicas)
+Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
 {
-    Lista<Playlist *> *basePlaylists = new Lista<Playlist *>();
+    Lista<Playlist> *basePlaylists = new Lista<Playlist>();
 
     cout << " Configurando playlist...\n";
 
-    Lista<Musica *> *musicasPlaylist1 = new Lista<Musica *>();
-    Lista<Musica *> *musicasPlaylist2 = new Lista<Musica *>();
+    Lista<Musica> *musicasPlaylist1 = new Lista<Musica>();
+    Lista<Musica> *musicasPlaylist2 = new Lista<Musica>();
 
     auto itr = baseMusicas->getCabeca();
     auto end = baseMusicas->getCauda();
@@ -54,9 +54,9 @@ Lista<Playlist *> configuracaoInicialPlaylists(Lista<Musica *> *baseMusicas)
 
     cout << " Músicas configuradas...\n";
 
-    basePlaylists->inserir(playlist1);
+    basePlaylists->inserir(*playlist1);
     cout << " Playlist adicionada...\n";
-    basePlaylists->inserir(playlist2);
+    basePlaylists->inserir(*playlist2);
     cout << " Playlist adicionada...\n";
 
     return *basePlaylists;
