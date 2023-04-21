@@ -7,7 +7,7 @@ Playlist::Playlist(string nome)
     this->nome = nome;
 }
 
-Playlist::Playlist(string nome, Lista<Musica *> *musicas)
+Playlist::Playlist(string nome, Lista<Musica> *musicas)
 {
     this->nome = nome;
     this->musicas = musicas;
@@ -20,7 +20,7 @@ void Playlist::setNome(string nome)
     this->nome = nome;
 }
 
-void Playlist::setMusicas(Lista<Musica *> *musicas)
+void Playlist::setMusicas(Lista<Musica> *musicas)
 {
     this->musicas = musicas;
 }
@@ -30,31 +30,31 @@ string Playlist::getNome()
     return this->nome;
 }
 
-Lista<Musica *> *Playlist::getMusicas()
+Lista<Musica> *Playlist::getMusicas()
 {
     return this->musicas;
 }
 
 void Playlist::addMusica(Musica *m)
 {
-    this->musicas->inserir(m);
+    this->musicas->inserir(*m);
 }
 
 void Playlist::remMusica(Musica *m)
 {
-    this->musicas->remover(m);
+    this->musicas->remover(*m);
 }
 
-Musica * Playlist::findMusica(Musica *m)
+No<Musica> *Playlist::findMusica(Musica *m)
 {
-    No<Musica *> *begin = this->musicas->getCauda();
-    No<Musica *> *end = this->musicas->getCabeca();
+    No<Musica> *begin = this->musicas->getCauda();
+    No<Musica> *end = this->musicas->getCabeca();
 
     while (begin != end)
     {
-        if (begin->getValor()->getTitulo() == m->getTitulo())
+        if (begin->getValor().getTitulo() == m->getTitulo())
         {
-            return begin->getValor();
+            return begin;
         }
         begin = begin->getProximo();
     }

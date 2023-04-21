@@ -8,25 +8,25 @@ class Playlist
 {
 private:
     string nome;
-    Lista<Musica *> *musicas;
+    Lista<Musica> *musicas;
 
 public:
     Playlist();
     Playlist(string nome);
-    Playlist(string nome, Lista<Musica *> *musicas);
+    Playlist(string nome, Lista<Musica> *musicas);
 
     ~Playlist();
 
     void setNome(string nome);
-    void setMusicas(Lista<Musica *> *musicas);
+    void setMusicas(Lista<Musica> *musicas);
 
     string getNome();
-    Lista<Musica *> *getMusicas();
+    Lista<Musica> *getMusicas();
 
     void addMusica(Musica *m);
     void remMusica(Musica *m);
 
-    Musica *findMusica(Musica *m);
+   No<Musica> *findMusica(Musica *m);
 };
 
 #endif
