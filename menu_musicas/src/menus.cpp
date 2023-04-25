@@ -10,7 +10,7 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
         string entry;
 
         cout << "\nMENU PRICIPAL\n";
-        cout << "1 - Gerenciar Playlists\n2 - Gerenciar Músicas\n3 - Sair\n";
+        cout << "1 - Gerenciar Músicas\n2 - Gerenciar Playlists\n3 - Sair\n";
         cout << "Digite a sua ação: ";
 
         cin >> acao;
@@ -19,10 +19,10 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
         switch (acao)
         {
         case 1:
-            menuPlaylists(basePlaylists);
+            menuMusicas(baseMusicas);
             break;
         case 2:
-            menuMusicas(baseMusicas);
+            menuPlaylists(basePlaylists);
             break;
         case 3:
         default:
@@ -44,7 +44,7 @@ void menuMusicas(Lista<Musica> *baseMusicas)
         cout << "Digite a sua ação: ";
 
         cin >> acao;
-        getline(cin,entry);
+        getline(cin, entry);
 
         switch (acao)
         {
@@ -69,18 +69,20 @@ void menuMusicas(Lista<Musica> *baseMusicas)
             cout << "\nMúsica removida!\n\n";
             break;
         case 3:
-            //No<Musica> *itr = baseMusicas->getCabeca();
-            //while (itr != nullptr)
-            //{
-            //  Musica m2 = itr->getValor();
-            //  cout << "Música: " << m2.getTitulo() << endl;
-            //  cout << "Artista: " << m2.getArtista() << endl;
+        {
+            No<Musica> *itr = baseMusicas->getCabeca();
+            while (itr != nullptr)
+            {
+                Musica m2 = itr->getValor();
+                cout << "Música: " << m2.getTitulo() << endl;
+                cout << "Artista: " << m2.getArtista() << endl
+                     << endl;
 
-            //    itr = itr->getProximo();
-            //}
-            //cout << endl;
+                itr = itr->getProximo();
+            }
+            cout << endl;
             break;
-        case 4:
+        }
         default:
             return;
         }
