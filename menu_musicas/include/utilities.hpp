@@ -13,8 +13,8 @@ void menuMusicas(Lista<Musica> *baseMusicas);
 
 void menuPlaylists(Lista<Playlist> *basePlaylists);
 
-void menuListagemMusicas(Lista<Musica> *baseMusicas);
-
-void menuListagemPlaylists(Lista<Playlist> *basePlaylists);
-
 void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
+
+void menuListagemMusicas(Lista<Musica> baseMusicas);
+
+void menuListagemPlaylists(Lista<Playlist> basePlaylists);

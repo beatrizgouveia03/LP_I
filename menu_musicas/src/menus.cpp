@@ -127,12 +127,11 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
     }
 }
 
-void menuListagemMusicas(Lista<Musica> *baseMusicas)
+void menuListagemMusicas(Lista<Musica> baseMusicas)
 {
-
     cout << "\nLISTAGEM DE MÚSICAS\n\n";
 
-    No<Musica> *itr = baseMusicas->getCabeca();
+    No<Musica> *itr = baseMusicas.getCabeca();
 
     int count = 1;
     while (itr != nullptr)
@@ -148,20 +147,18 @@ void menuListagemMusicas(Lista<Musica> *baseMusicas)
     return;
 }
 
-void menuListagemPlaylists(Lista<Playlist> *basePlaylists)
+void menuListagemPlaylists(Lista<Playlist> basePlaylists)
 {
-    int acao;
-    string entry;
-
     cout << "\nLISTAGEM DE PLAYLISTS\n";
 
-    No<Playlist> *itr = basePlaylists->getCabeca();
+    No<Playlist> *itr = basePlaylists.getCabeca();
 
     int count = 1;
     while (itr != nullptr)
     {
-        Playlist p2 = itr->getValor();
-        cout << "Playlist " << count << ": " << p2.getNome() << endl;
+        Playlist p = itr->getValor();
+
+        cout << p << endl;
 
         itr = itr->getProximo();
         count++;
@@ -177,7 +174,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
     {
         string playlist;
 
-        menuListagemPlaylists(basePlaylists);
+        menuListagemPlaylists(*basePlaylists);
 
         cout << "Digite o número da playlist: " << endl;
         getline(cin, playlist);
@@ -206,7 +203,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
         case 1:
         {
             string musica;
-            menuListagemMusicas(baseMusicas);
+            menuListagemMusicas(*baseMusicas);
 
             cout << "Digite o número da música: " << endl;
             getline(cin, musica);
@@ -229,7 +226,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
         case 2:
         {
             string musica;
-            menuListagemMusicas(baseMusicas);
+            menuListagemMusicas(*baseMusicas);
 
             cout << "Digite o número da música: " << endl;
             getline(cin, musica);
