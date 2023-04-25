@@ -15,11 +15,11 @@ int main()
 
     // Teste baseMusicas
     cout << "Teste baseMusicas..\n";
-    menuListagemMusicas(musicas);
+    menuListagemMusicas(&musicas);
 
     // Teste basePlaylist
     cout << "Teste basePlaylist..\n";
-    menuListagemPlaylists(playlists);
+    menuListagemPlaylists(&playlists);
    
 
     menuPrincipal(&musicas, &playlists);

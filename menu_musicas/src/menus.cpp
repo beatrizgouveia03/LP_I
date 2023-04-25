@@ -75,7 +75,7 @@ void menuMusicas(Lista<Musica> *baseMusicas)
             break;
         case 3:
         {
-            menuListagemMusicas(*baseMusicas);
+            menuListagemMusicas(baseMusicas);
             break;
         }
         case 4:
@@ -122,7 +122,7 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
             break;
         case 3:
         {
-            menuListagemPlaylists(*basePlaylists);
+            menuListagemPlaylists(basePlaylists);
             break;
         }
         case 4:
@@ -134,11 +134,11 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
     }
 }
 
-void menuListagemMusicas(Lista<Musica> baseMusicas)
+void menuListagemMusicas(Lista<Musica> *baseMusicas)
 {
     cout << "\nLISTAGEM DE MÚSICAS\n\n";
 
-    No<Musica> *itr = baseMusicas.getCabeca();
+    No<Musica> *itr = baseMusicas->getCabeca();
 
     int count = 1;
     while (itr != nullptr)
@@ -154,11 +154,11 @@ void menuListagemMusicas(Lista<Musica> baseMusicas)
     return;
 }
 
-void menuListagemPlaylists(Lista<Playlist> basePlaylists)
+void menuListagemPlaylists(Lista<Playlist> *basePlaylists)
 {
     cout << "\nLISTAGEM DE PLAYLISTS\n";
 
-    No<Playlist> *itr = basePlaylists.getCabeca();
+    No<Playlist> *itr = basePlaylists->getCabeca();
 
     int count = 1;
     while (itr != nullptr)
@@ -181,7 +181,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
     {
         string playlist;
 
-        menuListagemPlaylists(*basePlaylists);
+        menuListagemPlaylists(basePlaylists);
 
         cout << "Digite o número da playlist: " << endl;
         getline(cin, playlist);
@@ -210,7 +210,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
         case 1:
         {
             string musica;
-            menuListagemMusicas(*baseMusicas);
+            menuListagemMusicas(baseMusicas);
 
             cout << "Digite o número da música: " << endl;
             getline(cin, musica);
@@ -233,7 +233,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
         case 2:
         {
             string musica;
-            menuListagemMusicas(*baseMusicas);
+            menuListagemMusicas(baseMusicas);
 
             cout << "Digite o número da música: " << endl;
             getline(cin, musica);
@@ -252,7 +252,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             break;
         }
         case 3:
-            menuListagemMusicas(*(p->getValor().getMusicas()));
+            menuListagemMusicas(p->getValor().getMusicas());
             break;
         case 4:
             return;
