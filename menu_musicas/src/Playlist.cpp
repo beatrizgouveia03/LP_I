@@ -74,17 +74,18 @@ bool Playlist::operator==(Playlist &playlist)
     return false;
 }
 
-ostream &operator<<(ostream &cout, Playlist &p){
+ostream &operator<<(ostream &cout, Playlist &p)
+{
     cout << "Nome: " << p.getNome() << endl;
     cout << "Musicas: " << endl;
 
     No<Musica> *itr = p.getMusicas()->getCabeca();
     int count = 1;
 
-    while(itr != nullptr)
+    while (itr != nullptr)
     {
         Musica m = itr->getValor();
-        cout << "[" << count << "] " << m << endl;
+        cout << "[" << count << "] " << m;
 
         itr = itr->getProximo();
     }
