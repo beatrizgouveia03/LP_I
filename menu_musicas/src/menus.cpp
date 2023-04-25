@@ -75,10 +75,14 @@ void menuMusicas(Lista<Musica> *baseMusicas)
             break;
         case 3:
         {
-            menuListagemMusicas(baseMusicas);
+            menuListagemMusicas(*baseMusicas);
+            break;
         }
-        default:
+        case 4:
             return;
+        default:
+            cout << "Opção inválida!\n";
+            break;
         }
     }
 }
@@ -118,11 +122,14 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
             break;
         case 3:
         {
-            menuListagemPlaylists(basePlaylists);
+            menuListagemPlaylists(*basePlaylists);
             break;
         }
-        default:
+        case 4:
             return;
+        default:
+            cout << "Opção inválida!\n";
+            break;
         }
     }
 }
@@ -245,10 +252,13 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             break;
         }
         case 3:
-            menuListagemMusicas(p->getValor().getMusicas());
+            menuListagemMusicas(*(p->getValor().getMusicas()));
             break;
-        default:
+        case 4:
             return;
+        default:
+            cout << "Opção inválida!\n";
+            break;
         }
     }
 }
