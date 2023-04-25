@@ -27,8 +27,11 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
         case 3:
             menuMusicasEmPlaylists(baseMusicas, basePlaylists);
             break;
-        default:
+        case 4:
             return;
+        default:
+            cout << "Opção inválida\n\n";
+            break;
         }
     }
 }
@@ -72,18 +75,7 @@ void menuMusicas(Lista<Musica> *baseMusicas)
             break;
         case 3:
         {
-            No<Musica> *itr = baseMusicas->getCabeca();
-            while (itr != nullptr)
-            {
-                Musica m2 = itr->getValor();
-                cout << "Música: " << m2.getTitulo() << endl;
-                cout << "Artista: " << m2.getArtista() << endl
-                     << endl;
-
-                itr = itr->getProximo();
-            }
-            cout << endl;
-            break;
+            menuListagemMusicas(baseMusicas);
         }
         default:
             return;
@@ -126,18 +118,7 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
             break;
         case 3:
         {
-            No<Playlist> *itr = basePlaylists->getCabeca();
-
-            int count = 1;
-            while (itr != nullptr)
-            {
-                Playlist p2 = itr->getValor();
-                cout << "Playlist " << count << ": " << p2.getNome() << endl;
-
-                itr = itr->getProximo();
-                count++;
-            }
-            cout << endl;
+            menuListagemPlaylists(basePlaylists);
             break;
         }
         default:
@@ -151,7 +132,7 @@ No<Musica> *menuListagemMusicas(Lista<Musica> *baseMusicas)
     int acao;
     string entry;
 
-    cout << "\nLISTAGEM DE MÚSICAS\n";
+    cout << "\nLISTAGEM DE MÚSICAS\n\n";
 
     No<Musica> *itr = baseMusicas->getCabeca();
 
@@ -159,7 +140,7 @@ No<Musica> *menuListagemMusicas(Lista<Musica> *baseMusicas)
     while (itr != nullptr)
     {
         Musica m = itr->getValor();
-        cout << "[" << count << "] " << m.getArtista() << " - " << m.getTitulo() << endl;
+        cout << "[" << count << "] " << m << endl;
 
         itr = itr->getProximo();
         count++;
@@ -181,7 +162,7 @@ No<Musica> *menuListagemMusicas(Lista<Musica> *baseMusicas)
     return m;
 }
 
-No<Playlist> *menuListagemPlaylists(Lista<Playlist> *basePlaylists, Lista<Musica> *baseMusicas)
+No<Playlist> *menuListagemPlaylists(Lista<Playlist> *basePlaylists)
 {
     int acao;
     string entry;
@@ -220,7 +201,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 {
     while (true)
     {
-        No<Playlist> *p = menuListagemPlaylists(basePlaylists, baseMusicas);
+        No<Playlist> *p = menuListagemPlaylists(basePlaylists);
 
         int acao;
         string entry;
@@ -240,6 +221,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 
             p->getValor().getMusicas()->inserir(musicaEscolhida->getValor());
             cout << "\nMúsica adicionada!\n\n";
+            break;
         }
         case 2:
         {
@@ -247,6 +229,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 
             p->getValor().getMusicas()->remover(musicaEscolhida->getValor());
             cout << "\nMúsica removida!\n\n";
+            break;
         }
         case 3:
             // implementar
