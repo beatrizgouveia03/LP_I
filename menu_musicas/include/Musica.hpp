@@ -10,20 +10,21 @@ class Musica
 private:
     string titulo;
     string artista;
+
 public:
-   Musica();
-   Musica(string titulo, string artista);
+    Musica();
+    Musica(string titulo, string artista);
 
-   ~Musica();
+    ~Musica();
 
-   void setTitulo(string titulo);
-   void setArtista (string artista);
+    void setTitulo(string titulo);
+    void setArtista(string artista);
 
-   string getTitulo();
-   string getArtista();
-   
-   bool operator==(Musica &musica);
-   ostream &operator<<(ostream &cout, Musica *m);
+    string getTitulo();
+    string getArtista();
+
+    bool operator==(Musica &musica);
+    friend ostream &operator<<(ostream &cout, Musica &m);
 };
 
 #endif

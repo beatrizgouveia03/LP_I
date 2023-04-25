@@ -1,5 +1,7 @@
 #include "Musica.hpp"
 
+#include <ostream>
+
 Musica::Musica() {}
 
 Musica::Musica(string titulo, string artista)
@@ -38,9 +40,9 @@ bool Musica::operator==(Musica &musica)
 
     return false;
 }
-ostream &operator<<(ostream &cout, Musica *m)
+ostream &operator<<(ostream &cout, Musica &m)
 {
-    cout << m->getArtista() << " - " << m->getTitulo() << endl;
+    cout << m.getArtista() << " - " << m.getTitulo() << endl;
 
     return cout;
 }
