@@ -29,6 +29,7 @@ public:
     No<Musica> *findMusica(Musica *m);
 
     bool operator==(Playlist &playlist);
+    friend ostream &operator<<(ostream &cout, Playlist &p);
 };
 
 #endif

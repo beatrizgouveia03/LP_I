@@ -1,5 +1,7 @@
 #include "Playlist.hpp"
 
+#include <ostream>
+
 Playlist::Playlist() {}
 
 Playlist::Playlist(string nome)
@@ -70,4 +72,22 @@ bool Playlist::operator==(Playlist &playlist)
     }
 
     return false;
+}
+
+ostream &operator<<(ostream &cout, Playlist &p){
+    cout << "Nome: " << p.getNome() << endl;
+    cout << "Musicas: " << endl;
+
+    No<Musica> *itr = p.getMusicas()->getCabeca();
+    int count = 1;
+
+    while(itr != nullptr)
+    {
+        Musica m = itr->getValor();
+        cout << "[" << count << "] " << m << endl;
+
+        itr = itr->getProximo();
+    }
+
+    return cout;
 }
