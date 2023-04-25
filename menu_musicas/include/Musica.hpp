@@ -23,6 +23,7 @@ public:
    string getArtista();
    
    bool operator==(Musica &musica);
+   ostream &operator<<(ostream &cout, Musica *m);
 };
 
 #endif
