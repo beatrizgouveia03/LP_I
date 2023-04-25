@@ -26,7 +26,9 @@ public:
     void addMusica(Musica *m);
     void remMusica(Musica *m);
 
-   No<Musica> *findMusica(Musica *m);
+    No<Musica> *findMusica(Musica *m);
+
+    bool operator==(Playlist &playlist);
 };
 
 #endif

@@ -10,7 +10,7 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
         string entry;
 
         cout << "\nMENU PRICIPAL\n";
-        cout << "1 - Gerenciar Músicas\n2 - Gerenciar Playlists\n3 - Sair\n";
+        cout << "1 - Gerenciar Músicas\n2 - Gerenciar Playlists\n3 - Gerenciar Músicas em Playlists\n4 - Sair\n";
         cout << "Digite a sua ação: ";
 
         cin >> acao;
@@ -25,6 +25,8 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
             menuPlaylists(basePlaylists);
             break;
         case 3:
+            menuMusicasEmPlaylists(baseMusicas, basePlaylists);
+            break;
         default:
             return;
         }
@@ -91,8 +93,165 @@ void menuMusicas(Lista<Musica> *baseMusicas)
 
 void menuPlaylists(Lista<Playlist> *basePlaylists)
 {
+    while (true)
+    {
+        int acao;
+        Playlist p;
+        string entry;
 
-    // IMPLEMENTAR
+        cout << "\nMENU PLAYLISTS\n";
+        cout << "1 - Adicionar playlist\n2 - Remover playlist\n3 - Listar playlists\n4 - Sair\n";
+        cout << "Digite a sua ação: ";
 
-    return;
+        cin >> acao;
+        getline(cin, entry);
+
+        switch (acao)
+        {
+        case 1:
+            cout << "Digite o nome da playlist: ";
+            getline(cin, entry);
+            p.setNome(entry);
+
+            basePlaylists->inserir(p);
+            cout << "\nPlaylist Cadastrada!\n\n";
+            break;
+        case 2:
+            cout << "Digite o nome da playlist a ser removida: ";
+            getline(cin, entry);
+            p.setNome(entry);
+
+            basePlaylists->remover(p);
+            cout << "\nPlaylist removida!\n\n";
+            break;
+        case 3:
+        {
+            No<Playlist> *itr = basePlaylists->getCabeca();
+
+            int count = 1;
+            while (itr != nullptr)
+            {
+                Playlist p2 = itr->getValor();
+                cout << "Playlist " << count << ": " << p2.getNome() << endl;
+
+                itr = itr->getProximo();
+                count++;
+            }
+            cout << endl;
+            break;
+        }
+        default:
+            return;
+        }
+    }
+}
+
+No<Musica> *menuListagemMusicas(Lista<Musica> *baseMusicas)
+{
+    int acao;
+    string entry;
+
+    cout << "\nLISTAGEM DE MÚSICAS\n";
+
+    No<Musica> *itr = baseMusicas->getCabeca();
+
+    int count = 1;
+    while (itr != nullptr)
+    {
+        Musica m = itr->getValor();
+        cout << "[" << count << "] " << m.getArtista() << " - " << m.getTitulo() << endl;
+
+        itr = itr->getProximo();
+        count++;
+    }
+    cout << endl;
+
+    cout << "Digite o número da música: " << endl;
+    getline(cin, entry);
+    acao = stoi(entry);
+
+    No<Musica> *m = baseMusicas->getCabeca();
+
+    while (acao > 1)
+    {
+        m = m->getProximo();
+        acao--;
+    }
+
+    return m;
+}
+
+No<Playlist> *menuListagemPlaylists(Lista<Playlist> *basePlaylists, Lista<Musica> *baseMusicas)
+{
+    int acao;
+    string entry;
+
+    cout << "\nLISTAGEM DE PLAYLISTS\n";
+
+    No<Playlist> *itr = basePlaylists->getCabeca();
+
+    int count = 1;
+    while (itr != nullptr)
+    {
+        Playlist p2 = itr->getValor();
+        cout << "Playlist " << count << ": " << p2.getNome() << endl;
+
+        itr = itr->getProximo();
+        count++;
+    }
+    cout << endl;
+
+    cout << "Digite o número da playlist: " << endl;
+    getline(cin, entry);
+    acao = stoi(entry);
+
+    No<Playlist> *p = basePlaylists->getCabeca();
+
+    while (acao > 1)
+    {
+        p = p->getProximo();
+        acao--;
+    }
+
+    return p;
+}
+
+void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
+{
+    while (true)
+    {
+        No<Playlist> *p = menuListagemPlaylists(basePlaylists, baseMusicas);
+
+        int acao;
+        string entry;
+
+        cout << "\nGERENCIAR PLAYLIST: " << p->getValor().getNome() << endl;
+        cout << "1 - Adicionar música\n2 - Remover música\n3 - Listar músicas\n4 - Sair\n";
+        cout << "Digite a sua ação: ";
+
+        cin >> acao;
+        getline(cin, entry);
+
+        switch (acao)
+        {
+        case 1:
+        {
+            No<Musica> *musicaEscolhida = menuListagemMusicas(baseMusicas);
+
+            p->getValor().getMusicas()->inserir(musicaEscolhida->getValor());
+            cout << "\nMúsica adicionada!\n\n";
+        }
+        case 2:
+        {
+            No<Musica> *musicaEscolhida = menuListagemMusicas(baseMusicas);
+
+            p->getValor().getMusicas()->remover(musicaEscolhida->getValor());
+            cout << "\nMúsica removida!\n\n";
+        }
+        case 3:
+            // implementar
+        default:
+            return;
+        }
+    }
 }

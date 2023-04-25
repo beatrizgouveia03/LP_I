@@ -61,3 +61,13 @@ No<Musica> *Playlist::findMusica(Musica *m)
 
     return nullptr;
 }
+
+bool Playlist::operator==(Playlist &playlist)
+{
+    if (this->getNome() == playlist.getNome())
+    {
+        return true;
+    }
+
+    return false;
+}

@@ -48,8 +48,8 @@ Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
         index++;
     }
 
-    Playlist *playlist1 = new Playlist("Playlist 1", musicasPlaylist1);
-    Playlist *playlist2 = new Playlist("Playlist 2", musicasPlaylist2);
+    Playlist *playlist1 = new Playlist("Top Hits 2002", musicasPlaylist1);
+    Playlist *playlist2 = new Playlist("Good Vibes", musicasPlaylist2);
 
     cout << " Músicas configuradas...\n";
 
