@@ -123,24 +123,41 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
 
             if (basePlaylists->buscar(p) != nullptr)
             {
-                basePlaylists->inserir(p);
-                cout << "\nPlaylist Cadastrada!\n\n";
+                cout << "\nPlaylist já existente!\n\n";
                 break;
             }
-            cout << "\nPlaylist já existente\n\n";
+            basePlaylists->inserir(p);
+            cout << "\nPlaylist Cadastrada!\n\n";
             break;
         case 2:
-            cout << "Digite o nome da playlist a ser removida: ";
+        {
+            menuListagemPlaylists(basePlaylists);
+            cout << "Digite o número da playlist a ser removida: ";
             getline(cin, entry);
-            p.setNome(entry);
+            int acao = stoi(entry);
 
-            if (basePlaylists->buscar(p) != nullptr)
+            No<Playlist> *p2 = basePlaylists->getCabeca();
+
+            while (acao > 1)
             {
-                basePlaylists->remover(p);
-                cout << "\nPlaylist removida!\n\n";
+                p2 = p2->getProximo();
+                if (p2 == nullptr)
+                {
+                    cout << "\nNão existe nenhuma playlist com este número!\n\n";
+                    return;
+                }
+                acao--;
             }
-            cout << "\nPlaylist não encontrada\n\n";
+
+            if (basePlaylists->buscar(p2->getValor()) != nullptr)
+            {
+                basePlaylists->remover(p2->getValor());
+                cout << "\nPlaylist removida!\n\n";
+                break;
+            }
+            cout << "\nPlaylist não encontrada!\n\n";
             break;
+        }
         case 3:
         {
             menuListagemPlaylists(basePlaylists);
@@ -213,6 +230,11 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
         while (acao > 1)
         {
             p = p->getProximo();
+            if (p == nullptr)
+            {
+                cout << "\nNão existe nenhuma playlist com este número!\n\n";
+                return;
+            }
             acao--;
         }
 
@@ -242,10 +264,16 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             while (acao > 1)
             {
                 musicaEscolhida = musicaEscolhida->getProximo();
+                if (musicaEscolhida == nullptr)
+                {
+                    cout << "\nNão existe nenhuma música com este número!\n\n";
+                    return;
+                }
                 acao--;
             }
 
-            if (p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
+
+            if (p->getValor().getMusicas() != nullptr && p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
             {
                 cout << "\nMúsica já existente na Playlist!\n\n";
                 break;
@@ -269,6 +297,11 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             while (acao > 1)
             {
                 musicaEscolhida = musicaEscolhida->getProximo();
+                if (musicaEscolhida == nullptr)
+                {
+                    cout << "\nNão existe nenhuma música com este número!\n\n";
+                    return;
+                }
                 acao--;
             }
 

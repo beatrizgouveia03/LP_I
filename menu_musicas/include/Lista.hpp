@@ -172,7 +172,7 @@ void Lista<T>::remover(T valor)
 template <class T>
 No<T> *Lista<T>::buscar(T valor)
 {
-    No<T> *atual = this->cabeca;
+    No<T> *atual = this->getCabeca();
 
     while (atual != nullptr)
     {

@@ -25,6 +25,7 @@ void Playlist::setNome(string nome)
 void Playlist::setMusicas(Lista<Musica> *musicas)
 {
     this->musicas = musicas;
+    return;
 }
 
 string Playlist::getNome()
@@ -39,12 +40,18 @@ Lista<Musica> *Playlist::getMusicas()
 
 void Playlist::addMusica(Musica *m)
 {
+    if(musicas == nullptr){
+        musicas = new Lista<Musica>(*m);
+        return;
+    }
     this->musicas->inserir(*m);
+    return;
 }
 
 void Playlist::remMusica(Musica *m)
 {
     this->musicas->remover(*m);
+    return;
 }
 
 No<Musica> *Playlist::findMusica(Musica *m)
@@ -79,13 +86,13 @@ ostream &operator<<(ostream &cout, Playlist &p)
     cout << "Nome: " << p.getNome() << endl;
     cout << "Musicas: " << endl;
 
-    No<Musica> *itr = p.getMusicas()->getCabeca();
-
-    if(itr == nullptr){
+    if (p.getMusicas() == nullptr)
+    {
         cout << "Nenhuma música encontrada" << endl;
         return cout;
     }
 
+    No<Musica> *itr = p.getMusicas()->getCabeca();
     int count = 1;
 
     while (itr != nullptr)
