@@ -23,8 +23,6 @@ Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
 {
     Lista<Playlist> *basePlaylists = new Lista<Playlist>();
 
-    cout << " Configurando playlist...\n";
-
     Lista<Musica> *musicasPlaylist1 = new Lista<Musica>();
     Lista<Musica> *musicasPlaylist2 = new Lista<Musica>();
 
@@ -51,12 +49,8 @@ Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
     Playlist *playlist1 = new Playlist("Top Hits 2002", musicasPlaylist1);
     Playlist *playlist2 = new Playlist("Good Vibes", musicasPlaylist2);
 
-    cout << " Músicas configuradas...\n";
-
     basePlaylists->inserir(*playlist1);
-    cout << " Playlist adicionada...\n";
     basePlaylists->inserir(*playlist2);
-    cout << " Playlist adicionada...\n";
 
     return *basePlaylists;
 }
