@@ -80,6 +80,12 @@ ostream &operator<<(ostream &cout, Playlist &p)
     cout << "Musicas: " << endl;
 
     No<Musica> *itr = p.getMusicas()->getCabeca();
+
+    if(itr == nullptr){
+        cout << "Nenhuma música encontrada" << endl;
+        return cout;
+    }
+
     int count = 1;
 
     while (itr != nullptr)
