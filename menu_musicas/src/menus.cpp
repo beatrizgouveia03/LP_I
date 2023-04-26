@@ -83,7 +83,7 @@ void menuMusicas(Lista<Musica> *baseMusicas)
                 cout << "\nMúsica removida!\n\n";
                 break;
             }
-            cout << "Música não encontrada\n\n";
+            cout << "/nMúsica não encontrada!\n\n";
             break;
         case 3:
         {
@@ -245,7 +245,6 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
                 acao--;
             }
 
-
             if (p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
             {
                 cout << "\nMúsica já existente na Playlist!\n\n";
@@ -281,7 +280,6 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             }
             cout << "\nMúsica não localizada na Playlist!\n\n";
             break;
-            
         }
         case 3:
             menuListagemMusicas(p->getValor().getMusicas());
