@@ -62,16 +62,28 @@ void menuMusicas(Lista<Musica> *baseMusicas)
             getline(cin, entry);
             m.setArtista(entry);
 
+            if (baseMusicas->buscar(m) != nullptr)
+            {
+                cout << "\nMúsica já existe na lista!\n";
+                break;
+            }
+
             baseMusicas->inserir(m);
             cout << "\nMúsica Cadastrada!\n\n";
+
             break;
         case 2:
             cout << "Digite o nome da música a ser removida: ";
             getline(cin, entry);
             m.setTitulo(entry);
 
-            baseMusicas->remover(m);
-            cout << "\nMúsica removida!\n\n";
+            if (baseMusicas->buscar(m) != nullptr)
+            {
+                baseMusicas->remover(m);
+                cout << "\nMúsica removida!\n\n";
+                break;
+            }
+            cout << "Música não encontrada\n\n";
             break;
         case 3:
         {
@@ -109,16 +121,25 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
             getline(cin, entry);
             p.setNome(entry);
 
-            basePlaylists->inserir(p);
-            cout << "\nPlaylist Cadastrada!\n\n";
+            if (basePlaylists->buscar(p) != nullptr)
+            {
+                basePlaylists->inserir(p);
+                cout << "\nPlaylist Cadastrada!\n\n";
+                break;
+            }
+            cout << "\nPlaylist já existente\n\n";
             break;
         case 2:
             cout << "Digite o nome da playlist a ser removida: ";
             getline(cin, entry);
             p.setNome(entry);
 
-            basePlaylists->remover(p);
-            cout << "\nPlaylist removida!\n\n";
+            if (basePlaylists->buscar(p) != nullptr)
+            {
+                basePlaylists->remover(p);
+                cout << "\nPlaylist removida!\n\n";
+            }
+            cout << "\nPlaylist não encontrada\n\n";
             break;
         case 3:
         {
@@ -224,10 +245,15 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
                 acao--;
             }
 
+
+            if (p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
+            {
+                cout << "\nMúsica já existente na Playlist!\n\n";
+                break;
+            }
+
             p->getValor().getMusicas()->inserir(musicaEscolhida->getValor());
-
-            cout << "\nMúsica adicionada!\n\n";
-
+            cout << "\nMúsica Cadastrada!\n\n";
             break;
         }
         case 2:
@@ -247,9 +273,15 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
                 acao--;
             }
 
-            p->getValor().getMusicas()->remover(musicaEscolhida->getValor());
-            cout << "\nMúsica removida!\n\n";
+            if (p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
+            {
+                p->getValor().getMusicas()->remover(musicaEscolhida->getValor());
+                cout << "\nMúsica Removida!\n\n";
+                break;
+            }
+            cout << "\nMúsica não localizada na Playlist!\n\n";
             break;
+            
         }
         case 3:
             menuListagemMusicas(p->getValor().getMusicas());

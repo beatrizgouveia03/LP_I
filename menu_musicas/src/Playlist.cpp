@@ -88,6 +88,7 @@ ostream &operator<<(ostream &cout, Playlist &p)
         cout << "[" << count << "] " << m;
 
         itr = itr->getProximo();
+        count++;
     }
 
     return cout;
