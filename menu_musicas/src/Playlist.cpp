@@ -85,7 +85,7 @@ ostream &operator<<(ostream &cout, Playlist &p)
     No<Musica> *itr = p.getMusicas()->getCabeca();
 
     if(itr == nullptr){
-        cout << "Nenhuma música cadsatrada!\n";
+        cout << "Nenhuma música cadastrada!\n";
     }
 
     int count = 1;
