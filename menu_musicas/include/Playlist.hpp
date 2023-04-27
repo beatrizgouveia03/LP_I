@@ -8,7 +8,7 @@ class Playlist
 {
 private:
     string nome;
-    Lista<Musica> *musicas = nullptr;
+    Lista<Musica> *musicas = new Lista<Musica>();
 
 public:
     Playlist();

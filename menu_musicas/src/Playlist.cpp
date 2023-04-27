@@ -40,10 +40,6 @@ Lista<Musica> *Playlist::getMusicas()
 
 void Playlist::addMusica(Musica *m)
 {
-    if(musicas == nullptr){
-        musicas = new Lista<Musica>(*m);
-        return;
-    }
     this->musicas->inserir(*m);
     return;
 }
@@ -86,13 +82,12 @@ ostream &operator<<(ostream &cout, Playlist &p)
     cout << "Nome: " << p.getNome() << endl;
     cout << "Musicas: " << endl;
 
-    if (p.getMusicas() == nullptr)
-    {
-        cout << "Nenhuma música encontrada" << endl;
-        return cout;
+    No<Musica> *itr = p.getMusicas()->getCabeca();
+
+    if(itr == nullptr){
+        cout << "Nenhuma música cadsatrada!\n";
     }
 
-    No<Musica> *itr = p.getMusicas()->getCabeca();
     int count = 1;
 
     while (itr != nullptr)
