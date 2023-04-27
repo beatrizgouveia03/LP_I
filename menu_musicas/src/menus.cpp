@@ -22,7 +22,7 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
             menuMusicas(baseMusicas);
             break;
         case 2:
-            menuPlaylists(basePlaylists);
+            menuPlaylists(baseMusicas, basePlaylists);
             break;
         case 3:
             menuMusicasEmPlaylists(baseMusicas, basePlaylists);
@@ -99,7 +99,7 @@ void menuMusicas(Lista<Musica> *baseMusicas)
     }
 }
 
-void menuPlaylists(Lista<Playlist> *basePlaylists)
+void menuPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
 {
     while (true)
     {
@@ -108,7 +108,7 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
         string entry;
 
         cout << "\nMENU PLAYLISTS\n";
-        cout << "1 - Adicionar playlist\n2 - Remover playlist\n3 - Listar playlists\n4 - Sair\n";
+        cout << "1 - Adicionar playlist\n2 - Remover playlist\n3 - Listar playlists\n4 - Gerenciar Músicas em Playlists\n5 - Sair\n";
         cout << "Digite a sua ação: ";
 
         cin >> acao;
@@ -164,6 +164,9 @@ void menuPlaylists(Lista<Playlist> *basePlaylists)
             break;
         }
         case 4:
+            menuMusicasEmPlaylists(baseMusicas, basePlaylists);
+            break;
+        case 5:
             return;
         default:
             cout << "Opção inválida!\n";
@@ -271,7 +274,6 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
                 }
                 acao--;
             }
-
 
             if (p->getValor().getMusicas() != nullptr && p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
             {

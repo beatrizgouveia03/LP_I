@@ -11,7 +11,7 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
 void menuMusicas(Lista<Musica> *baseMusicas);
 
-void menuPlaylists(Lista<Playlist> *basePlaylists);
+void menuPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
 void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
