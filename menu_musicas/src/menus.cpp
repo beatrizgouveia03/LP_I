@@ -225,9 +225,13 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 
         menuListagemPlaylists(basePlaylists);
 
-        cout << "Digite o número da playlist: " << endl;
+        cout << "Digite o número da playlist: (digite 0 para sair) " << endl;
         getline(cin, playlist);
         int acao = stoi(playlist);
+
+        if(acao == 0){
+            return;
+        }
 
         No<Playlist> *p = basePlaylists->getCabeca();
 
