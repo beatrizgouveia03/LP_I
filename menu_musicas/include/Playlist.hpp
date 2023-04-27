@@ -23,10 +23,10 @@ public:
     string getNome();
     Lista<Musica> *getMusicas();
 
-    void addMusica(Musica *m);
-    void remMusica(Musica *m);
+    void addMusica(Musica m);
+    void remMusica(Musica m);
 
-    No<Musica> *findMusica(Musica *m);
+    No<Musica> *findMusica(Musica m);
 
     bool operator==(Playlist &playlist);
     friend ostream &operator<<(ostream &cout, Playlist &p);
