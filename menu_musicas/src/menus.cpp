@@ -206,7 +206,8 @@ void menuListagemPlaylists(Lista<Playlist> *basePlaylists)
     {
         Playlist p = itr->getValor();
 
-        cout << p << endl;
+        cout << "-- " << count << " --\n"
+             << p << endl;
 
         itr = itr->getProximo();
         count++;
