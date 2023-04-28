@@ -1,5 +1,7 @@
 #include "utilities.hpp"
 
+using namespace std;
+
 Lista<Musica> configuracaoInicialMusicas()
 {
     string titulo[] = {"I'm good", "I'm believer", "I want it that way", "Alejandro", "Applause", "Californication"};
@@ -53,4 +55,31 @@ Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
     basePlaylists->inserir(*playlist2);
 
     return *basePlaylists;
+}
+
+void tratarAcao(int *acao){
+    string entry;
+
+    getline(cin, entry);
+    if (!isNumber(entry))
+    {
+        cout << "Entrada inválida!\n\n";
+        return;
+    }
+    *acao = stoi(entry);
+
+    return;
+}
+
+bool isNumber(string entry)
+{
+    for (size_t i = 0; i < (entry.length() - 1); ++i)
+    {
+        if (!isdigit(entry[i]))
+        {
+            return false;
+        }
+    }
+
+    return true;
 }

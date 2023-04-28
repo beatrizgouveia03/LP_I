@@ -38,33 +38,21 @@ Lista<Musica> *Playlist::getMusicas()
     return this->musicas;
 }
 
-void Playlist::addMusica(Musica *m)
+void Playlist::addMusica(Musica m)
 {
-    this->musicas->inserir(*m);
+    this->musicas->inserir(m);
     return;
 }
 
-void Playlist::remMusica(Musica *m)
+void Playlist::remMusica(Musica m)
 {
-    this->musicas->remover(*m);
+    this->musicas->remover(m);
     return;
 }
 
-No<Musica> *Playlist::findMusica(Musica *m)
+No<Musica> *Playlist::findMusica(Musica m)
 {
-    No<Musica> *begin = this->musicas->getCauda();
-    No<Musica> *end = this->musicas->getCabeca();
-
-    while (begin != end)
-    {
-        if (begin->getValor().getTitulo() == m->getTitulo())
-        {
-            return begin;
-        }
-        begin = begin->getProximo();
-    }
-
-    return nullptr;
+    return this->musicas->buscar(m);
 }
 
 bool Playlist::operator==(Playlist &playlist)
@@ -84,7 +72,8 @@ ostream &operator<<(ostream &cout, Playlist &p)
 
     No<Musica> *itr = p.getMusicas()->getCabeca();
 
-    if(itr == nullptr){
+    if (itr == nullptr)
+    {
         cout << "Nenhuma música cadastrada!\n";
     }
 
