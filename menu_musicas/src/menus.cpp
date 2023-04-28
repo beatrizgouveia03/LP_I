@@ -6,15 +6,16 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
 {
     while (true)
     {
-        int acao;
-        string entry;
+        int acao = -1;
 
         cout << "\nMENU PRICIPAL\n";
         cout << "1 - Gerenciar Músicas\n2 - Gerenciar Playlists\n3 - Gerenciar Músicas em Playlists\n4 - Sair\n";
         cout << "Digite a opção da sua ação: ";
-
-        cin >> acao;
-        getline(cin, entry);
+        tratarAcao(&acao);
+        if (acao == -1)
+        {
+            continue;
+        }
 
         switch (acao)
         {
@@ -40,16 +41,18 @@ void menuMusicas(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylist)
 {
     while (true)
     {
-        int acao;
-        Musica m;
+        int acao = -1;
         string entry;
+        Musica m;
 
         cout << "\nMENU MÚSICAS\n";
         cout << "1 - Adicionar música\n2 - Remover música\n3 - Listar músicas\n4 - Sair\n";
         cout << "Digite a opção da sua ação: ";
-
-        cin >> acao;
-        getline(cin, entry);
+        tratarAcao(&acao);
+        if (acao == -1)
+        {
+            continue;
+        }
 
         switch (acao)
         {
@@ -74,13 +77,15 @@ void menuMusicas(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylist)
             break;
         case 2:
         {
-            string musica;
-            int acao2;
+            int acao2 = -1;
             menuListagemMusicas(baseMusicas);
 
             cout << "Digite o número da música: " << endl;
-            getline(cin, musica);
-            acao2 = stoi(musica);
+            tratarAcao(&acao2);
+            if (acao2 == -1)
+            {
+                continue;
+            }
 
             No<Musica> *m = baseMusicas->getCabeca();
 
@@ -95,35 +100,22 @@ void menuMusicas(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylist)
                 acao2--;
             }
 
-            if (baseMusicas->buscar(m->getValor()) != nullptr)
+            No<Playlist> *p = basePlaylist->getCabeca();
+
+            while (p != nullptr)
             {
-                No<Playlist> *p = basePlaylist->getCabeca();
+                Playlist p2 = p->getValor();
 
-                while (p != nullptr)
+                if (p2.findMusica(m->getValor()) != nullptr)
                 {
-                    Playlist p2 = p->getValor();
-
-                    cout << p2 << endl;
-
-                    cout << "2\n";
-
-                    if(p2.findMusica(m->getValor()) != nullptr)
-                    {
-                        cout << "5\n";
-                        p->getValor().remMusica(m->getValor());
-                    }
-
-                    cout << "6\n";
-
-                    p= p->getProximo();
+                    p->getValor().remMusica(m->getValor());
                 }
-
-                baseMusicas->remover(m->getValor());
-
-                cout << "\nMúsica removida!\n\n";
-                break;
+                p = p->getProximo();
             }
-            cout << "/nMúsica não encontrada!\n\n";
+
+            baseMusicas->remover(m->getValor());
+
+            cout << "\nMúsica removida!\n\n";
             break;
         }
         case 3:
@@ -144,16 +136,18 @@ void menuPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
 {
     while (true)
     {
-        int acao;
-        Playlist p;
         string entry;
+        int acao = -1;
+        Playlist p;
 
         cout << "\nMENU PLAYLISTS\n";
         cout << "1 - Adicionar playlist\n2 - Remover playlist\n3 - Listar playlists\n4 - Gerenciar Músicas em Playlists\n5 - Sair\n";
         cout << "Digite a opção da sua ação: ";
-
-        cin >> acao;
-        getline(cin, entry);
+        tratarAcao(&acao);
+        if (acao == -1)
+        {
+            continue;
+        }
 
         switch (acao)
         {
@@ -172,14 +166,19 @@ void menuPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
             break;
         case 2:
         {
+            int acao2 = -1;
+
             menuListagemPlaylists(basePlaylists);
             cout << "Digite o número da playlist a ser removida: ";
-            getline(cin, entry);
-            int acao = stoi(entry);
+            tratarAcao(&acao2);
+            if (acao2 == -1)
+            {
+                continue;
+            }
 
             No<Playlist> *p2 = basePlaylists->getCabeca();
 
-            while (acao > 1)
+            while (acao2 > 1)
             {
                 p2 = p2->getProximo();
                 if (p2 == nullptr)
@@ -190,13 +189,8 @@ void menuPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
                 acao--;
             }
 
-            if (basePlaylists->buscar(p2->getValor()) != nullptr)
-            {
-                basePlaylists->remover(p2->getValor());
-                cout << "\nPlaylist removida!\n\n";
-                break;
-            }
-            cout << "\nPlaylist não encontrada!\n\n";
+            basePlaylists->remover(p2->getValor());
+            cout << "\nPlaylist removida!\n\n";
             break;
         }
         case 3:
@@ -262,15 +256,16 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 {
     while (true)
     {
-        string playlist;
+        int acao = -1;
 
         menuListagemPlaylists(basePlaylists);
 
         cout << "Digite o número da playlist: (digite 0 para sair) " << endl;
-        getline(cin, playlist);
-        int acao = stoi(playlist);
-
-        if (acao == 0)
+        tratarAcao(&acao);
+        if (acao == -1)
+        {
+            continue;
+        } else if (acao == 0)
         {
             return;
         }
@@ -293,30 +288,34 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
         while (!sair)
         {
 
-            int acao2;
-            string entry;
+            int acao2 = -1;
 
             cout << "\nGERENCIAR PLAYLIST: " << p->getValor().getNome() << endl;
             cout << "1 - Adicionar música\n2 - Remover música\n3 - Listar músicas\n4 - Sair\n";
             cout << "Digite a opção da sua ação: ";
-
-            cin >> acao2;
-            getline(cin, entry);
+            tratarAcao(&acao2);
+            if (acao2 == -1)
+            {
+                continue;
+            }
 
             switch (acao2)
             {
             case 1:
             {
-                string musica;
+                int acao3 = -1;
                 menuListagemMusicas(baseMusicas);
 
                 cout << "Digite o número da música: " << endl;
-                getline(cin, musica);
-                acao = stoi(musica);
+                tratarAcao(&acao3);
+                if (acao3 == -1)
+                {
+                    continue;
+                }
 
                 No<Musica> *musicaEscolhida = baseMusicas->getCabeca();
 
-                while (acao > 1)
+                while (acao3 > 1)
                 {
                     musicaEscolhida = musicaEscolhida->getProximo();
                     if (musicaEscolhida == nullptr)
@@ -324,7 +323,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
                         cout << "\nNão existe nenhuma música com este número!\n\n";
                         return;
                     }
-                    acao--;
+                    acao3--;
                 }
 
                 if (p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
@@ -339,12 +338,15 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             }
             case 2:
             {
-                string musica;
+                int acao = -1;
                 menuListagemMusicas(baseMusicas);
 
                 cout << "Digite o número da música: " << endl;
-                getline(cin, musica);
-                acao = stoi(musica);
+                tratarAcao(&acao);
+                if (acao == -1)
+                {
+                    continue;
+                }
 
                 No<Musica> *musicaEscolhida = baseMusicas->getCabeca();
 
