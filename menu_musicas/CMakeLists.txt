@@ -9,5 +9,5 @@ add_executable( program
                 src/menus.cpp
                 src/Musica.cpp
                 src/Playlist.cpp
-                src/configuracaoInicial.cpp)
+                src/utilities.cpp)
 set_property(TARGET program PROPERTY CXX_STANDARD 20)
