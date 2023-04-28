@@ -18,3 +18,8 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 void menuListagemMusicas(Lista<Musica> *baseMusicas);
 
 void menuListagemPlaylists(Lista<Playlist> *basePlaylists);
+
+//Tratamento da entrada
+void tratarAcao(int *acao);
+
+bool isNumber(string entry);
