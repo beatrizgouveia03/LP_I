@@ -15,11 +15,13 @@ void menuPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
 void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
+void menuTocarMusicas(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
+
 void menuListagemMusicas(Lista<Musica> *baseMusicas);
 
 void menuListagemPlaylists(Lista<Playlist> *basePlaylists);
 
-//Tratamento da entrada
+// Tratamento da entrada
 void tratarAcao(int *acao);
 
 bool isNumber(string entry);

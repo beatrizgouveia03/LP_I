@@ -22,6 +22,7 @@ public:
     void inserir(T valor);
     void inserir(T valor, int posicao);
     void remover(T valor);
+    int tamanho();
 
     void setCabeca(No<T> *cabeca);
     void setCauda(No<T> *cauda);
@@ -30,6 +31,7 @@ public:
     No<T> *getCauda();
 
     No<T> *buscar(T valor);
+    No<T> *buscarPorIndice(int indice);
 };
 
 // Construtor padrão
@@ -185,6 +187,36 @@ No<T> *Lista<T>::buscar(T valor)
     }
 
     return nullptr;
+}
+
+// Método para retornar o tamanho da lista
+template <class T>
+int Lista<T>::tamanho()
+{
+    int tamanho = 0;
+    No<T> *atual = this->cabeca;
+
+    while (atual != nullptr)
+    {
+        tamanho++;
+        atual = atual->getProximo();
+    }
+
+    return tamanho;
+}
+
+// Método para buscar um nó da lista por índice
+template <class T>
+No<T> *Lista<T>::buscarPorIndice(int indice)
+{
+    No<T> *atual = this->cabeca;
+
+    for (int i = 0; i < indice; i++)
+    {
+        atual = atual->getProximo();
+    }
+
+    return atual;
 }
 
 #endif
