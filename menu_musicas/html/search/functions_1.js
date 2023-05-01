@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['configuracaoinicialmusicas_37',['configuracaoInicialMusicas',['../utilities_8hpp.html#a1d35292e4ae48b85d72c00b836449cc2',1,'utilities.hpp']]],
-  ['configuracaoinicialplaylists_38',['configuracaoInicialPlaylists',['../utilities_8hpp.html#a66905fee13769e6492b65e27affd661c',1,'utilities.hpp']]]
+  ['buscar_52',['buscar',['../classLista.html#a54a16f55989b1016107a7ea6b9df679e',1,'Lista']]],
+  ['buscarporindice_53',['buscarPorIndice',['../classLista.html#a9714089c4ca9dac1c7461cee36acd7cf',1,'Lista']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['musica_12',['Musica',['../classMusica.html',1,'Musica'],['../classMusica.html#a435c4de75bd638108bf9caae58000e18',1,'Musica::Musica()'],['../classMusica.html#a62fc22e4986511b9e0df3769facd2a15',1,'Musica::Musica(string titulo, string artista)']]],
-  ['musica_2ehpp_13',['Musica.hpp',['../Musica_8hpp.html',1,'']]]
+  ['inserir_14',['inserir',['../classLista.html#a96ed3c100591f8579492fb5d2fc538cf',1,'Lista::inserir(T valor)'],['../classLista.html#aaf1536e7323f29d1072503c612d9f420',1,'Lista::inserir(T valor, int posicao)']]]
 ];

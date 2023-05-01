@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7elista_53',['~Lista',['../classLista.html#af297975e278b0c92cbf67d14b2f08366',1,'Lista']]],
-  ['_7emusica_54',['~Musica',['../classMusica.html#aebcf7c6bd83ea83d172be34e2fd550f2',1,'Musica']]]
+  ['playlist_70',['Playlist',['../classPlaylist.html#aef38d55e42995be147977726350f3ada',1,'Playlist::Playlist()'],['../classPlaylist.html#aa4b4914ac8e101589ed5ffba330b7cf5',1,'Playlist::Playlist(string nome)'],['../classPlaylist.html#a4083df86652da125a41250204a203fc4',1,'Playlist::Playlist(string nome, Lista&lt; Musica &gt; *musicas)']]]
 ];
