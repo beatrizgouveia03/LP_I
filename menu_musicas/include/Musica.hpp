@@ -12,7 +12,7 @@
 
 using namespace std;
 
-
+/// @class Musica Musica.hpp "include/Musica.hpp"
 /// @brief implementação de uma classe Musica 
 class Musica
 {

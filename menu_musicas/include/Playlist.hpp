@@ -5,12 +5,13 @@
  *   @file Playlist.hpp
  *   @brief Definição da classe Playlist
  *   @date 01 de maio de 2023
- *   @author Beatriz G. Gadelha
+ *   @author Rodrigo Barbalho
  */
 
 #include "Musica.hpp"
 #include "Lista.hpp"
 
+/// @class Playlist Playlist.hpp "include/Playlist.hpp"
 /// @brief Implementação de uma classe Playlist
 class Playlist
 {

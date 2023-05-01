@@ -14,6 +14,7 @@
 
 using namespace std;
 
+/// @class Lista Lista.hpp "include/Lista.hpp"
 /// @brief Implementação de uma classe Lista
 /// @param T Variável template
 template <class T>
@@ -31,7 +32,7 @@ public:
     Lista();
     /// @brief Construtor que inicializa a lista com um nó
     /// @param valor Valor com que o nó será iniciado
-    Lista(T valor );
+    Lista(T valor);
 
     /// @brief Destrutor padrão da classe
     /// @param NULL
@@ -45,7 +46,7 @@ public:
     void setCauda(No<T> *cauda);
 
     /// @brief Função que retorna um ponteiro indicando o head/cabeça da lista
-    /// @return Iterador para a cabeça da lista 
+    /// @return Iterador para a cabeça da lista
     No<T> *getCabeca();
     /// @brief Função que retorna um ponteiro indicando o tail/cauda da lista
     /// @return Iterador para a cauda da lista
@@ -262,4 +263,4 @@ No<T> *Lista<T>::buscarPorIndice(int indice)
     return atual;
 }
 
-#endif //LISTA_HPP
+#endif // LISTA_HPP

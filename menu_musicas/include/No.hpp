@@ -5,11 +5,12 @@
  *   @file No.hpp
  *   @brief Definição da classe No
  *   @date 01 de maio de 2023
- *   @author Beatriz G. Gadelha
+ *   @author Rodrigo Barbalho
  */
 
 using namespace std;
 
+/// @class No No.hpp "include/No.hpp"
 /// @brief Implementação de uma classe No
 /// @param T Variável template
 template <class T>
