@@ -27,7 +27,7 @@ Para executar o projeto com o GCC, siga as instruções abaixo:
 1. Clone o repositório do projeto para a sua máquina local:
 
 ```
-git clone https://github.com/beatrizgouveia03/menu_musicas.git
+git clone git clone https://github.com/beatrizgouveia03/LP_I.git --branch main --single-branch menu_musicas
 ```
 
 2. Abra o terminal na pasta onde o repositório foi clonado e compile o código-fonte usando o seguinte comando:
