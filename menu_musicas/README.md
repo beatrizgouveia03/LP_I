@@ -112,4 +112,7 @@ git push origin minha-contribuicao
 # Contribuidores
 
 Beatriz Gouveia Gadelha
+
+```
 Rodrigo Eduardo Dantas Barbalho
+```
