@@ -1,15 +1,14 @@
 # Menu de Músicas
 
-Este é um projeto de um menu de músicas criado em C++. O objetivo deste projeto é permitir que os usuários possam visualizar listas de músicas e de de PLaylist e selecionar a que desejam ouvir.
+Este é um projeto de um menu de músicas criado em C++. O objetivo deste projeto é permitir que os usuários possam visualizar listas de músicas e de Playlist e selecionar a que desejam ouvir.
 
 ## Funcionalidades
 
 - Listar todas as músicas disponíveis
-- Pesquisar músicas por nome
-- Selecionar uma música para ouvir
 - Adicionar uma nova música à lista
 - Remover uma música da lista
 - Criar uma nova playlist
+- Excluir uma playlist
 - Adicionar músicas a uma playlist
 - Remover músicas de uma playlist
 - Listar todas as playlists disponíveis
@@ -50,7 +49,7 @@ Para executar o projeto com o CMake, siga as instruções abaixo:
 1. Clone o repositório do projeto para a sua máquina local:
 
 ```
-git clone https://github.com/beatrizgouveia03/LP.git
+git clone git clone https://github.com/beatrizgouveia03/LP_I.git --branch main --single-branch menu_musicas
 ```
 
 2. Abra o terminal na pasta onde o repositório foi clonado e crie uma nova pasta chamada "build":
@@ -80,7 +79,7 @@ make
 
 ## Documentação
 
-A documentação do projeto foi gerada com o Doxygen e pode ser acessada em [link-do-doxygen](https://exemplo.com).
+A documentação do projeto foi gerada com o Doxygen.
 
 ## Contribuindo
 
@@ -96,12 +95,14 @@ git checkout -b minha-contribuicao
 
 4. Adicione suas alterações ao código e documentação
 5. Faça um commit das suas alterações:
+
 ```
 git add .
 git commit -m "Minha contribuição"
 ```
 
 6. Envie as suas alterações para o GitHub:
+
 ```
 git push origin minha-contribuicao
 ```
