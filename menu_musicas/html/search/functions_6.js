@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d_3d_46',['operator==',['../classMusica.html#a5ab5944abe6bc0ced5d5a53e3608ebc7',1,'Musica']]]
+  ['lista_66',['Lista',['../classLista.html#adce924e21607848663132290be1a959d',1,'Lista::Lista()'],['../classLista.html#a1c9caebe51a82ddf43d20f15b551910d',1,'Lista::Lista(T valor)']]]
 ];

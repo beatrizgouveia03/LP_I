@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tamanho_23',['tamanho',['../classLista.html#a0b3652fa0b2faf07ea7af0ba575561b8',1,'Lista']]]
+  ['remmusica_26',['remMusica',['../classPlaylist.html#af5ca335fb315a2cea8348aa8885b897f',1,'Playlist']]],
+  ['remover_27',['remover',['../classLista.html#a820a6851e127aadde092e88be73672c2',1,'Lista']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_3c_3c_15',['operator&lt;&lt;',['../classMusica.html#a518e083e6807bf2a71262285a71ce136',1,'Musica']]],
-  ['operator_3d_3d_16',['operator==',['../classMusica.html#a5ab5944abe6bc0ced5d5a53e3608ebc7',1,'Musica']]]
+  ['musica_18',['Musica',['../classMusica.html',1,'Musica'],['../classMusica.html#a435c4de75bd638108bf9caae58000e18',1,'Musica::Musica()'],['../classMusica.html#a62fc22e4986511b9e0df3769facd2a15',1,'Musica::Musica(string titulo, string artista)']]],
+  ['musica_2ehpp_19',['Musica.hpp',['../Musica_8hpp.html',1,'']]]
 ];
