@@ -108,3 +108,8 @@ git push origin minha-contribuicao
 ```
 
 7. Abra um pull request no repositório original para que suas alterações possam ser revisadas e incorporadas.
+
+# Contribuidores
+
+Beatriz Gouveia Gadelha
+Rodrigo Eduardo Dantas Barbalho
