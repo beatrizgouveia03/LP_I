@@ -34,6 +34,8 @@ public:
     /// @param valor Valor com que o nó será iniciado
     Lista(T valor);
 
+    Lista(Lista<T> *lista);
+
     /// @brief Destrutor padrão da classe
     /// @param NULL
     ~Lista();
@@ -60,9 +62,13 @@ public:
     /// @param posicao Posição em que o novo elemento será inserido
     void inserir(T valor, int posicao);
 
+    void adicionarElementos(Lista<T> *lista);
+
     /// @brief Função para excluir um elemento da lista
     /// @param valor Valor que será removido da lista
     void remover(T valor);
+
+    void removerElementos(Lista<T> *lista);
 
     /// @brief Função que returna o tamanho da lista
     /// @return Tamanho da lista
@@ -76,6 +82,12 @@ public:
     /// @param indice Indice do elemento a ser procurado na lista
     /// @return Interador para o elemento ou nullptr
     No<T> *buscarPorIndice(int indice);
+
+    Lista<T> *operator+(const Lista<T> &lista);
+
+    friend void operator>>(No<T> *no);
+
+    friend void operator<<(T valor);
 };
 
 // Construtor padrão
@@ -93,6 +105,21 @@ Lista<T>::Lista(T valor /*Nó a ser inicializado junto com a construção da lis
     No<T> *no = new No<T>(valor);
     this->cabeca = no;
     this->cauda = no;
+}
+
+template <class T>
+Lista<T>::Lista(Lista<T> *lista)
+{
+    this->cabeca = nullptr;
+    this->cauda = nullptr;
+
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
+    {
+        this->inserir(atual->getValor());
+        atual = atual->getProximo();
+    }
 }
 
 // Desconstrutor padrão
@@ -181,6 +208,19 @@ void Lista<T>::inserir(T valor, int posicao)
     }
 }
 
+// Método para adicionar os elementos de uma lista em outra
+template <class T>
+void Lista<T>::adicionarElementos(Lista<T> *lista)
+{
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
+    {
+        this->inserir(atual->getValor());
+        atual = atual->getProximo();
+    }
+}
+
 // Método para remover um nó da lista
 template <class T>
 void Lista<T>::remover(T valor)
@@ -210,6 +250,19 @@ void Lista<T>::remover(T valor)
         }
 
         anterior = atual;
+        atual = atual->getProximo();
+    }
+}
+
+// Método para remover os elementos de uma lista em outra
+template <class T>
+void Lista<T>::removerElementos(Lista<T> *lista)
+{
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
+    {
+        this->remover(atual->getValor());
         atual = atual->getProximo();
     }
 }
@@ -261,6 +314,47 @@ No<T> *Lista<T>::buscarPorIndice(int indice)
     }
 
     return atual;
+}
+
+// Método para concatenar duas listas
+template <class T>
+Lista<T> *operator+(const Lista<T> &lista)
+{
+    Lista<T> *novaLista = new Lista<T>(this);
+
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
+    {
+        novaLista->inserir(atual->getValor());
+        atual = atual->getProximo();
+    }
+
+    return novaLista;
+}
+
+// Sobrecarga do operador de extração
+template <class T>
+void operator>>(Lista<T> &lista, No<T> *no)
+{
+    if (lista->tamanho() == 0)
+    {
+        no->setValor(nullptr);
+        return;
+    }
+
+    No<T> *ultimo = lista->getCauda();
+    no->setValor(ultimo->getValor());
+}
+
+// Sobrecarga do operador de inserção
+template <class T>
+void operator<<(Lista<T> &lista, T valor)
+{
+    if (valor == nullptr)
+        return;
+
+    lista->inserir(valor);
 }
 
 #endif // LISTA_HPP
