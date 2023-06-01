@@ -83,11 +83,11 @@ public:
     /// @return Interador para o elemento ou nullptr
     No<T> *buscarPorIndice(int indice);
 
-    Lista<T> *operator+(const Lista<T> &lista);
+    friend Lista<T> *operator+(Lista<T> &lista);
 
-    friend void operator>>(No<T> *no);
+    friend void operator>>(Lista<T> &lista, No<T> *no);
 
-    friend void operator<<(T valor);
+    friend void operator<<(Lista<T> &lista, T valor);
 };
 
 // Construtor padrão
@@ -318,7 +318,7 @@ No<T> *Lista<T>::buscarPorIndice(int indice)
 
 // Método para concatenar duas listas
 template <class T>
-Lista<T> *operator+(const Lista<T> &lista)
+Lista<T> *operator+(Lista<T> &lista)
 {
     Lista<T> *novaLista = new Lista<T>(this);
 
