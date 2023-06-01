@@ -54,6 +54,9 @@ public:
     /// @brief Função para adicionar uma música à playlist
     /// @param m Música que será adicionada à playlist
     void addMusica(Musica m);
+
+    void addMusica(Playlist musicas);
+
     /// @brief Função para remover uma música da playlist
     /// @param m Música que será removida da playlist
     void remMusica(Musica m);

@@ -44,6 +44,16 @@ void Playlist::addMusica(Musica m)
     return;
 }
 
+void Playlist::addMusica(Playlist musicas){
+    auto it = musicas.getMusicas()->getCabeca();
+
+    while(it != musicas.getMusicas()->getCauda()){
+        this->musicas->inserir(it->getValor());
+        it = it->getProximo();
+    }
+    return;
+}
+
 void Playlist::remMusica(Musica m)
 {
     this->musicas->remover(m);
