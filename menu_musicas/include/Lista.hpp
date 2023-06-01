@@ -83,7 +83,9 @@ public:
     /// @return Interador para o elemento ou nullptr
     No<T> *buscarPorIndice(int indice);
 
-    friend Lista<T> *operator+(Lista<T> &lista);
+    Lista<T> *operator+(const Lista<T> &lista) const;
+
+    Lista<T> *operator-(const Lista<T> &lista) const;
 
     friend void operator>>(Lista<T> &lista, No<T> *no);
 
@@ -318,17 +320,27 @@ No<T> *Lista<T>::buscarPorIndice(int indice)
 
 // Método para concatenar duas listas
 template <class T>
-Lista<T> *operator+(Lista<T> &lista)
+Lista<T> *Lista<T>::operator+(const Lista<T> &lista) const
 {
-    Lista<T> *novaLista = new Lista<T>(this);
+    Lista<T> *novaLista = new Lista<T>(lista1);
 
-    No<T> *atual = lista->getCabeca();
+    No<T> *atual = lista2->getCabeca();
 
     while (atual != nullptr)
     {
         novaLista->inserir(atual->getValor());
         atual = atual->getProximo();
     }
+
+    return novaLista;
+}
+
+template <class T>
+Lista<T> *Lista<T>::operator-(const Lista<T> &lista) const
+{
+    Lista<T> *novaLista = new Lista<T>(lista1);
+
+    novaLista->removerElementos(lista);
 
     return novaLista;
 }
