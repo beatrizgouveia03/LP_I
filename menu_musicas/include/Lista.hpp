@@ -87,9 +87,9 @@ public:
 
     Lista<T> *operator-(Lista<T> &lista);
 
-    friend void operator>> <T>(Lista<T> &lista, No<T> *no);
+    friend void operator>>(Lista<T> &lista, No<T> *no);
 
-    friend void operator<< <T>(Lista<T> &lista, T valor);
+    friend void operator<<(Lista<T> &lista, T valor);
 };
 
 // Construtor padrão

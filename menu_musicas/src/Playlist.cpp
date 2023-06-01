@@ -123,7 +123,7 @@ Lista<Musica> *Playlist::operator+( Playlist &playlist)
 
 Lista<Musica> *Playlist::operator+(Musica &musica) {
     Lista<Musica> *m = new Lista<Musica>(this->musicas);
-    *m << musica;
+    m->inserir(musica);
 
     return m;
 }
@@ -135,14 +135,14 @@ Lista<Musica> *Playlist::operator-(Playlist &playlist) {
     return m;
 }
 
-Lista<Musica> *Playlist::operator-( Musica &musica) {
+Lista<Musica> *Playlist::operator-(Musica &musica) {
     Lista<Musica> *m = new Lista<Musica>(this->musicas);
     m->remover(musica);
 
     return m;
 }
 void operator<<(Playlist &playlist, Musica &musica){
-    *playlist.musicas << musica;
+    playlist.musicas->inserir(musica);
 }
 
 void operator>>(Playlist &playlist, Musica &musica){
