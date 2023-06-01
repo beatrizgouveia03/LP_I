@@ -19,7 +19,7 @@ private:
     /// @brief Nome da playlist
     string nome;
     /// @brief Lista de músicas da playlist
-    Lista<Musica> *musicas = new Lista<Musica>();
+    Lista<Musica> *musicas;
 
 public:
     /// @brief Construtor padrão da classe

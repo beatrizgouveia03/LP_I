@@ -2,11 +2,20 @@
 
 #include <ostream>
 
-Playlist::Playlist() {}
+Playlist::Playlist() {
+    Lista<Musica> *lista = new Lista<Musica>();
+    this->musicas = lista;
+
+    delete lista;
+}
 
 Playlist::Playlist(string nome)
 {
+    Lista<Musica> *lista = new Lista<Musica>();
     this->nome = nome;
+    this->musicas = lista;
+
+    delete lista;
 }
 
 Playlist::Playlist(string nome, Lista<Musica> *musicas)
