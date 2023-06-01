@@ -75,10 +75,10 @@ public:
     /// @return True se as playlists forem iguais e false caso contrário
     bool operator==(Playlist &playlist);
     friend ostream &operator<<(ostream &cout, Playlist &p);
-    Lista<Musica> *operator+(const Playlist &playlist) const;
-    Lista<Musica> *operator+(const Musica &musica) const;
-    Lista<Musica> *operator-(const Playlist &playlist) const;
-    Lista<Musica> *operator-(const Musica &musica) const;
+    Lista<Musica> *operator+( Playlist &playlist) ;
+    Lista<Musica> *operator+( Musica &musica) ;
+    Lista<Musica> *operator-( Playlist &playlist) ;
+    Lista<Musica> *operator-( Musica &musica) ;
     friend void operator<<(Playlist &playlist, Musica &musica);
     friend void operator>>(Playlist *playlist, Musica musica);
 };

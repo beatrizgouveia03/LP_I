@@ -83,13 +83,13 @@ public:
     /// @return Interador para o elemento ou nullptr
     No<T> *buscarPorIndice(int indice);
 
-    Lista<T> *operator+(const Lista<T> &lista) const;
+    Lista<T> *operator+(Lista<T> &lista);
 
-    Lista<T> *operator-(const Lista<T> &lista) const;
+    Lista<T> *operator-(Lista<T> &lista);
 
-    friend void operator>>(Lista<T> &lista, No<T> *no);
+    friend void operator>> <T>(Lista<T> &lista, No<T> *no);
 
-    friend void operator<<(Lista<T> &lista, T valor);
+    friend void operator<< <T>(Lista<T> &lista, T valor);
 };
 
 // Construtor padrão
@@ -320,27 +320,21 @@ No<T> *Lista<T>::buscarPorIndice(int indice)
 
 // Método para concatenar duas listas
 template <class T>
-Lista<T> *Lista<T>::operator+(const Lista<T> &lista) const
+Lista<T> *Lista<T>::operator+(Lista<T> &lista)
 {
-    Lista<T> *novaLista = new Lista<T>(lista1);
+    Lista<T> *novaLista = new Lista<T>(this);
 
-    No<T> *atual = lista2->getCabeca();
-
-    while (atual != nullptr)
-    {
-        novaLista->inserir(atual->getValor());
-        atual = atual->getProximo();
-    }
+    novaLista->adicionarElementos(&lista);
 
     return novaLista;
 }
 
 template <class T>
-Lista<T> *Lista<T>::operator-(const Lista<T> &lista) const
+Lista<T> *Lista<T>::operator-(Lista<T> &lista)
 {
-    Lista<T> *novaLista = new Lista<T>(lista1);
+    Lista<T> *novaLista = new Lista<T>(this);
 
-    novaLista->removerElementos(lista);
+    novaLista->removerElementos(&lista);
 
     return novaLista;
 }
@@ -363,10 +357,10 @@ void operator>>(Lista<T> &lista, No<T> *no)
 template <class T>
 void operator<<(Lista<T> &lista, T valor)
 {
-    if (valor == nullptr)
+    if (valor->getValor() == nullptr)
         return;
 
-    lista->inserir(valor);
+    lista.inserir(valor->getValor());
 }
 
 #endif // LISTA_HPP

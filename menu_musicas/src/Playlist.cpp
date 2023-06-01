@@ -113,33 +113,33 @@ ostream &operator<<(ostream &cout, Playlist &p)
     return cout;
 }
 
-Lista<Musica> *Playlist::operator+(const Playlist &playlist) const
+Lista<Musica> *Playlist::operator+( Playlist &playlist) 
 {
-    Lista<Musica> m = new Lista<Musica>(this->musicas);
-    m = m + playlist.musicas;
+    Lista<Musica> *m = new Lista<Musica>(this->musicas);
+    *m = *m + *playlist.musicas;
 
-    return &m;
+    return m;
 }
 
-Lista<Musica> *Playlist::operator+(const Musica &musica) const{
-    Lista<Musica> m = new Lista<Musica>(this->musicas);
-    m << musica;
+Lista<Musica> *Playlist::operator+(Musica &musica) {
+    Lista<Musica> *m = new Lista<Musica>(this->musicas);
+    *m << musica;
 
-    return &m;
+    return m;
 }
 
-Lista<Musica> *Playlist::operator-(const Playlist &playlist) const{
-    Lista<Musica> m = new Lista<Musica>(this->musicas);
-    m = m - playlist.musicas;
+Lista<Musica> *Playlist::operator-(Playlist &playlist) {
+    Lista<Musica> *m = new Lista<Musica>(this->musicas);
+    *m = *m - *playlist.musicas;
 
-    return &m;
+    return m;
 }
 
-Lista<Musica> *Playlist::operator-(const Musica &musica) const{
-    Lista<Musica> m = new Lista<Musica>(this->musicas);
-    m.remover(musica);
+Lista<Musica> *Playlist::operator-( Musica &musica) {
+    Lista<Musica> *m = new Lista<Musica>(this->musicas);
+    m->remover(musica);
 
-    return &m;
+    return m;
 }
 void operator<<(Playlist &playlist, Musica &musica){
     *playlist.musicas << musica;
