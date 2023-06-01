@@ -15,6 +15,11 @@ Playlist::Playlist(string nome, Lista<Musica> *musicas)
     this->musicas = musicas;
 }
 
+Playlist::Playlist(Playlist *playlist){
+    this->nome = playlist->getNome();
+    this->musicas = playlist->getMusicas();
+}
+
 Playlist::~Playlist() {}
 
 void Playlist::setNome(string nome)

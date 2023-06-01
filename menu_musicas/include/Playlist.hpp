@@ -33,6 +33,8 @@ public:
     /// @param musicas Lista de músicas da playlist
     Playlist(string nome, Lista<Musica> *musicas);
 
+    Playlist(Playlist *playlist);
+
     /// @brief Destrutor da classe
     /// @param NULL
     ~Playlist();
