@@ -236,7 +236,7 @@ void Lista<T>::remover(T valor)
         {
             if (atual == this->cabeca)
             {
-                this->cabeca = atual->getProximo();
+                this->cabeca = cabeca->getProximo();
             }
             else if (atual == this->cauda)
             {
@@ -249,6 +249,7 @@ void Lista<T>::remover(T valor)
             }
 
             delete atual;
+            break;
         }
 
         anterior = atual;

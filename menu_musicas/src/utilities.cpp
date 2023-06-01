@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Lista<Musica> configuracaoInicialMusicas()
+Lista<Musica> *configuracaoInicialMusicas()
 {
     string titulo[] = {"I'm good", "I'm believer", "I want it that way", "Alejandro", "Applause", "Californication"};
     string artista[] = {"David Guetta", "Smash Mounth", "Backstreet Boys", "Lady Gaga", "Lady Gaga", "Red Hot Chili Peppers"};
@@ -18,10 +18,10 @@ Lista<Musica> configuracaoInicialMusicas()
         baseMusicas->inserir(musica);
     }
 
-    return *baseMusicas;
+    return baseMusicas;
 }
 
-Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
+Lista<Playlist> *configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
 {
     Lista<Playlist> *basePlaylists = new Lista<Playlist>();
 
@@ -54,7 +54,7 @@ Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
     basePlaylists->inserir(*playlist1);
     basePlaylists->inserir(*playlist2);
 
-    return *basePlaylists;
+    return basePlaylists;
 }
 
 void tratarAcao(int *acao){

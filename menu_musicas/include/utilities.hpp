@@ -13,7 +13,7 @@
 
     @return Uma lista de músicas formatada com as músicas iniciais configuradas
 */
-Lista<Musica> configuracaoInicialMusicas();
+Lista<Musica> *configuracaoInicialMusicas();
 
 /*!
     Essa função cria uma Lista<Playlist> para ser a base inicial das playlists,
@@ -22,7 +22,7 @@ Lista<Musica> configuracaoInicialMusicas();
     @param baseMusicas Iterador para a base de músicas principal
     @return Uma lista de playlists formatada com as playlists iniciais configuradas
 */
-Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas);
+Lista<Playlist> *configuracaoInicialPlaylists(Lista<Musica> *baseMusicas);
 
 /*!
     Esta função trata do menu principal da nossa aplicação com opções para
