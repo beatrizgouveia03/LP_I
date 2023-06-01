@@ -61,6 +61,8 @@ public:
     /// @param m Música que será removida da playlist
     void remMusica(Musica m);
 
+    void remMusica(Playlist musicas);
+
     /// @brief Função para encontrar uma música na playlist
     /// @param m Música que será procurada na playlist
     /// @return Iterador para a música encontrada

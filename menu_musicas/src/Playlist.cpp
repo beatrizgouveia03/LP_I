@@ -45,12 +45,10 @@ void Playlist::addMusica(Musica m)
 }
 
 void Playlist::addMusica(Playlist musicas){
-    auto it = musicas.getMusicas()->getCabeca();
+    Lista<Musica> *base = musicas.getMusicas();
 
-    while(it != musicas.getMusicas()->getCauda()){
-        this->musicas->inserir(it->getValor());
-        it = it->getProximo();
-    }
+    this->musicas->adicionarElementos(base);
+
     return;
 }
 
@@ -58,6 +56,12 @@ void Playlist::remMusica(Musica m)
 {
     this->musicas->remover(m);
     return;
+}
+
+void Playlist::remMusica(Playlist musicas){
+    Lista<Musica> *base = musicas.getMusicas();
+
+    this->musicas->removerElementos(base);
 }
 
 No<Musica> *Playlist::findMusica(Musica m)
