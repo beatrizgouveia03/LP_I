@@ -4,13 +4,14 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
     Lista<Musica> *musicas = configuracaoInicialMusicas();
     Lista<Playlist> *playlists = configuracaoInicialPlaylists(musicas);
 
-    menuPrincipal(musicas, playlists);
+    lerMusicasDeArquivo(argv[1], musicas, playlists);
 
+    menuPrincipal(musicas, playlists);
 
     delete musicas;
     delete playlists;

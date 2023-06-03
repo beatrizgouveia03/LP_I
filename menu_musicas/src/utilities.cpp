@@ -1,5 +1,7 @@
 #include "utilities.hpp"
 
+#include <fstream>
+
 using namespace std;
 
 Lista<Musica> *configuracaoInicialMusicas()
@@ -62,7 +64,70 @@ Lista<Playlist> *configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
     return basePlaylists;
 }
 
-void tratarAcao(int *acao){
+void lerMusicasDeArquivo(string path, Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
+{
+    if (path.empty())
+        return;
+
+    ifstream arquivo(path);
+
+    while (!arquivo.eof())
+    {
+        string linha = "";
+        int i = 0;
+        string playlistAtual = "";
+
+        getline(arquivo, linha);
+
+        // obter nome da Playlist
+        for (; linha[i] != ';'; i++)
+        {
+            playlistAtual += linha[i];
+        }
+
+        i++;
+
+        Lista<Musica> *musicasNovas = new Lista<Musica>();
+
+        while (i < linha.length())
+        {
+            string musicaAtual = "";
+            string artistaAtual = "";
+
+            // obter nome de Musica
+            for (; linha[i] != ':'; i++)
+            {
+                musicaAtual += linha[i];
+            }
+
+            i++;
+
+            // obter nome do artista
+            for (; linha[i] != ','; i++)
+            {
+                if (i >= linha.length())
+                    break;
+                artistaAtual += linha[i];
+            }
+
+            i++;
+
+            Musica musica(musicaAtual, artistaAtual);
+
+            // ADICIONAR MUSICA A MUSICAS
+            musicasNovas->inserir(musica);
+        }
+
+        // ADICIONAR PLAYLIST COM MUSICAS
+        Playlist playlist(playlistAtual, musicasNovas);
+
+        baseMusicas->adicionarElementos(musicasNovas);
+        basePlaylists->inserir(playlist);
+    }
+}
+
+void tratarAcao(int *acao)
+{
     string entry;
 
     getline(cin, entry);

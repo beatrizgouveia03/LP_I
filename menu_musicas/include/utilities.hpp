@@ -24,6 +24,8 @@ Lista<Musica> *configuracaoInicialMusicas();
 */
 Lista<Playlist> *configuracaoInicialPlaylists(Lista<Musica> *baseMusicas);
 
+void lerMusicasDeArquivo(string path, Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
+
 /*!
     Esta função trata do menu principal da nossa aplicação com opções para
     gerenciar músicas, gerenciar playlists, gerenciar as músicas em playlists,
