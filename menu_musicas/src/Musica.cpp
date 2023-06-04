@@ -4,47 +4,45 @@
 
 Musica::Musica() {}
 
-Musica::Musica(string t, string a)
+Musica::Musica(string titulo, string artista)
 {
-    titulo = t;
-    artista = a;
+    this->titulo = titulo;
+    this->artista = artista;
 }
-
 Musica::~Musica() {}
 
-void Musica::setTitulo(string t)
+void Musica::setTitulo(string titulo)
 {
-    titulo = t;
+    this->titulo = titulo;
 }
 
-void Musica::setArtista(string a)
+void Musica::setArtista(string artista)
 {
-    artista = a;
+    this->artista = artista;
 }
 
-string Musica::getTitulo() const
+string Musica::getTitulo()
 {
-    return titulo;
+    return this->titulo;
 }
 
-string Musica::getArtista() const
+string Musica::getArtista()
 {
-    return artista;
+    return this->artista;
 }
 
-bool Musica::operator==(const Musica &musica)
+bool Musica::operator==(Musica &musica)
 {
-    if (titulo == musica.getTitulo())
+    if (this->getTitulo() == musica.getTitulo())
     {
         return true;
     }
 
     return false;
 }
-
-ostream &operator<<(ostream &cout, const Musica &m)
+ostream &operator<<(ostream &cout, Musica &m)
 {
-    cout << m.artista << " - " << m.titulo << endl;
+    cout << m.getArtista() << " - " << m.getTitulo() << endl;
 
     return cout;
 }
