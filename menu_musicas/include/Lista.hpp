@@ -29,224 +29,339 @@ private:
 public:
     /// @brief Construtor padrão da classe
     /// @param NULL
-    Lista()
-    {
-        cabeca = nullptr;
-        cauda = nullptr;
-    }
-
+    Lista();
     /// @brief Construtor que inicializa a lista com um nó
     /// @param valor Valor com que o nó será iniciado
-    Lista(T valor)
-    {
-        cabeca = new No<T>(valor);
-        cauda = cabeca;
-    }
+    Lista(T valor);
 
-    /// @brief Construtor cópia
-    /// @param lista Lista com os elementos que serão inicializados na lista
-    Lista(const Lista<T> &lista)
-    {
-        cabeca = nullptr;
-        cauda = nullptr;
-
-        if (lista.cabeca == nullptr)
-            return;
-
-        No<T> *atual = lista.cabeca;
-
-        while (atual != nullptr)
-        {
-            inserir(atual->getValor());
-            atual = atual->getProximo();
-        }
-    }
+    Lista(Lista<T> *lista);
 
     /// @brief Destrutor padrão da classe
     /// @param NULL
-    ~Lista()
-    {
-        No<T> *atual = cabeca;
-
-        while (atual != nullptr)
-        {
-            No<T> *proximo = atual->getProximo();
-            delete atual;
-            atual = proximo;
-        }
-    }
+    ~Lista();
 
     /// @brief Função para configurar o head/cabeça da lista
     /// @param cabeca Iterador para o nó que será a cabeça da lista
-    void setCabeca(No<T> *cabeca)
-    {
-        this->cabeca = cabeca;
-    }
-
+    void setCabeca(No<T> *cabeca);
     /// @brief Função para configurar o tail/cauda da lista
     /// @param cauda Iterador para o nó que será a cauda da lista
-    void setCauda(No<T> *cauda)
-    {
-        this->cauda = cauda;
-    }
+    void setCauda(No<T> *cauda);
 
     /// @brief Função que retorna um ponteiro indicando o head/cabeça da lista
     /// @return Iterador para a cabeça da lista
-    No<T> *getCabeca() const
-    {
-        return cabeca;
-    }
+    No<T> *getCabeca();
     /// @brief Função que retorna um ponteiro indicando o tail/cauda da lista
     /// @return Iterador para a cauda da lista
-    No<T> *getCauda() const
-    {
-        return cauda;
-    }
+    No<T> *getCauda();
 
     /// @brief Função para inserir um elemento na lista
     /// @param valor Valor que será inserido no novo fim da lista
-    void inserir(T valor)
-    {
-        No<T> *novo = new No<T>(valor);
+    void inserir(T valor);
+    /// @brief Função para inserir um elemento na lista no índice especificado
+    /// @param valor Valor que será inserido no novo nó da lista
+    /// @param posicao Posição em que o novo elemento será inserido
+    void inserir(T valor, int posicao);
 
-        if (cabeca == nullptr)
-        {
-            cabeca = novo;
-            cauda = cabeca;
-        }
-        else
-        {
-            cauda->setProximo(novo);
-            cauda = novo;
-        }
-    }
-
-    /// @brief Função para inserir todos os elemeneos de outra lista na lista
-    /// @param lista Lista com os elementos a serem adicionados
-    void adicionarElementos(const Lista<T> &lista)
-    {
-        No<T> *atual = lista.cabeca;
-
-        while (atual != nullptr)
-        {
-            inserir(atual->getValor());
-            atual = atual->getProximo();
-        }
-    }
+    void adicionarElementos(Lista<T> *lista);
 
     /// @brief Função para excluir um elemento da lista
     /// @param valor Valor que será removido da lista
-    void remover(T valor)
-    {
-        if (cabeca == nullptr)
-        {
-            return;
-        }
+    void remover(T valor);
 
-        if (cabeca->getValor() == valor)
-        {
-            No<T> *temp = cabeca;
-            cabeca = cabeca->getProximo();
-            delete temp;
-            return;
-        }
-
-        No<T> *atual = cabeca->getProximo();
-        No<T> *anterior = cabeca;
-
-        while (atual != nullptr)
-        {
-            if (atual->getValor() == valor)
-            {
-                anterior->setProximo(atual->getProximo());
-                delete atual;
-                return;
-            }
-
-            anterior = atual;
-            atual = atual->getProximo();
-        }
-    }
-
-    // Função com problema
-    void removerElementos(const Lista<T> &lista)
-    {
-        Lista<T> *listaTemp = new Lista<T>();
-        No<T> *atual = cabeca;
-
-        while (atual != nullptr)
-        {
-            if (lista.buscar(atual->getValor()) == nullptr)
-            {
-                listaTemp->inserir(atual->getValor());
-            }
-
-            atual = atual->getProximo();
-        }
-
-        *this = *listaTemp;
-
-        delete listaTemp;
-    }
+    void removerElementos(Lista<T> *lista);
 
     /// @brief Função que returna o tamanho da lista
     /// @return Tamanho da lista
-    int tamanho() const
-    {
-        int size = 0;
-        No<T> *atual = cabeca;
-
-        while (atual != nullptr)
-        {
-            size++;
-            atual = atual->getProximo();
-        }
-
-        return size;
-    }
+    int tamanho();
 
     /// @brief Função que busca um elemento na lista. Caso o encontre retorna um ponteiro para ele, caso não, retorna um nullptr
     /// @param valor Valor do elemento a ser procurado na lista
     /// @return Interador para o elemento ou nullptr
-    No<T> *buscar(T valor) const
+    No<T> *buscar(T valor);
+    /// @brief Função que busca se existe um elemento na lista no índice indicado. Caso exista, retorna um ponteiro para ele, cano nãõ~retorna um nullptr
+    /// @param indice Indice do elemento a ser procurado na lista
+    /// @return Interador para o elemento ou nullptr
+    No<T> *buscarPorIndice(int indice);
+
+    Lista<T> *operator+(Lista<T> &lista);
+
+    Lista<T> *operator-(Lista<T> &lista);
+
+    friend void operator>>(Lista<T> &lista, No<T> *no);
+
+    friend void operator<<(Lista<T> &lista, T valor);
+};
+
+// Construtor padrão
+template <class T>
+Lista<T>::Lista()
+{
+    this->cabeca = nullptr;
+    this->cauda = nullptr;
+}
+
+// Construtor que inializa a lista com um nó
+template <class T>
+Lista<T>::Lista(T valor /*Nó a ser inicializado junto com a construção da lista*/)
+{
+    No<T> *no = new No<T>(valor);
+    this->cabeca = no;
+    this->cauda = no;
+}
+
+template <class T>
+Lista<T>::Lista(Lista<T> *lista)
+{
+    this->cabeca = nullptr;
+    this->cauda = nullptr;
+
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
     {
-        No<T> *atual = cabeca;
+        this->inserir(atual->getValor());
+        atual = atual->getProximo();
+    }
+}
 
-        while (atual != nullptr)
+// Desconstrutor padrão
+template <class T>
+Lista<T>::~Lista()
+{
+    No<T> *atual = this->cabeca;
+    No<T> *proximo = nullptr;
+
+    while (atual != nullptr)
+    {
+        proximo = atual->getProximo();
+        delete atual;
+        atual = proximo;
+    }
+}
+
+// Métodos setters e getters para o atributo Cabeca
+template <class T>
+void Lista<T>::setCabeca(No<T> *cabeca)
+{
+    this->cabeca = cabeca;
+}
+
+template <class T>
+No<T> *Lista<T>::getCabeca()
+{
+    return this->cabeca;
+}
+
+// Métodos setters e getters para o atributo Cabeca
+template <class T>
+void Lista<T>::setCauda(No<T> *cauda)
+{
+    this->cauda = cauda;
+}
+
+template <class T>
+No<T> *Lista<T>::getCauda()
+{
+    return this->cauda;
+}
+
+// Método para adicionar um nó no final da lista
+template <class T>
+void Lista<T>::inserir(T valor)
+{
+    No<T> *novo = new No<T>(valor);
+
+    if (this->cabeca == nullptr)
+    {
+        this->setCabeca(novo);
+        this->setCauda(novo);
+    }
+    else
+    {
+        this->cauda->setProximo(novo);
+        this->setCauda(novo);
+    }
+}
+
+// Método para adicionar um nó em uma posição específica da lista
+template <class T>
+void Lista<T>::inserir(T valor, int posicao)
+{
+    No<T> *novo = new No<T>(valor);
+
+    if (posicao == 0)
+    {
+        novo->setProximo(this->cabeca);
+        this->cabeca = novo;
+    }
+    else
+    {
+        No<T> *atual = this->cabeca;
+        No<T> *anterior = nullptr;
+
+        for (int i = 0; i < posicao; i++)
         {
-            if (atual->getValor() == valor)
-            {
-                return atual;
-            }
-
+            anterior = atual;
             atual = atual->getProximo();
         }
 
-        return nullptr;
+        novo->setProximo(atual);
+        anterior->setProximo(novo);
     }
+}
 
-    Lista<T> operator+(const Lista<T> &lista) const
+// Método para adicionar os elementos de uma lista em outra
+template <class T>
+void Lista<T>::adicionarElementos(Lista<T> *lista)
+{
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
     {
-        Lista<T> novaLista;
+        this->inserir(atual->getValor());
+        atual = atual->getProximo();
+    }
+}
 
-        novaLista.adicionarElementos(*this);
-        novaLista.adicionarElementos(lista);
+// Método para remover um nó da lista
+template <class T>
+void Lista<T>::remover(T valor)
+{
+    No<T> *atual = this->cabeca;
+    No<T> *anterior = nullptr;
 
-        return novaLista;
+    while (atual != nullptr)
+    {
+        if (atual->getValor() == valor)
+        {
+            if (atual == this->cabeca)
+            {
+                this->cabeca = cabeca->getProximo();
+            }
+            else if (atual == this->cauda)
+            {
+                this->cauda = anterior;
+                this->cauda->setProximo(nullptr);
+            }
+            else
+            {
+                anterior->setProximo(atual->getProximo());
+            }
+
+            delete atual;
+            break;
+        }
+
+        anterior = atual;
+        atual = atual->getProximo();
+    }
+}
+
+// Método para remover os elementos de uma lista em outra
+template <class T>
+void Lista<T>::removerElementos(Lista<T> *lista)
+{
+    No<T> *atual = lista->getCabeca();
+
+    while (atual != nullptr)
+    {
+        this->remover(atual->getValor());
+        atual = atual->getProximo();
+    }
+}
+
+// Método para buscar um nó da lista
+template <class T>
+No<T> *Lista<T>::buscar(T valor)
+{
+    No<T> *atual = this->getCabeca();
+
+    while (atual != nullptr)
+    {
+        if (atual->getValor() == valor)
+        {
+            return atual;
+        }
+
+        atual = atual->getProximo();
     }
 
-    // Lista<T> operator-(const Lista<T> &lista) const{
-    //   Lista<T> novaLista;
+    return nullptr;
+}
 
-    //  novaLista.adicionarElementos(*this);
-    //  novaLista.removerElementos(lista);
+// Método para retornar o tamanho da lista
+template <class T>
+int Lista<T>::tamanho()
+{
+    int tamanho = 0;
+    No<T> *atual = this->cabeca;
 
-    //  return novaLista;
-    //}
+    while (atual != nullptr)
+    {
+        tamanho++;
+        atual = atual->getProximo();
+    }
 
-    // friend void operator>>(Lista<T> &lista, No<T> *no);
-    //
-    // friend void operator<<(Lista<T> &lista, T valor);
-};
+    return tamanho;
+}
+
+// Método para buscar um nó da lista por índice
+template <class T>
+No<T> *Lista<T>::buscarPorIndice(int indice)
+{
+    No<T> *atual = this->cabeca;
+
+    for (int i = 0; i < indice; i++)
+    {
+        atual = atual->getProximo();
+    }
+
+    return atual;
+}
+
+// Método para concatenar duas listas
+template <class T>
+Lista<T> *Lista<T>::operator+(Lista<T> &lista)
+{
+    Lista<T> *novaLista = new Lista<T>(this);
+
+    novaLista->adicionarElementos(&lista);
+
+    return novaLista;
+}
+
+template <class T>
+Lista<T> *Lista<T>::operator-(Lista<T> &lista)
+{
+    Lista<T> *novaLista = new Lista<T>(this);
+
+    novaLista->removerElementos(&lista);
+
+    return novaLista;
+}
+
+// Sobrecarga do operador de extração
+template <class T>
+void operator>>(Lista<T> &lista, No<T> *no)
+{
+    if (lista->tamanho() == 0)
+    {
+        no->setValor(nullptr);
+        return;
+    }
+
+    No<T> *ultimo = lista->getCauda();
+    no->setValor(ultimo->getValor());
+}
+
+// Sobrecarga do operador de inserção
+template <class T>
+void operator<<(Lista<T> &lista, T valor)
+{
+    if (valor->getValor() == nullptr)
+        return;
+
+    lista.inserir(valor->getValor());
+}
 
 #endif // LISTA_HPP
