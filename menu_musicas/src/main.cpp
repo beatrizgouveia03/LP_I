@@ -9,7 +9,8 @@ int main(int argc, char *argv[])
     Lista<Musica> *musicas = configuracaoInicialMusicas();
     Lista<Playlist> *playlists = configuracaoInicialPlaylists(musicas);
 
-    lerMusicasDeArquivo(argv[1], musicas, playlists);
+    if (argc > 1)
+        lerMusicasDeArquivo(argv[1], musicas, playlists);
 
     menuPrincipal(musicas, playlists);
 

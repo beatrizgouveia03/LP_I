@@ -58,8 +58,6 @@ Lista<Playlist> *configuracaoInicialPlaylists(Lista<Musica> *baseMusicas)
 
     delete playlist1;
     delete playlist2;
-    delete musicasPlaylist1;
-    delete musicasPlaylist2;
 
     return basePlaylists;
 }
