@@ -34,6 +34,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
       acao--;
     }
 
+    Playlist play = p->getValor();
     bool sair = false;
 
     while (!sair)
@@ -41,7 +42,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 
       int acao2 = -1;
 
-      cout << "\nGERENCIAR PLAYLIST: " << p->getValor().getNome() << endl;
+      cout << "\nGERENCIAR PLAYLIST: " << play.getNome() << endl;
       cout << "1 - Adicionar música\n2 - Remover música\n3 - Listar músicas\n4 - Sair\n";
       cout << "Digite a opção da sua ação: ";
       tratarAcao(&acao2);
@@ -52,6 +53,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
 
       switch (acao2)
       {
+        // Adicionar música
       case 1:
       {
         int acao3 = -1;
@@ -64,6 +66,7 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
           continue;
         }
 
+        Lista<Musica> *musicas = play.getMusicas();
         No<Musica> *musicaEscolhida = baseMusicas->getCabeca();
 
         while (acao3 > 1)
@@ -77,31 +80,33 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
           acao3--;
         }
 
-        if (p->getValor().getMusicas()->buscar(musicaEscolhida->getValor()) != nullptr)
+        if (musicas->buscar(musicaEscolhida->getValor()) != nullptr)
         {
           cout << "\nMúsica já existente na Playlist!\n\n";
           break;
         }
 
-        p->getValor().getMusicas()->inserir(musicaEscolhida->getValor());
+        musicas->inserir(musicaEscolhida->getValor());
         cout << "\nMúsica Cadastrada!\n\n";
         break;
       }
+      // Remover músicas
       case 2:
       {
-        int acao = -1;
-        menuListagemMusicas(p->getValor().getMusicas());
+        int acao3 = -1;
+        menuListagemMusicas(play.getMusicas());
 
         cout << "Digite o número da música: " << endl;
-        tratarAcao(&acao);
-        if (acao == -1)
+        tratarAcao(&acao3);
+        if (acao3 == -1)
         {
           continue;
         }
 
-        No<Musica> *musicaEscolhida = p->getValor().getMusicas()->getCabeca();
+        Lista<Musica> *musicas = play.getMusicas();
+        No<Musica> *musicaEscolhida = musicas->getCabeca();
 
-        while (acao > 1)
+        while (acao3 > 1)
         {
           musicaEscolhida = musicaEscolhida->getProximo();
           if (musicaEscolhida == nullptr)
@@ -109,16 +114,20 @@ void menuMusicasEmPlaylists(Lista<Musica> *baseMusicas, Lista<Playlist> *basePla
             cout << "\nNão existe nenhuma música com este número!\n\n";
             return;
           }
-          acao--;
+          acao3--;
         }
 
-        p->getValor().remMusica(musicaEscolhida->getValor());
+        play.remMusica(musicaEscolhida->getValor());
         cout << "\nMúsica Removida!\n\n";
         break;
       }
+      // Listar músicas
       case 3:
-        menuListagemMusicas(p->getValor().getMusicas());
+      {
+        menuListagemMusicas(play.getMusicas());
         break;
+      }
+      // Sair
       case 4:
         sair = true;
         return;
