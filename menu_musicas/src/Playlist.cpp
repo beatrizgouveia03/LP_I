@@ -2,162 +2,172 @@
 
 #include <ostream>
 
-Playlist::Playlist() {
-    Lista<Musica> *lista = new Lista<Musica>();
-    this->musicas = lista;
+Playlist::Playlist() : nome(""),musicas(nullptr){}
 
-    delete lista;
+Playlist::Playlist(const string &nome) : nome(nome), musicas(nullptr){}
+
+Playlist::Playlist(const string &nome, const Lista<Musica> &musicas)
+                 : nome(nome), musicas(nullptr){
+  if (musicas.getCabeca() != nullptr)
+  {
+    this->musicas = new Lista<Musica>(musicas);
+  }
 }
 
-Playlist::Playlist(string nome)
+Playlist::Playlist(const Playlist &playlist) 
+                 : nome(playlist.nome), musicas(nullptr)
 {
-    Lista<Musica> *lista = new Lista<Musica>();
-    this->nome = nome;
-    this->musicas = lista;
-
-    delete lista;
+  if(playlist.musicas != nullptr){
+    musicas = new Lista<Musica>(*playlist.musicas);
+  }
 }
 
-Playlist::Playlist(string nome, Lista<Musica> *musicas)
-{
-    this->nome = nome;
-    this->musicas = musicas;
+Playlist::~Playlist() {
+  delete musicas;
 }
 
-Playlist::Playlist(Playlist *playlist)
+void Playlist::setNome(const string &nome)
 {
-    this->nome = playlist->getNome();
-    this->musicas = playlist->getMusicas();
+  this->nome = nome;
 }
 
-Playlist::~Playlist() {}
-
-void Playlist::setNome(string nome)
+void Playlist::setMusicas(const Lista<Musica> &musicas)
 {
-    this->nome = nome;
+  if(this->musicas != nullptr) delete this->musicas;
+  this->musicas = new Lista<Musica>(musicas);
 }
 
-void Playlist::setMusicas(Lista<Musica> *musicas)
+string Playlist::getNome() const
 {
-    this->musicas = musicas;
-    return;
+  return nome;
 }
 
-string Playlist::getNome()
+Lista<Musica> *Playlist::getMusicas() const
 {
-    return this->nome;
+  return musicas;
 }
 
-Lista<Musica> *Playlist::getMusicas()
+void Playlist::addMusica(const Musica &musica)
 {
-    return this->musicas;
+  if(musicas == nullptr){
+    musicas = new Lista<Musica>();
+  }
+  musicas->inserir(musica);
 }
 
-void Playlist::addMusica(Musica m)
+void Playlist::addMusica(const Playlist &playlist)
 {
-    this->musicas->inserir(m);
-    return;
+  if(musicas == nullptr){
+    musicas = new Lista<Musica>();
+  }
+  musicas->adicionarElementos(*playlist.getMusicas());
 }
 
-void Playlist::addMusica(Playlist musicas)
+void Playlist::remMusica(const Musica &musica)
 {
-    Lista<Musica> *base = musicas.getMusicas();
-
-    this->musicas->adicionarElementos(base);
-
-    return;
+  if(musicas != nullptr){
+    musicas->remover(musica);
+  }
 }
 
-void Playlist::remMusica(Musica m)
+void Playlist::remMusica(const Playlist &playlist)
 {
-    this->musicas->remover(m);
-    return;
+  if(musicas != nullptr){
+    musicas->removerElementos(*playlist.getMusicas());
+  }
 }
 
-void Playlist::remMusica(Playlist musicas)
+No<Musica> *Playlist::findMusica(const Musica &musica) const
 {
-    Lista<Musica> *base = musicas.getMusicas();
+  if(musicas != nullptr){
+    return musicas->buscar(musica);
+  }
 
-    this->musicas->removerElementos(base);
+  return nullptr;
 }
 
-No<Musica> *Playlist::findMusica(Musica m)
+bool Playlist::operator==(const Playlist &playlist)
 {
-    return this->musicas->buscar(m);
+  if (nome == playlist.getNome())
+  {
+    return true;
+  }
+
+  return false;
 }
 
-bool Playlist::operator==(Playlist &playlist)
+ostream &operator<<(ostream &cout, const Playlist &playlist)
 {
-    if (this->getNome() == playlist.getNome())
-    {
-        return true;
-    }
+  cout << "Nome: " << playlist.nome << endl;
+  cout << "Musicas: " << endl;
 
-    return false;
-}
-
-ostream &operator<<(ostream &cout, Playlist &p)
-{
-    cout << "Nome: " << p.getNome() << endl;
-    cout << "Musicas: " << endl;
-
-    No<Musica> *itr = p.getMusicas()->getCabeca();
-
-    if (itr == nullptr)
-    {
-        cout << "Nenhuma música cadastrada!\n";
-    }
-
-    int count = 1;
-
-    while (itr != nullptr)
-    {
-        Musica m = itr->getValor();
-        cout << "[" << count << "] " << m;
-
-        itr = itr->getProximo();
-        count++;
-    }
-
+  if (playlist.musicas == nullptr)
+  {
+    cout << "Nenhuma música cadastrada!\n";
     return cout;
+  }
+
+  int count = 1;
+  No<Musica> *itr = playlist.musicas->getCabeca();
+
+  while (itr != nullptr)
+  {
+    Musica m = itr->getValor();
+    cout << "[" << count << "] " << m;
+
+    itr = itr->getProximo();
+    count++;
+  }
+
+  return cout;
 }
 
-Lista<Musica> *Playlist::operator+( Playlist &playlist) 
+Playlist *Playlist::operator+(const Playlist &playlist)
 {
-    Lista<Musica> *m = new Lista<Musica>(this->musicas);
-    *m = *m + *playlist.musicas;
+  Playlist *resultado = new Playlist("", *this->musicas);
+  
+  resultado->addMusica(playlist);
 
-    return m;
+  return resultado;
 }
 
-Lista<Musica> *Playlist::operator+(Musica &musica) {
-    Lista<Musica> *m = new Lista<Musica>(this->musicas);
-    m->inserir(musica);
+Playlist *Playlist::operator+(const Musica &musica)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
 
-    return m;
+  resultado->addMusica(musica);
+
+  return resultado;
 }
 
-Lista<Musica> *Playlist::operator-(Playlist &playlist) {
-    Lista<Musica> *m = new Lista<Musica>(this->musicas);
-    *m = *m - *playlist.musicas;
+Playlist *Playlist::operator-(const Playlist &playlist)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
 
-    return m;
+  resultado->remMusica(playlist);
+
+  return resultado;
 }
 
-Lista<Musica> *Playlist::operator-(Musica &musica) {
-    Lista<Musica> *m = new Lista<Musica>(this->musicas);
-    m->remover(musica);
+Playlist *Playlist::operator-(const Musica &musica)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
 
-    return m;
+  resultado->remMusica(musica);
+
+  return resultado;
 }
-void operator<<(Playlist &playlist, Musica &musica){
-    playlist.musicas->inserir(musica);
-}
 
-void operator>>(Playlist &playlist, Musica &musica){
-   Lista<Musica> *base = playlist.getMusicas();
-
-   base->remover(musica);
-
-   playlist.setMusicas(base);
-}
+//void operator<<(Playlist &playlist, Musica &musica)
+//{
+//  playlist.musicas->inserir(musica);
+//}
+//
+//void operator>>(Playlist &playlist, Musica &musica)
+//{
+//  Lista<Musica> *base = playlist.getMusicas();
+//
+//  base->remover(musica);
+//
+//  playlist.setMusicas(base);
+//}
