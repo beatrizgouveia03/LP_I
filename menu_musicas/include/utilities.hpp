@@ -94,6 +94,13 @@ void menuListagemMusicas(Lista<Musica> *baseMusicas);
 void menuListagemPlaylists(Lista<Playlist> *basePlaylists);
 
 /*!
+    Esta função trata do menu das funções extras implementadas da nossa aplicação
+    @param basePlaylists Iterador para a base de playlists principal
+    @param baseMusicas Iterador para a base de musicas principal
+*/
+void menuExtras(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
+
+/*!
     Esta função serve para tratar a entrada recebido dos menus, ela lê a entrada
     e a formata para o variáveel do tipo inteiro informada
 

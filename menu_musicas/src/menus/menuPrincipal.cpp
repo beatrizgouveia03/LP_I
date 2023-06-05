@@ -9,7 +9,8 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
     int acao = -1;
 
     cout << "\nMENU PRICIPAL\n";
-    cout << "1 - Gerenciar Músicas\n2 - Gerenciar Playlists\n3 - Gerenciar Músicas em Playlists\n4 - Tocar músicas\n5 - Sair\n";
+    cout << "1 - Gerenciar Músicas\n2 - Gerenciar Playlists\n3 - Gerenciar Músicas em Playlists\n";
+    cout << "4 - Tocar músicas\n5 - Menu Extra\n6 - Sair\n";
     cout << "Digite a opção da sua ação: ";
     tratarAcao(&acao);
     if (acao == -1)
@@ -32,6 +33,9 @@ void menuPrincipal(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
       menuTocarMusicas(baseMusicas, basePlaylists);
       break;
     case 5:
+      menuExtras(baseMusicas, basePlaylists);
+      break;
+    case 6:
       return;
     default:
       cout << "Opção inválida\n\n";
