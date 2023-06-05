@@ -110,8 +110,8 @@ public:
   /// @return Uma nova playlist resultante da subtração
   Playlist *operator-(const Musica &musica);
   
-  // friend void operator<<(Playlist &playlist, Musica &musica);
-  // friend void operator>>(Playlist *playlist, Musica musica);
+  friend void operator>>(Playlist playlist, No<Musica> *musica);
+  friend void operator<<(Playlist playlist, Musica &musica);
 };
 
 #endif // PLAYLIST_H

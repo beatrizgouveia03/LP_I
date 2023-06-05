@@ -158,16 +158,13 @@ Playlist *Playlist::operator-(const Musica &musica)
   return resultado;
 }
 
-//void operator<<(Playlist &playlist, Musica &musica)
-//{
-//  playlist.musicas->inserir(musica);
-//}
-//
-//void operator>>(Playlist &playlist, Musica &musica)
-//{
-//  Lista<Musica> *base = playlist.getMusicas();
-//
-//  base->remover(musica);
-//
-//  playlist.setMusicas(base);
-//}
+void operator>>(Playlist playlist, No<Musica> *musica)
+{
+  *playlist.musicas >> musica;
+}
+
+void operator<<(Playlist playlist, Musica &musica)
+{
+  *playlist.musicas << musica;
+}
+
