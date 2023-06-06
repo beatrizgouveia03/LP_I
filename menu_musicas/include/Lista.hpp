@@ -199,28 +199,42 @@ public:
       return atual;
     }
 
-    Lista<T> operator+(const Lista<T> &lista) const
-    {
-      Lista<T> novaLista(*this);
+    /// @brief Sobrecarga do operador para adição de listas
+    /// @param lista Outra lista que será somada
+    /// @return Uma nova lista resultante da soma
+  Lista<T> operator+(const Lista<T> &lista) const
+  {
+    Lista<T> novaLista(*this);
 
-      novaLista.adicionarElementos(lista);
+    novaLista.adicionarElementos(lista);
 
-      return novaLista;
+    return novaLista;
   }
 
- Lista<T> operator-(const Lista<T> &lista) const{
-   Lista<T> novaLista(*this);
+  /// @brief Sobrecarga do operador para subtração de listas
+  /// @param lista Outra lista que será subtraída
+  /// @return Uma nova lista resultante da substração
+  Lista<T> operator-(const Lista<T> &lista) const
+  {
+    Lista<T> novaLista(*this);
 
-   novaLista.removerElementos(lista);
+    novaLista.removerElementos(lista);
 
-   return novaLista;
+    return novaLista;
  }
 
-  friend void operator>>(Lista<T> &lista, No<T> &no) {
-    no.setValor(lista.cauda->getValor());
-    lista.remover(lista.cauda->getValor());
+  /// @brief Sobrecarga do operador para extração do último nó de uma lista
+  /// @param lista Lista da qual será extraído o nó
+  /// @param no Nó que será preenchido com o nó extraído da lista
+  friend void operator>>(Lista<T> &lista, No<T> &no)
+  {
+      no.setValor(lista.cauda->getValor());
+      lista.remover(lista.cauda->getValor());
   }
 
+  /// @brief Sobrecarga do operador para inserção de um nó em uma lista
+  /// @param lista Lista em que será inserido o nó
+  /// @param no Nó que será inserido na lista
   friend void operator<<(Lista<T> &lista, T &valor) {
     lista.inserir(valor);
   }

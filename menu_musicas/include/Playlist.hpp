@@ -90,7 +90,7 @@ public:
   /// @return Saída(cout) formatada
   friend ostream &operator<<(ostream &cout, const Playlist &playlist);
 
-  /// @brief Sobrecarga do operador para adiçãõ de playlists
+  /// @brief Sobrecarga do operador para adição de playlists
   /// @param playlist Outra playlist que será somada  
   /// @return Uma nova playlist resultante da soma
   Playlist *operator+(const Playlist &playlist);
