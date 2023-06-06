@@ -216,12 +216,12 @@ public:
    return novaLista;
  }
 
-  friend void operator>>(Lista<T> lista, No<T> *no) {
-    no->setValor(lista.cauda->getValor());
+  friend void operator>>(Lista<T> &lista, No<T> &no) {
+    no.setValor(lista.cauda->getValor());
     lista.remover(lista.cauda->getValor());
   }
 
-  friend void operator<<(Lista<T> lista, T valor) {
+  friend void operator<<(Lista<T> &lista, T &valor) {
     lista.inserir(valor);
   }
 };

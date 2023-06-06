@@ -54,10 +54,10 @@ void menuExtras(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists)
       }
 
       Playlist play = p->getValor();
-      No<Musica> *musica = new No<Musica>();
+      Musica musica;
       play >> musica;
 
-      cout << "Música extraída: \n" << musica->getValor().getTitulo() << endl;
+      cout << "Música extraída: \n" << musica << endl;
       cout << play << endl;
       break;
     }
