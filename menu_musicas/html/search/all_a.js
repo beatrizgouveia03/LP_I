@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['playlist_33',['Playlist',['../a00036.html',1,'Playlist'],['../a00036.html#aef38d55e42995be147977726350f3ada',1,'Playlist::Playlist()'],['../a00036.html#aa4b4914ac8e101589ed5ffba330b7cf5',1,'Playlist::Playlist(string nome)'],['../a00036.html#a4083df86652da125a41250204a203fc4',1,'Playlist::Playlist(string nome, Lista&lt; Musica &gt; *musicas)']]],
-  ['playlist_2ehpp_34',['Playlist.hpp',['../a00011.html',1,'']]]
+  ['playlist_39',['Playlist',['../a00036.html',1,'Playlist'],['../a00036.html#aef38d55e42995be147977726350f3ada',1,'Playlist::Playlist()'],['../a00036.html#ae0fab6b028d4f7ff3e520a0ca8200a0d',1,'Playlist::Playlist(const string &amp;nome)'],['../a00036.html#abddd31a980c8e2494af3081bdbdc4cd7',1,'Playlist::Playlist(const string &amp;nome, const Lista&lt; Musica &gt; &amp;musicas)'],['../a00036.html#a4ec33dd0bee19bda3371b94dd0cb2f47',1,'Playlist::Playlist(const Playlist &amp;playlist)']]],
+  ['playlist_2ehpp_40',['Playlist.hpp',['../a00011.html',1,'']]]
 ];

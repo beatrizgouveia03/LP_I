@@ -10,9 +10,11 @@ Definição de funções utilizadas no main e nos menus.
 \doxysubsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ \mbox{\hyperlink{a00014_a1d35292e4ae48b85d72c00b836449cc2}{configuracao\+Inicial\+Musicas}} ()
+\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$ \mbox{\hyperlink{a00014_ae4cd3f5b8933f51dc68c71786891be71}{configuracao\+Inicial\+Musicas}} ()
 \item 
-\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ \mbox{\hyperlink{a00014_a66905fee13769e6492b65e27affd661c}{configuracao\+Inicial\+Playlists}} (\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$base\+Musicas)
+\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$ \mbox{\hyperlink{a00014_ade45e1e639adaf2b66b29b05a7dbbb0a}{configuracao\+Inicial\+Playlists}} (\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$base\+Musicas)
+\item 
+void \mbox{\hyperlink{a00014_a2f93b6199ca1943baf053c06e2656b1e}{ler\+Musicas\+De\+Arquivo}} (string path, \mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$base\+Musicas, \mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$base\+Playlists)
 \item 
 void \mbox{\hyperlink{a00014_a62b69aadfe7d5f496d2bab0370395666}{menu\+Principal}} (\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$base\+Musicas, \mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$base\+Playlists)
 \item 
@@ -27,6 +29,8 @@ void \mbox{\hyperlink{a00014_a4ee4fa3cb667ce10579ee63555e5a5b5}{menu\+Tocar\+Mus
 void \mbox{\hyperlink{a00014_ab4244b043bbf75fc020668af42ae4eeb}{menu\+Listagem\+Musicas}} (\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$base\+Musicas)
 \item 
 void \mbox{\hyperlink{a00014_a011f621a2845d786e59065a69d9b1079}{menu\+Listagem\+Playlists}} (\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$base\+Playlists)
+\item 
+void \mbox{\hyperlink{a00014_a962cffaf4d56843c6d5de420e1c7032a}{menu\+Extras}} (\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$base\+Musicas, \mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$base\+Playlists)
 \item 
 void \mbox{\hyperlink{a00014_a6d7db27eaff6800de14a789716de0cdb}{tratar\+Acao}} (int $\ast$acao)
 \item 
@@ -46,22 +50,22 @@ Beatriz G. Gadelha
 
 
 \doxysubsection{Funções}
-\mbox{\Hypertarget{a00014_a1d35292e4ae48b85d72c00b836449cc2}\label{a00014_a1d35292e4ae48b85d72c00b836449cc2}} 
+\mbox{\Hypertarget{a00014_ae4cd3f5b8933f51dc68c71786891be71}\label{a00014_ae4cd3f5b8933f51dc68c71786891be71}} 
 \index{utilities.hpp@{utilities.hpp}!configuracaoInicialMusicas@{configuracaoInicialMusicas}}
 \index{configuracaoInicialMusicas@{configuracaoInicialMusicas}!utilities.hpp@{utilities.hpp}}
 \doxysubsubsection{\texorpdfstring{configuracaoInicialMusicas()}{configuracaoInicialMusicas()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{a00024}{Lista}}$<$\mbox{\hyperlink{a00028}{Musica}}$>$ configuracao\+Inicial\+Musicas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00024}{Lista}}$<$\mbox{\hyperlink{a00028}{Musica}}$>$$\ast$ configuracao\+Inicial\+Musicas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Essa função cria uma \mbox{\hyperlink{a00024}{Lista$<$\+Musica$>$}} para ser a base inicial das músicas e a retorna.
 
 \begin{DoxyReturn}{Retorna}
 Uma lista de músicas formatada com as músicas iniciais configuradas 
 \end{DoxyReturn}
-\mbox{\Hypertarget{a00014_a66905fee13769e6492b65e27affd661c}\label{a00014_a66905fee13769e6492b65e27affd661c}} 
+\mbox{\Hypertarget{a00014_ade45e1e639adaf2b66b29b05a7dbbb0a}\label{a00014_ade45e1e639adaf2b66b29b05a7dbbb0a}} 
 \index{utilities.hpp@{utilities.hpp}!configuracaoInicialPlaylists@{configuracaoInicialPlaylists}}
 \index{configuracaoInicialPlaylists@{configuracaoInicialPlaylists}!utilities.hpp@{utilities.hpp}}
 \doxysubsubsection{\texorpdfstring{configuracaoInicialPlaylists()}{configuracaoInicialPlaylists()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{a00024}{Lista}}$<$\mbox{\hyperlink{a00036}{Playlist}}$>$ configuracao\+Inicial\+Playlists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$}]{base\+Musicas }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00024}{Lista}}$<$\mbox{\hyperlink{a00036}{Playlist}}$>$$\ast$ configuracao\+Inicial\+Playlists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$}]{base\+Musicas }\end{DoxyParamCaption})}
 
 Essa função cria uma Lista$<$\+Playlist$>$ para ser a base inicial das playlists, tomando como parâmetro a base de músicas configuradas anteriormente e a retorna.
 
@@ -89,6 +93,25 @@ Esta função recebe uma string e retorna se o seu conteúdo trata-\/se de um n�
 \begin{DoxyReturn}{Retorna}
 Booleano informando se o valor é um número ou não 
 \end{DoxyReturn}
+\mbox{\Hypertarget{a00014_a2f93b6199ca1943baf053c06e2656b1e}\label{a00014_a2f93b6199ca1943baf053c06e2656b1e}} 
+\index{utilities.hpp@{utilities.hpp}!lerMusicasDeArquivo@{lerMusicasDeArquivo}}
+\index{lerMusicasDeArquivo@{lerMusicasDeArquivo}!utilities.hpp@{utilities.hpp}}
+\doxysubsubsection{\texorpdfstring{lerMusicasDeArquivo()}{lerMusicasDeArquivo()}}
+{\footnotesize\ttfamily void ler\+Musicas\+De\+Arquivo (\begin{DoxyParamCaption}\item[{string}]{path,  }\item[{\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$}]{base\+Musicas,  }\item[{\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$}]{base\+Playlists }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00014_a962cffaf4d56843c6d5de420e1c7032a}\label{a00014_a962cffaf4d56843c6d5de420e1c7032a}} 
+\index{utilities.hpp@{utilities.hpp}!menuExtras@{menuExtras}}
+\index{menuExtras@{menuExtras}!utilities.hpp@{utilities.hpp}}
+\doxysubsubsection{\texorpdfstring{menuExtras()}{menuExtras()}}
+{\footnotesize\ttfamily void menu\+Extras (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00028}{Musica}} $>$ $\ast$}]{base\+Musicas,  }\item[{\mbox{\hyperlink{a00024}{Lista}}$<$ \mbox{\hyperlink{a00036}{Playlist}} $>$ $\ast$}]{base\+Playlists }\end{DoxyParamCaption})}
+
+Esta função trata do menu das funções extras implementadas da nossa aplicação 
+\begin{DoxyParams}{Parâmetros}
+{\em base\+Playlists} & Iterador para a base de playlists principal \\
+\hline
+{\em base\+Musicas} & Iterador para a base de musicas principal \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{a00014_ab4244b043bbf75fc020668af42ae4eeb}\label{a00014_ab4244b043bbf75fc020668af42ae4eeb}} 
 \index{utilities.hpp@{utilities.hpp}!menuListagemMusicas@{menuListagemMusicas}}
 \index{menuListagemMusicas@{menuListagemMusicas}!utilities.hpp@{utilities.hpp}}

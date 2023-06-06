@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['getartista_6',['getArtista',['../a00028.html#a303417684960f027b394137110d46777',1,'Musica']]],
-  ['getcabeca_7',['getCabeca',['../a00024.html#ac711f7d0d980e4413a1c956b75b30755',1,'Lista']]],
-  ['getcauda_8',['getCauda',['../a00024.html#af77a27bde9b537695c62fbd04d5f6e5e',1,'Lista']]],
-  ['getmusicas_9',['getMusicas',['../a00036.html#a65691826c1e28eed4175d0e9b3f3c0af',1,'Playlist']]],
-  ['getnome_10',['getNome',['../a00036.html#ad5934cacafaebe5890d9100502ab3827',1,'Playlist']]],
-  ['getproximo_11',['getProximo',['../a00032.html#a9889880f1de3f95d87e638f1fd4c5297',1,'No']]],
-  ['gettitulo_12',['getTitulo',['../a00028.html#a6b86215d63e65c58aec7b8f39d83e961',1,'Musica']]],
-  ['getvalor_13',['getValor',['../a00032.html#ae912470bd6dde548ca89444dd52e9dc6',1,'No']]]
+  ['getartista_7',['getArtista',['../a00028.html#afa031aa01fdb8995faa35ebedb0862a1',1,'Musica']]],
+  ['getcabeca_8',['getCabeca',['../a00024.html#ab1d687706cd838d94ef05648b4526359',1,'Lista']]],
+  ['getcauda_9',['getCauda',['../a00024.html#abbb4d1b6b8fdd9411805d16bb869f315',1,'Lista']]],
+  ['getmusicas_10',['getMusicas',['../a00036.html#ae578afd0a026dae54f1ae1f881071dc1',1,'Playlist']]],
+  ['getnome_11',['getNome',['../a00036.html#aca3a69d3fb7bb8de19718c655814e8c7',1,'Playlist']]],
+  ['getproximo_12',['getProximo',['../a00032.html#ab93313a2d4988a5a087ae8166e3ea2fa',1,'No']]],
+  ['gettitulo_13',['getTitulo',['../a00028.html#a1314371aa34b2e35f83d5b78780a308c',1,'Musica']]],
+  ['getvalor_14',['getValor',['../a00032.html#a78682b8bf11f29339bfbaa4fb9d0f780',1,'No']]]
 ];

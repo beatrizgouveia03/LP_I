@@ -20,9 +20,9 @@ void \mbox{\hyperlink{a00032_a3bb2f1c77fa3837cb2d9d930ae8508b7}{set\+Valor}} (T 
 \begin{DoxyCompactList}\small\item\em Função para configurar o valor do nó \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{a00032_a1a1896dd72a9d6e40f8cf6fc64256a81}{set\+Proximo}} (\mbox{\hyperlink{a00032}{No}}$<$ T $>$ $\ast$proximo)
 \begin{DoxyCompactList}\small\item\em Função para configurar o próximo nó \end{DoxyCompactList}\item 
-T \mbox{\hyperlink{a00032_ae912470bd6dde548ca89444dd52e9dc6}{get\+Valor}} ()
+T \mbox{\hyperlink{a00032_a78682b8bf11f29339bfbaa4fb9d0f780}{get\+Valor}} () const
 \begin{DoxyCompactList}\small\item\em Função que retorna o valor do nó \end{DoxyCompactList}\item 
-\mbox{\hyperlink{a00032}{No}}$<$ T $>$ $\ast$ \mbox{\hyperlink{a00032_a9889880f1de3f95d87e638f1fd4c5297}{get\+Proximo}} ()
+\mbox{\hyperlink{a00032}{No}}$<$ T $>$ $\ast$ \mbox{\hyperlink{a00032_ab93313a2d4988a5a087ae8166e3ea2fa}{get\+Proximo}} () const
 \begin{DoxyCompactList}\small\item\em Função que retorna o próximo nó \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -45,7 +45,7 @@ Implementação de uma classe \mbox{\hyperlink{a00032}{No}}.
 \index{No@{No}!No$<$ T $>$@{No$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{No()}{No()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::\mbox{\hyperlink{a00032}{No}}}
+\mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::\mbox{\hyperlink{a00032}{No}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -61,7 +61,7 @@ Construtor padrão da classe.
 \index{No@{No}!No$<$ T $>$@{No$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{No()}{No()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::\mbox{\hyperlink{a00032}{No}} (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+\mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::\mbox{\hyperlink{a00032}{No}} (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -75,12 +75,12 @@ Construtor que inicializa o nó com um valor.
 
 
 \doxysubsection{Funções membros}
-\mbox{\Hypertarget{a00032_a9889880f1de3f95d87e638f1fd4c5297}\label{a00032_a9889880f1de3f95d87e638f1fd4c5297}} 
+\mbox{\Hypertarget{a00032_ab93313a2d4988a5a087ae8166e3ea2fa}\label{a00032_ab93313a2d4988a5a087ae8166e3ea2fa}} 
 \index{No$<$ T $>$@{No$<$ T $>$}!getProximo@{getProximo}}
 \index{getProximo@{getProximo}!No$<$ T $>$@{No$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{getProximo()}{getProximo()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{a00032}{No}}$<$ T $>$ $\ast$ \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::get\+Proximo}
+\mbox{\hyperlink{a00032}{No}}$<$T$>$$\ast$ \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::get\+Proximo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -89,12 +89,12 @@ Função que retorna o próximo nó
 \begin{DoxyReturn}{Retorna}
 Iterador para o próximo nó 
 \end{DoxyReturn}
-\mbox{\Hypertarget{a00032_ae912470bd6dde548ca89444dd52e9dc6}\label{a00032_ae912470bd6dde548ca89444dd52e9dc6}} 
+\mbox{\Hypertarget{a00032_a78682b8bf11f29339bfbaa4fb9d0f780}\label{a00032_a78682b8bf11f29339bfbaa4fb9d0f780}} 
 \index{No$<$ T $>$@{No$<$ T $>$}!getValor@{getValor}}
 \index{getValor@{getValor}!No$<$ T $>$@{No$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-T \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::get\+Valor}
+T \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::get\+Valor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -108,7 +108,7 @@ Valor do nó
 \index{setProximo@{setProximo}!No$<$ T $>$@{No$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{setProximo()}{setProximo()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::set\+Proximo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00032}{No}}$<$ T $>$ $\ast$}]{proximo }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::set\+Proximo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00032}{No}}$<$ T $>$ $\ast$}]{proximo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -124,7 +124,7 @@ Função para configurar o próximo nó
 \index{setValor@{setValor}!No$<$ T $>$@{No$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::set\+Valor (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})}
+void \mbox{\hyperlink{a00032}{No}}$<$ T $>$\+::set\+Valor (\begin{DoxyParamCaption}\item[{T}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
