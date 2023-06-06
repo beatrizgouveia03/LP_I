@@ -109,8 +109,15 @@ public:
   /// @param musica Musica que será subtraída na playlist
   /// @return Uma nova playlist resultante da subtração
   Playlist *operator-(const Musica &musica);
-  
+
+  /// @brief Sobrecarga do operador para extração da última musica de uma playlist
+  /// @param playlist Playlist da qual será extraída a música
+  /// @param musica Musica que será preenchida com a música extraída na playlist
   friend void operator>>(Playlist playlist, No<Musica> *musica);
+
+  /// @brief Sobrecarga do operador para inserção de uma musica em uma playlist
+  /// @param playlist Playlist daa qual será inserida a música
+  /// @param musica Musica que será inserida na playlist
   friend void operator<<(Playlist playlist, Musica &musica);
 };
 
