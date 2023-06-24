@@ -13,7 +13,7 @@
 
     @return Uma lista de músicas formatada com as músicas iniciais configuradas
 */
-Lista<Musica> configuracaoInicialMusicas();
+Lista<Musica> *configuracaoInicialMusicas();
 
 /*!
     Essa função cria uma Lista<Playlist> para ser a base inicial das playlists,
@@ -22,7 +22,9 @@ Lista<Musica> configuracaoInicialMusicas();
     @param baseMusicas Iterador para a base de músicas principal
     @return Uma lista de playlists formatada com as playlists iniciais configuradas
 */
-Lista<Playlist> configuracaoInicialPlaylists(Lista<Musica> *baseMusicas);
+Lista<Playlist> *configuracaoInicialPlaylists(Lista<Musica> *baseMusicas);
+
+void lerMusicasDeArquivo(string path, Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
 /*!
     Esta função trata do menu principal da nossa aplicação com opções para
@@ -90,6 +92,13 @@ void menuListagemMusicas(Lista<Musica> *baseMusicas);
     @param basePlaylists Iterador para a base de playlists a ser listada
 */
 void menuListagemPlaylists(Lista<Playlist> *basePlaylists);
+
+/*!
+    Esta função trata do menu das funções extras implementadas da nossa aplicação
+    @param basePlaylists Iterador para a base de playlists principal
+    @param baseMusicas Iterador para a base de musicas principal
+*/
+void menuExtras(Lista<Musica> *baseMusicas, Lista<Playlist> *basePlaylists);
 
 /*!
     Esta função serve para tratar a entrada recebido dos menus, ela lê a entrada

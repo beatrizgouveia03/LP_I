@@ -2,91 +2,172 @@
 
 #include <ostream>
 
-Playlist::Playlist() {}
+Playlist::Playlist() : nome(""),musicas(nullptr){}
 
-Playlist::Playlist(string nome)
-{
-    this->nome = nome;
+Playlist::Playlist(const string &nome) : nome(nome), musicas(nullptr){}
+
+Playlist::Playlist(const string &nome, const Lista<Musica> &musicas)
+                 : nome(nome), musicas(nullptr){
+  if (musicas.getCabeca() != nullptr)
+  {
+    this->musicas = new Lista<Musica>(musicas);
+  }
 }
 
-Playlist::Playlist(string nome, Lista<Musica> *musicas)
+Playlist::Playlist(const Playlist &playlist) 
+                 : nome(playlist.nome), musicas(nullptr)
 {
-    this->nome = nome;
-    this->musicas = musicas;
+  if(playlist.musicas != nullptr){
+    musicas = new Lista<Musica>(*playlist.musicas);
+  }
 }
 
-Playlist::~Playlist() {}
-
-void Playlist::setNome(string nome)
-{
-    this->nome = nome;
+Playlist::~Playlist() {
+  delete musicas;
 }
 
-void Playlist::setMusicas(Lista<Musica> *musicas)
+void Playlist::setNome(const string &nome)
 {
-    this->musicas = musicas;
-    return;
+  this->nome = nome;
 }
 
-string Playlist::getNome()
+void Playlist::setMusicas(const Lista<Musica> &musicas)
 {
-    return this->nome;
+  if(this->musicas != nullptr) delete this->musicas;
+  this->musicas = new Lista<Musica>(musicas);
 }
 
-Lista<Musica> *Playlist::getMusicas()
+string Playlist::getNome() const
 {
-    return this->musicas;
+  return nome;
 }
 
-void Playlist::addMusica(Musica m)
+Lista<Musica> *Playlist::getMusicas() const
 {
-    this->musicas->inserir(m);
-    return;
+  return musicas;
 }
 
-void Playlist::remMusica(Musica m)
+void Playlist::addMusica(const Musica &musica)
 {
-    this->musicas->remover(m);
-    return;
+  if(musicas == nullptr){
+    musicas = new Lista<Musica>();
+  }
+  musicas->inserir(musica);
 }
 
-No<Musica> *Playlist::findMusica(Musica m)
+void Playlist::addMusica(const Playlist &playlist)
 {
-    return this->musicas->buscar(m);
+  if(musicas == nullptr){
+    musicas = new Lista<Musica>();
+  }
+  musicas->adicionarElementos(*playlist.getMusicas());
 }
 
-bool Playlist::operator==(Playlist &playlist)
+void Playlist::remMusica(const Musica &musica)
 {
-    if (this->getNome() == playlist.getNome())
-    {
-        return true;
-    }
-
-    return false;
+  if(musicas != nullptr){
+    musicas->remover(musica);
+  }
 }
 
-ostream &operator<<(ostream &cout, Playlist &p)
+void Playlist::remMusica(const Playlist &playlist)
 {
-    cout << "Nome: " << p.getNome() << endl;
-    cout << "Musicas: " << endl;
+  if(musicas != nullptr){
+    musicas->removerElementos(*playlist.getMusicas());
+  }
+}
 
-    No<Musica> *itr = p.getMusicas()->getCabeca();
+No<Musica> *Playlist::findMusica(const Musica &musica) const
+{
+  if(musicas != nullptr){
+    return musicas->buscar(musica);
+  }
 
-    if (itr == nullptr)
-    {
-        cout << "Nenhuma música cadastrada!\n";
-    }
+  return nullptr;
+}
 
-    int count = 1;
+bool Playlist::operator==(const Playlist &playlist)
+{
+  if (nome == playlist.getNome())
+  {
+    return true;
+  }
 
-    while (itr != nullptr)
-    {
-        Musica m = itr->getValor();
-        cout << "[" << count << "] " << m;
+  return false;
+}
 
-        itr = itr->getProximo();
-        count++;
-    }
+ostream &operator<<(ostream &cout, const Playlist &playlist)
+{
+  cout << "Nome: " << playlist.nome << endl;
+  cout << "Musicas: " << endl;
 
+  if (playlist.musicas == nullptr)
+  {
+    cout << "Nenhuma música cadastrada!\n";
     return cout;
+  }
+
+  int count = 1;
+  No<Musica> *itr = playlist.musicas->getCabeca();
+
+  while (itr != nullptr)
+  {
+    Musica m = itr->getValor();
+    cout << "[" << count << "] " << m;
+
+    itr = itr->getProximo();
+    count++;
+  }
+
+  return cout;
 }
+
+Playlist *Playlist::operator+(const Playlist &playlist)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
+  
+  resultado->addMusica(playlist);
+
+  return resultado;
+}
+
+Playlist *Playlist::operator+(const Musica &musica)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
+
+  resultado->addMusica(musica);
+
+  return resultado;
+}
+
+Playlist *Playlist::operator-(const Playlist &playlist)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
+
+  resultado->remMusica(playlist);
+
+  return resultado;
+}
+
+Playlist *Playlist::operator-(const Musica &musica)
+{
+  Playlist *resultado = new Playlist("", *this->musicas);
+
+  resultado->remMusica(musica);
+
+  return resultado;
+}
+
+void operator>>(Playlist &playlist, Musica &musica)
+{
+  No<Musica> extracao;
+  *playlist.getMusicas() >> extracao;
+
+  musica = extracao.getValor();
+}
+
+void operator<<(Playlist &playlist, Musica &musica)
+{
+  *playlist.getMusicas() << musica;
+}
+

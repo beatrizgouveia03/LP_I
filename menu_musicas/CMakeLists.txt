@@ -4,10 +4,11 @@ project(menu_musicas VERSION 1.0 LANGUAGES CXX)
 
 include_directories (include)
 
-add_executable( program 
-                src/main.cpp
-                src/menus.cpp
-                src/Musica.cpp
-                src/Playlist.cpp
-                src/utilities.cpp)
+file(GLOB_RECURSE SOURCE_FILES
+    "src/*.cpp"
+    "src/menus/*.cpp"
+)
+
+add_executable( program  ${SOURCE_FILES})
+
 set_property(TARGET program PROPERTY CXX_STANDARD 20)

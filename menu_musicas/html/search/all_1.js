@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['buscar_1',['buscar',['../a00024.html#a54a16f55989b1016107a7ea6b9df679e',1,'Lista']]],
-  ['buscarporindice_2',['buscarPorIndice',['../a00024.html#a9714089c4ca9dac1c7461cee36acd7cf',1,'Lista']]]
+  ['buscar_2',['buscar',['../a00024.html#a497c9d055f303c4292c9e26aa5cf015b',1,'Lista']]],
+  ['buscarporindice_3',['buscarPorIndice',['../a00024.html#a721cf84cd22fe2af057bd895cfd35616',1,'Lista']]]
 ];
