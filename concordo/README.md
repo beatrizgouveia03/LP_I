@@ -6,6 +6,10 @@ Concordo é um sistema inspirado no Discord, porém funciona apenas em modo text
 - Manipulação de Arquivos
 - Standard Template Library (STL) com uso do vector
 
+Feito por: Beatriz Gouveia Gadelha
+Matrícula: 20220040029
+Matéria/turma: DIM0120 - T01
+
 ## Funcionalidades Implementadas
 
 O sistema Concordo possui as seguintes entidades:
