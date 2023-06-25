@@ -1,8 +1,19 @@
 create-user beatrizgouveia.gadelha0@gmail.com senha123 Beatriz Gouveia Gadelha 
 create-user beatrizgouveia.gadelha0@gmail.com senha123 Beatriz Gouveia Gadelha 
+create-user beatrizgouveia.gadelha0@hotmail.com senha123 Beatriz Gouveia Gadelha 
 login beatrizgouveia.gadelha0@gmail.com senha123
+create-server minha-casa
+set-server-desc minha-casa “Este servidor serve como minha casa,
+sempre estarei nele”
+set-server-desc minha-casa2 “Este servidor serve como minha casa,
+sempre estarei nele”
 login beatrizgouveia.gadelha0@gmail.com 12senha3
 login beatrizgouveia.gadelha0@hotmail.com senha123
+create-server minha-casa
+create-server minha-casa-2
+set-server-desc minha-casa “Este servidor serve como minha casa,
+sempre estarei nele”
 disconnect
+create-server minha-casa
 disconnect
 quit

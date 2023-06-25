@@ -4,9 +4,9 @@
 
 User::User(){/* Empty */};
 
-User::User(const string name, const string email, const string password)
+User::User(const string name, const string email, const string password, const int id)
 {
-  this->id = 0;
+  this->id = id;
   this->name = name;
   this->email = email;
   this->password = password;

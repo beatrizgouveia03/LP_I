@@ -17,7 +17,7 @@ public:
 
   User();
 
-  User(const string name, const string email, const string password);
+  User(const string name, const string email, const string password, const int id);
 
   ~User();
 

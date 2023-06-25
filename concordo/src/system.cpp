@@ -95,7 +95,7 @@ void System::remUser(const User user)
 
 void System::remServer(const Server server)
 {
-  auto aux = findServer(server);
+  auto aux = findServer(server.getName());
   delete aux;
 };
 
@@ -107,7 +107,12 @@ User *System::findUser(const string email)
   return nullptr;
 };
 
-Server *System::findServer(const Server server)
+Server *System::findServer(const string name)
 {
+  for (int i = 0; i < allServers.size(); ++i)
+  {
+    if (allServers[i].getName() == name)
+      return &allServers[i];
+  }
   return nullptr;
 };

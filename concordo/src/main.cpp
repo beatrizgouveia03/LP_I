@@ -52,8 +52,30 @@ int main(){
         cout << "\"Não está conectado\"\n";
       }
     }
+    else if(command == "create-server"){
+      if(system.isLogged()){
+        string name;
+        ss >> name;
+        
+        createServer(system, name);
+      }
+      else{
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "set-server-desc"){
+      string name;
+      string description;
 
-    if(quit){
+      ss >> name;
+      getline(ss, description);
+      description.erase(0, 1);
+
+      setDescription(system, name, description);
+    }
+
+    if (quit)
+    {
       cout << "\"Saindo do concordo\"\n";
       break;
     }
