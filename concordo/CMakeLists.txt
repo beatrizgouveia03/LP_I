@@ -4,7 +4,7 @@ project(concordo VERSION 1.0 LANGUAGES CXX)
 
 include_directories (include)
 
-add_executable( program 
+add_executable( concordo 
                 src/main.cpp
                 src/user.cpp
                 src/server.cpp
@@ -13,4 +13,4 @@ add_executable( program
                 src/channel.cpp              
                 src/channelText.cpp
                 src/channelVoice.cpp)
-set_property(TARGET program PROPERTY CXX_STANDARD 20)
+set_property(TARGET concordo PROPERTY CXX_STANDARD 20)
