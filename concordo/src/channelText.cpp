@@ -40,9 +40,7 @@ void ChannelText::remMessage(const Message message)
 
 Message *ChannelText::findMessage(const Message message)
 {
-  for(Message m : messages){
-    if(m == message) return &m;
-  }
+  return nullptr;
 };
 
 void ChannelText::printMessages() const

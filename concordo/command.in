@@ -1,0 +1,8 @@
+create-user beatrizgouveia.gadelha0@gmail.com senha123 Beatriz Gouveia Gadelha 
+create-user beatrizgouveia.gadelha0@gmail.com senha123 Beatriz Gouveia Gadelha 
+login beatrizgouveia.gadelha0@gmail.com senha123
+login beatrizgouveia.gadelha0@gmail.com 12senha3
+login beatrizgouveia.gadelha0@hotmail.com senha123
+disconnect
+disconnect
+quit

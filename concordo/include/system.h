@@ -10,6 +10,8 @@ class System
 private:
   vector<User> allUsers;
   vector<Server> allServers;
+  int nextID = 1;
+  bool userIsLogged = false;
   User userLogged;
   Server serverLogged;
   Channel channelLoged;
@@ -48,6 +50,10 @@ public:
 
   /* Other methods */ 
 
+  bool isLogged();
+
+  void disconnect();
+
   void addUser(const User user); 
 
   void addServer(const Server server); 
@@ -56,7 +62,7 @@ public:
 
   void remServer(const Server server);
 
-  User *findUser(const User user);
+  User *findUser(const string email);
 
   Server *findServer(const Server server);
 

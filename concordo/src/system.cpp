@@ -51,6 +51,7 @@ void System::setAllServers(const vector<Server> allServers)
 
 void System::setUserLogged(const User userLogged)
 {
+  this->userIsLogged = true;
   this->userLogged = userLogged;
 };
 
@@ -66,6 +67,16 @@ void System::setChannelLoged(const Channel channelLoged)
 
 /* Other methods */
 
+bool System::isLogged()
+{
+  return this->userIsLogged;
+}
+
+void System::disconnect()
+{
+  this->userIsLogged = false;
+}
+
 void System::addUser(const User user)
 {
   allUsers.push_back(user);
@@ -78,7 +89,7 @@ void System::addServer(const Server server)
 
 void System::remUser(const User user)
 {
-  auto aux = findUser(user);
+  auto aux = findUser(user.getEmail());
   delete aux;
 };
 
@@ -88,18 +99,15 @@ void System::remServer(const Server server)
   delete aux;
 };
 
-User *System::findUser(const User user)
+User *System::findUser(const string email)
 {
-  for(auto u : allUsers){
-    if(u == user) return &u;
+  for(int i=0; i<allUsers.size(); ++i){
+    if(allUsers[i].getEmail() == email) return &allUsers[i];
   }
+  return nullptr;
 };
 
 Server *System::findServer(const Server server)
 {
-  for (auto s : allServers)
-  {
-    if (s == server)
-      return &s;
-  }
+  return nullptr;
 };
