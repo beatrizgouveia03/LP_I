@@ -117,6 +117,16 @@ User *System::findUser(const string email)
   return nullptr;
 };
 
+User *System::findUser(const int id)
+{
+  for (auto &u : allUsers)
+  {
+    if (u.getID() == id)
+      return &u;
+  }
+  return nullptr;
+};
+
 Server *System::findServer(const string name)
 {
   for (auto& s : allServers)

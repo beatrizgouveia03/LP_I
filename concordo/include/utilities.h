@@ -18,6 +18,8 @@ void login(System &system, string email, string password){
     User *user = system.findUser(email);
     if(user->getPassword() == password){
       system.setUserLogged(*user);
+      system.setServerLogged(Server());
+      system.setChannelLoged(Channel());
       cout << "\"Logado como " << email << "\"\n";
     }
     else{
@@ -32,7 +34,7 @@ void login(System &system, string email, string password){
 void createServer(System &system, string name){
   if(system.findServer(name) == nullptr){
     Server newServer(name);
-    newServer.setUserID(system.getUserLogged().getID());
+    newServer.setOwnerID(system.getUserLogged().getID());
     newServer.addParticipantID(system.getUserLogged().getID());
     system.addServer(newServer);
 
@@ -47,7 +49,7 @@ void createServer(System &system, string name){
 void setDescription(System &system, string name, string description){
   if(system.findServer(name) != nullptr){
     Server* server = system.findServer(name);
-    if(server->getUserID() == system.getUserLogged().getID()){
+    if(server->getOwnerID() == system.getUserLogged().getID()){
       server->setDescription(description);
 
       cout << "\"Descrição do servidor \'" << name << "\' modificada!\"\n";
@@ -65,7 +67,7 @@ void setCode(System &system, string name, string code){
   if (system.findServer(name) != nullptr)
   {
     Server *server = system.findServer(name);
-    if (server->getUserID() == system.getUserLogged().getID())
+    if (server->getOwnerID() == system.getUserLogged().getID())
     {
       server->setCodeInvite(code);
       if(code != ""){
@@ -90,7 +92,7 @@ void removeServer(System &system, string name){
   if (system.findServer(name) != nullptr)
   {
     Server *server = system.findServer(name);
-    if (server->getUserID() == system.getUserLogged().getID())
+    if (server->getOwnerID() == system.getUserLogged().getID())
     {
       system.remServer(*server);
       cout << "\"Servidor \'" << name << "\' removido\"\n";
@@ -105,3 +107,51 @@ void removeServer(System &system, string name){
     cout << "\"Servidor \'" << name << "\' não existe\"\n";
   }
 };
+
+void enterServer(System &system, string name, string code){
+  if(system.findServer(name) != nullptr){
+    Server* server = system.findServer(name);
+    if(server->getCodeInvite() == code || server->getOwnerID() == system.getUserLogged().getID()){
+      server->addParticipantID(system.getUserLogged().getID());
+      server->setUserID(system.getUserLogged().getID());
+      system.setServerLogged(*server);
+      cout << "\"Entrou no servidor com sucesso\"\n";
+    }
+    else{
+      cout << "\"Servidor requer código de convite\"\n";
+    }
+  }
+  else
+  {
+    cout << "\"Servidor \'" << name << "\' não existe\"\n";
+  }
+}
+
+void leaveServer(System &system){
+  if(system.getServerLogged() != Server()){
+    Server *server = system.findServer(system.getServerLogged().getName());
+    server->setUserID(-1);
+    system.setServerLogged(Server());
+    cout << "\"“Saindo do servidor \'" <<  server->getName() << "\'\"\n";
+  }
+  else
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+  }
+}
+
+void listParticipants(System &system){
+  if (system.getServerLogged() != Server())
+  {
+    Server server = system.getServerLogged();
+    for (int partID : server.getParticipantIDs())
+    {
+      User *part = system.findUser(partID);
+      cout << part->getName() << endl;
+    }
+  }
+  else 
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+  }
+}

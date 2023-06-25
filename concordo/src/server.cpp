@@ -12,6 +12,12 @@ Server::Server(const string name)
 Server::~Server(){/* Empty */};
 
 /* Get methods */
+
+int Server::getOwnerID() const
+{
+  return this->ownerID;
+};
+
 int Server::getUserID() const
 {
   return this->userID;
@@ -43,6 +49,11 @@ vector<int> Server::getParticipantIDs() const
 };
 
 /* Set methods */
+
+void Server::setOwnerID(const int userID)
+{
+  this->ownerID = userID;
+};
 
 void Server::setUserID(const int userID){
   this->userID = userID;
@@ -80,5 +91,8 @@ bool Server::operator==(const Server other){
 };
 
 void Server::addParticipantID(const int id){
+  for(int participantid : participantIDs){
+    if(participantid == id) return;
+  }
   participantIDs.push_back(id);
 };

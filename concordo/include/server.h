@@ -9,6 +9,7 @@ using namespace std;
 class Server
 {
 private:
+  int ownerID;
   int userID;
   string name;
   string description;
@@ -25,6 +26,9 @@ public:
   ~Server();
 
   /* Get methods */
+
+  int getOwnerID() const;
+
   int getUserID() const;
 
   string getName() const;
@@ -38,6 +42,8 @@ public:
   vector<int> getParticipantIDs() const;
 
   /* Set methods */
+
+  void setOwnerID(const int userID);
 
   void setUserID(const int userID);
 

@@ -64,6 +64,8 @@ public:
 
   User *findUser(const string email);
 
+  User *findUser(const int id);
+
   Server *findServer(const string name);
 
 };

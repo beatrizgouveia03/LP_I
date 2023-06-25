@@ -121,6 +121,44 @@ int main(){
         cout << "\"Não está conectado\"\n";
       }
     }
+    else if (command == "enter-server")
+    {
+      if (system.isLogged())
+      {
+        string name;
+        string code;
+
+        ss >> name >> code;
+
+        enterServer(system, name, code);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "leave-server")
+    {
+      if (system.isLogged())
+      {
+        leaveServer(system);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "list-participants")
+    {
+      if (system.isLogged())
+      {
+        listParticipants(system);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
 
     if (quit)
     {
