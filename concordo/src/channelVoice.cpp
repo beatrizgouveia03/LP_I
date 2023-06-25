@@ -4,9 +4,9 @@
 
 ChannelVoice::ChannelVoice(){/* Empty */};
 
-ChannelVoice::ChannelVoice(const Message lastMessage)
+ChannelVoice::ChannelVoice(const string name)
 {
-  this->lastMessage = lastMessage;
+  this->setName(name);
 };
 
 ChannelVoice::~ChannelVoice(){/* Empty */};

@@ -1,6 +1,14 @@
 #include <iostream>
 #include "system.h"
 
+/*!
+ * Creates a new user in the system.
+ *
+ * \param system The adress of the system.
+ * \param email The email of the user.
+ * \param password The password of the user.
+ * \param name The name of the user.
+ */
 void createUser(System &system, string email, string password, string name){
   if(system.findUser(email) == nullptr){
     User newUser(name, email, password, system.getAllUsers().size()+1);
@@ -13,6 +21,13 @@ void createUser(System &system, string email, string password, string name){
   }
 };
 
+/*!
+ * Logs in a user to the system.
+ *
+ * \param system The adress of the system.
+ * \param email The email of the user.
+ * \param password The password of the user.
+ */
 void login(System &system, string email, string password){
   if(system.findUser(email) != nullptr){
     User *user = system.findUser(email);
@@ -31,6 +46,12 @@ void login(System &system, string email, string password){
   }
 }
 
+/*!
+ * Creates a new server in the system.
+ *
+ * \param system The adress of the system.
+ * \param name The name of the server.
+ */
 void createServer(System &system, string name){
   if(system.findServer(name) == nullptr){
     Server newServer(name);
@@ -46,6 +67,13 @@ void createServer(System &system, string name){
   }
 }
 
+/*!
+ * Sets the description of a server.
+ *
+ * \param system The adress fo the system.
+ * \param name The name of the server.
+ * \param description The new description for the server.
+ */
 void setDescription(System &system, string name, string description){
   if(system.findServer(name) != nullptr){
     Server* server = system.findServer(name);
@@ -63,6 +91,13 @@ void setDescription(System &system, string name, string description){
   }
 }
 
+/*!
+ * Sets the invitation code of a server.
+ *
+ * \param system The adress fo the system.
+ * \param name The name of the server.
+ * \param code The new invitation code for the server.
+ */
 void setCode(System &system, string name, string code){
   if (system.findServer(name) != nullptr)
   {
@@ -88,6 +123,12 @@ void setCode(System &system, string name, string code){
   }
 }
 
+/*!
+ * Removes a new server from the system.
+ *
+ * \param system The adress of the system.
+ * \param name The name of the server.
+ */
 void removeServer(System &system, string name){
   if (system.findServer(name) != nullptr)
   {
@@ -108,6 +149,13 @@ void removeServer(System &system, string name){
   }
 };
 
+/*!
+ * Enters a server.
+ *
+ * \param system The adress of the system.
+ * \param name The name of the server.
+ * \param code The invite code for the server.
+ */
 void enterServer(System &system, string name, string code){
   if(system.findServer(name) != nullptr){
     Server* server = system.findServer(name);
@@ -127,6 +175,11 @@ void enterServer(System &system, string name, string code){
   }
 }
 
+/*!
+ * Leaves the server being visualized.
+ *
+ * \param system The adress of the system.
+ */
 void leaveServer(System &system){
   if(system.getServerLogged() != Server()){
     Server *server = system.findServer(system.getServerLogged().getName());
@@ -140,6 +193,11 @@ void leaveServer(System &system){
   }
 }
 
+/*!
+ * Lists all the participants of the server being visualized.
+ *
+ * \param system The adress of the system.
+ */
 void listParticipants(System &system){
   if (system.getServerLogged() != Server())
   {

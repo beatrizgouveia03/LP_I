@@ -4,9 +4,9 @@
 
 ChannelText::ChannelText(){/* Empty */};
 
-ChannelText::ChannelText(const vector<Message> messages)
+ChannelText::ChannelText(const string name)
 {
-  this->messages = messages;
+  this->setName(name);
 };
 
 ChannelText::~ChannelText(){/* Empty */};
