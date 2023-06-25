@@ -54,6 +54,8 @@ public:
   /* Other methods */
 
   bool operator==(const Server other);
+
+  void addParticipantID(const int id);
 };
 
 #endif

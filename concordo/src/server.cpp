@@ -78,3 +78,7 @@ void Server::setParticipantIDs(const vector<int> participantIDs)
 bool Server::operator==(const Server other){
   return name == other.name && description == other.description;
 };
+
+void Server::addParticipantID(const int id){
+  participantIDs.push_back(id);
+};

@@ -64,14 +64,62 @@ int main(){
       }
     }
     else if (command == "set-server-desc"){
-      string name;
-      string description;
+      if (system.isLogged())
+      {
+        string name;
+        string description;
 
-      ss >> name;
-      getline(ss, description);
-      description.erase(0, 1);
+        ss >> name;
+        getline(ss, description);
+        description.erase(0, 1);
 
-      setDescription(system, name, description);
+        setDescription(system, name, description);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if(command == "set-server-invite-code"){
+      if (system.isLogged())
+      {
+        string name;
+        string code;
+
+        ss >> name >> code;
+
+        setCode(system, name, code);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if(command == "list-servers"){
+      if(system.isLogged()){
+        for(Server s : system.getAllServers()){
+          cout << s.getName() << endl;
+        }
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "remove-server")
+    {
+      if (system.isLogged())
+      {
+        string name;
+
+        ss >> name;
+
+        removeServer(system, name);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
     }
 
     if (quit)

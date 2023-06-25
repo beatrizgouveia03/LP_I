@@ -89,30 +89,40 @@ void System::addServer(const Server server)
 
 void System::remUser(const User user)
 {
-  auto aux = findUser(user.getEmail());
-  delete aux;
+  for (auto it = allUsers.begin(); it != allUsers.end(); ++it)
+  {
+    if (*it == user)
+    {
+      allUsers.erase(it);
+      return;
+    }
+  }
 };
 
 void System::remServer(const Server server)
 {
-  auto aux = findServer(server.getName());
-  delete aux;
+  for(auto it = allServers.begin(); it != allServers.end(); ++it){
+    if(*it == server){
+      allServers.erase(it);
+      return;
+    }
+  }
 };
 
 User *System::findUser(const string email)
 {
-  for(int i=0; i<allUsers.size(); ++i){
-    if(allUsers[i].getEmail() == email) return &allUsers[i];
+  for(auto& u : allUsers){
+    if(u.getEmail() == email) return &u;
   }
   return nullptr;
 };
 
 Server *System::findServer(const string name)
 {
-  for (int i = 0; i < allServers.size(); ++i)
+  for (auto& s : allServers)
   {
-    if (allServers[i].getName() == name)
-      return &allServers[i];
+    if (s.getName() == name)
+      return &s;
   }
   return nullptr;
 };
