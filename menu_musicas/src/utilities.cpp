@@ -118,6 +118,8 @@ void lerMusicasDeArquivo(string path, Lista<Musica> *baseMusicas, Lista<Playlist
       musicasNovas->inserir(musica);
     }
 
+    arquivo.close();
+
     // ADICIONAR PLAYLIST COM MUSICAS
     Playlist playlist(playlistAtual, *musicasNovas);
 

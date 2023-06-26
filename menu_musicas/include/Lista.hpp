@@ -226,17 +226,17 @@ public:
   /// @brief Sobrecarga do operador para extração do último nó de uma lista
   /// @param lista Lista da qual será extraído o nó
   /// @param no Nó que será preenchido com o nó extraído da lista
-  friend void operator>>(Lista<T> &lista, No<T> &no)
+  friend void operator>>(Lista<T> *lista, No<T> &no)
   {
-      no.setValor(lista.cauda->getValor());
-      lista.remover(lista.cauda->getValor());
+      no.setValor(lista->getCauda()->getValor());
+      lista->remover(lista->getCauda()->getValor());
   }
 
   /// @brief Sobrecarga do operador para inserção de um nó em uma lista
   /// @param lista Lista em que será inserido o nó
   /// @param no Nó que será inserido na lista
-  friend void operator<<(Lista<T> &lista, T &valor) {
-    lista.inserir(valor);
+  friend void operator<<(Lista<T> *lista, T &valor) {
+    lista->inserir(valor);
   }
 };
 
