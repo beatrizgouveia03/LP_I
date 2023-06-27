@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['server_40',['Server',['../db/d00/classServer.html',1,'Server'],['../db/d00/classServer.html#ad5ec9462b520e59f7ea831e157ee5e59',1,'Server::Server()'],['../db/d00/classServer.html#a87500e00996a5eab10e91d3c5a09f9ee',1,'Server::Server(const string name)']]],
+  ['setallservers_41',['setAllServers',['../dd/d2d/classSystem.html#ae0f89675a1db85be6a1ac168e1bd5c75',1,'System']]],
+  ['setallusers_42',['setAllUsers',['../dd/d2d/classSystem.html#a2071c1a26ac5aa9c712460b3e838f5c6',1,'System']]],
+  ['setchannelloged_43',['setChannelLoged',['../dd/d2d/classSystem.html#a62ed0cf192e2e7ac70dfb64977c75ad0',1,'System']]],
+  ['setchannels_44',['setChannels',['../db/d00/classServer.html#aa6a6d5a70508d3242f5ab24b324f9e46',1,'Server']]],
+  ['setcodeinvite_45',['setCodeInvite',['../db/d00/classServer.html#a4cf08cf8b195982076ad78fc45594d6e',1,'Server']]],
+  ['setcontent_46',['setContent',['../d6/d28/classMessage.html#a1a277734846a6c8d20b69f90cad3bfbc',1,'Message']]],
+  ['setdatehour_47',['setDateHour',['../d6/d28/classMessage.html#aa6c46cca902803846eae95d3985c4d07',1,'Message']]],
+  ['setdescription_48',['setDescription',['../db/d00/classServer.html#a76cc28690223f66ae7ff457d01fdea83',1,'Server']]],
+  ['setemail_49',['setEmail',['../d9/dc0/classUser.html#a0ad21faca43bdda9f1e9519a2146a0bd',1,'User']]],
+  ['setid_50',['setID',['../d9/dc0/classUser.html#a61307d114bc862d35c9b13a45873cdfa',1,'User']]],
+  ['setlastmessage_51',['setLastMessage',['../db/da0/classChannelVoice.html#a22f3db24717fa9fe9150b8d27390d35b',1,'ChannelVoice']]],
+  ['setmessages_52',['setMessages',['../df/dad/classChannelText.html#adcacc3c8849d195bda7db7f846386035',1,'ChannelText']]],
+  ['setname_53',['setName',['../d2/d48/classChannel.html#accc613228bb14a445f5632f679efafca',1,'Channel::setName()'],['../db/d00/classServer.html#a75607d0dd821152c84780a382de59c17',1,'Server::setName()'],['../d9/dc0/classUser.html#a67d2277ebc0a16cdc058b09b8bbb1c84',1,'User::setName()']]],
+  ['setownerid_54',['setOwnerID',['../db/d00/classServer.html#a604ac2501ed04c117c88f9b8e488e2df',1,'Server']]],
+  ['setparticipantids_55',['setParticipantIDs',['../db/d00/classServer.html#a9221c66e3dea3dba7fd21b65b0885fe2',1,'Server']]],
+  ['setpassword_56',['setPassword',['../d9/dc0/classUser.html#a436666246c70082c336d54a0b2d1bb51',1,'User']]],
+  ['setsendfrom_57',['setSendFrom',['../d6/d28/classMessage.html#af5aa7b76db8a0b4d212f50cbc714b0cf',1,'Message']]],
+  ['setserverlogged_58',['setServerLogged',['../dd/d2d/classSystem.html#ac4fb25a8715ed4eb73067b433b8bd01e',1,'System']]],
+  ['setuserid_59',['setUserID',['../db/d00/classServer.html#a1596f219845e3f6f99faa6e94cac5159',1,'Server']]],
+  ['setuserlogged_60',['setUserLogged',['../dd/d2d/classSystem.html#a3623eebf42b94bcad5efc67ff2d229ae',1,'System']]],
+  ['system_61',['System',['../dd/d2d/classSystem.html#a09cce7054d2504c96beefb46326b7bcd',1,'System::System(vector&lt; User &gt; allUsers, vector&lt; Server &gt; allServers)'],['../dd/d2d/classSystem.html#ae317936c9bcf1374d61745572e0f2f8a',1,'System::System()'],['../dd/d2d/classSystem.html',1,'System']]]
+];
