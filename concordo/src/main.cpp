@@ -23,25 +23,40 @@ int main(){
       quit = true;
     }
     else if (command == "create-user")
-    {
-      string email;
-      string senha;
-      string name;
+    { 
+      if(!system.isLogged())
+      {
+        string email;
+        string senha;
+        string name;
 
-      ss >> email >> senha;
-      getline(ss, name);
-      name.erase(0,1);
+        ss >> email >> senha;
+        getline(ss, name);
+        name.erase(0,1);
 
-      createUser(system, email, senha, name);
+        createUser(system, email, senha, name);
+      }
+      else
+      {
+        cout << "\"Usuário já logado\"\n";
+      }
     }
     else if (command == "login")
     {
-      string email;
-      string senha;
+      if (!system.isLogged())
+      {
+        string email;
+        string senha;
 
-      ss >> email >> senha;
+        ss >> email >> senha;
 
-      login(system, email, senha);
+        login(system, email, senha);
+      }
+    
+      else
+      {
+        cout << "\"Usuário já logado\"\n";
+      }
     }
     else if(command == "disconnect"){
       if(system.isLogged()){
