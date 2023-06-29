@@ -23,6 +23,9 @@ enter-server minha-casa
 leave-server
 enter-server minha-casa 1456
 list-participants
+list-channels
+create-channel teste texto
+list-channels
 leave-server
 list-participants
 leave-server

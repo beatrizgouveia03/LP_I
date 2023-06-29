@@ -61,7 +61,7 @@ int main(){
     else if(command == "disconnect"){
       if(system.isLogged()){
         system.disconnect();
-        cout << "\"Desconectando usuário " << system.getUserLogged().getEmail() << "\"\n";
+        cout << "\"Desconectando usuário " << system.findUser(system.getUserLoggedID())->getEmail() << "\"\n";
       }
       else{
         cout << "\"Não está conectado\"\n";
@@ -168,6 +168,33 @@ int main(){
       if (system.isLogged())
       {
         listParticipants(system);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "list-channels")
+    {
+      if (system.isLogged())
+      {
+        listChannels(system);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "create-channel")
+    {
+      if (system.isLogged())
+      {
+        string name;
+        string type;
+
+        ss >> name >> type;
+
+        createChannel(system, name, type);
       }
       else
       {

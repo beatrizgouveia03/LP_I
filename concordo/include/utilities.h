@@ -1,5 +1,7 @@
 #include <iostream>
 #include "system.h"
+#include "channelText.h"
+#include "channelVoice.h"
 
 /*!
  * Creates a new user in the system.
@@ -32,9 +34,9 @@ void login(System &system, string email, string password){
   if(system.findUser(email) != nullptr){
     User *user = system.findUser(email);
     if(user->getPassword() == password){
-      system.setUserLogged(*user);
-      system.setServerLogged(Server());
-      system.setChannelLoged(Channel());
+      system.setUserLoggedID(user->getID());
+      system.setServerLogged();
+      system.setChannelLoged();
       cout << "\"Logado como " << email << "\"\n";
     }
     else{
@@ -55,8 +57,8 @@ void login(System &system, string email, string password){
 void createServer(System &system, string name){
   if(system.findServer(name) == nullptr){
     Server newServer(name);
-    newServer.setOwnerID(system.getUserLogged().getID());
-    newServer.addParticipantID(system.getUserLogged().getID());
+    newServer.setOwnerID(system.getUserLoggedID());
+    newServer.addParticipantID(system.getUserLoggedID());
     system.addServer(newServer);
 
     cout << "\"Servidor criado\"\n";
@@ -77,7 +79,7 @@ void createServer(System &system, string name){
 void setDescription(System &system, string name, string description){
   if(system.findServer(name) != nullptr){
     Server* server = system.findServer(name);
-    if(server->getOwnerID() == system.getUserLogged().getID()){
+    if(server->getOwnerID() == system.getUserLoggedID()){
       server->setDescription(description);
 
       cout << "\"Descrição do servidor \'" << name << "\' modificada!\"\n";
@@ -102,7 +104,7 @@ void setCode(System &system, string name, string code){
   if (system.findServer(name) != nullptr)
   {
     Server *server = system.findServer(name);
-    if (server->getOwnerID() == system.getUserLogged().getID())
+    if (server->getOwnerID() == system.getUserLoggedID())
     {
       server->setCodeInvite(code);
       if(code != ""){
@@ -133,7 +135,7 @@ void removeServer(System &system, string name){
   if (system.findServer(name) != nullptr)
   {
     Server *server = system.findServer(name);
-    if (server->getOwnerID() == system.getUserLogged().getID())
+    if (server->getOwnerID() == system.getUserLoggedID())
     {
       system.remServer(*server);
       cout << "\"Servidor \'" << name << "\' removido\"\n";
@@ -159,10 +161,10 @@ void removeServer(System &system, string name){
 void enterServer(System &system, string name, string code){
   if(system.findServer(name) != nullptr){
     Server* server = system.findServer(name);
-    if(server->getCodeInvite() == code || server->getOwnerID() == system.getUserLogged().getID()){
-      server->addParticipantID(system.getUserLogged().getID());
-      server->setUserID(system.getUserLogged().getID());
-      system.setServerLogged(*server);
+    if(server->getCodeInvite() == code || server->getOwnerID() == system.getUserLoggedID()){
+      server->addParticipantID(system.getUserLoggedID());
+      server->setUserID(system.getUserLoggedID());
+      system.setServerLogged(server);
       cout << "\"Entrou no servidor com sucesso\"\n";
     }
     else{
@@ -181,11 +183,11 @@ void enterServer(System &system, string name, string code){
  * \param system The adress of the system.
  */
 void leaveServer(System &system){
-  if(system.getServerLogged() != Server()){
-    Server *server = system.findServer(system.getServerLogged().getName());
+  if(system.getServerLogged() != nullptr){
+    Server *server = system.findServer(system.getServerLogged()->getName());
     server->setUserID(-1);
-    system.setServerLogged(Server());
-    cout << "\"“Saindo do servidor \'" <<  server->getName() << "\'\"\n";
+    system.setServerLogged();
+    cout << "\"Saindo do servidor \'" <<  server->getName() << "\'\"\n";
   }
   else
   {
@@ -199,10 +201,10 @@ void leaveServer(System &system){
  * \param system The adress of the system.
  */
 void listParticipants(System &system){
-  if (system.getServerLogged() != Server())
+  if (system.getServerLogged() != nullptr)
   {
-    Server server = system.getServerLogged();
-    for (int partID : server.getParticipantIDs())
+    Server* server = system.getServerLogged();
+    for (int partID : server->getParticipantIDs())
     {
       User *part = system.findUser(partID);
       cout << part->getName() << endl;
@@ -213,3 +215,83 @@ void listParticipants(System &system){
     cout << "\"Você não está visualizando nenhum servidor\"\n";
   }
 }
+
+/*!
+ * Lists all the channels of the server being visualized.
+ *
+ * \param system The adress of the system.
+ */
+void listChannels(System &system)
+{
+  if (system.getServerLogged() !=  nullptr)
+  {
+    Server* server = system.getServerLogged();
+    cout << "#canais de texto\n";
+    for (Channel* c : server->getChannels())
+    {
+      if (ChannelText *ct = dynamic_cast<ChannelText *>(c))
+      {
+        cout << ct->getName() << endl;
+      }
+    }
+    cout << "#canais de audio\n";
+    for (Channel *c : server->getChannels())
+    {
+      if (ChannelVoice *cv = dynamic_cast<ChannelVoice *>(c))
+      {
+        cout << cv->getName() << endl;
+      }
+    }
+  }
+  else
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+  }
+}
+
+void createChannel(System &system, string name, string type){
+  if (system.getServerLogged() != nullptr)
+  {
+    Server* server = system.findServer(system.getServerLogged()->getName());
+
+    if(type == "texto"){
+      for (Channel *c : server->getChannels())
+      {
+        if (ChannelText *ct = dynamic_cast<ChannelText *>(c))
+        {
+          if (ct->getName() == name){
+            cout << "\"Canal de texto \'" << name << "\' já existe!\"\n";
+            return;
+          }
+          delete ct;
+        }
+      }
+      server->addChannel(new ChannelText(name));
+      cout << "\"Canal de texto \'" << name << "\' criado\"\n";
+    }
+    else if (type == "voz")
+    {
+      for (Channel *c : server->getChannels())
+      {
+        if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c))
+        {
+          if (ct->getName() == name)
+          {
+            cout << "\"Canal de voz \'" << name << "\' já existe!\"\n";
+            return;
+          }
+        }
+      }
+      server->addChannel(new ChannelVoice(name));
+      cout << "\"Canal de voz \'" << name << "\' criado\"\n";
+    }
+    else{
+      cout << "Tipo de canal inválido.\n Tipos de canais disponíveis:\n - texto\n - voz\n";
+    }
+  }
+  else
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+  }
+}
+

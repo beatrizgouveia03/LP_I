@@ -1,7 +1,6 @@
 #ifndef SYSTEM_M
 #define SYSTEM_H
 
-#include "channel.h"
 #include "server.h"
 #include "user.h"
 
@@ -12,9 +11,9 @@ private:
   vector<Server> allServers;
   int nextID = 1;
   bool userIsLogged = false;
-  User userLogged;
-  Server serverLogged;
-  Channel channelLoged;
+  int userLoggedID;
+  Server* serverLogged;
+  Channel* channelLoged;
 public:
   /* Constructors and destructor*/
 
@@ -53,25 +52,25 @@ public:
   vector<Server> getAllServers() const;
 
   /*!
-   * Retrieves the user that is logged in the system.
+   * Retrieves the logged user ID in the system.
    *
-   * \return The user that is logged in the system.
+   * \return The logged user ID in the system.
    */
-  User getUserLogged() const;
+  int getUserLoggedID() const;
 
   /*!
    * Retrieves the server that is being visualized in the system.
    *
    * \return The server that is being visualized in the system.
    */
-  Server getServerLogged() const;
+  Server* getServerLogged() const;
 
   /*!
    * Retrieves the channel that is being visualised in the system.
    *
    * \return The channel that is being visualised in the system.
    */
-  Channel getChannelLoged() const;  
+  Channel* getChannelLoged() const;  
 
   /* Set methods */
 
@@ -90,25 +89,25 @@ public:
   void setAllServers(const vector<Server> allServers);
 
   /*!
-   * Sets the user that is logged in the system.
+   * Sets the logged user ID in the system.
    *
-   * \param userLoged The user that is logged in the system.
+   * \param userLoged The logged user ID in the system.
    */
-  void setUserLogged(const User userLogged);
+  void setUserLoggedID(const int userLoggedID);
 
   /*!
    * Sets the server that is being visualized in the system.
    *
    * \param serverLoged The server that is being visualized in the system.
    */
-  void setServerLogged(const Server serverLogged);
+  void setServerLogged(Server *serverLogged = nullptr);
 
   /*!
    * Sets the channel that is being visualized in the system.
    *
    * \param channelLoged The channel that is being visualized in the system.
    */
-  void setChannelLoged(const Channel channelLoged); 
+  void setChannelLoged(Channel *channelLoged = nullptr); 
 
   /* Other methods */
 

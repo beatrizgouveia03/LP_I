@@ -50,9 +50,9 @@ public:
   /* Other methods */
 
   /*!
-   * Prints the last message from the voice channel.
+   * lists the last message from the voice channel.
    */
-  void printLastMessage() const;
+  void listChannel() const override;
 };
 
 #endif

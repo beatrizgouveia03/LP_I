@@ -73,9 +73,11 @@ public:
   Message* findMessage(const Message message);
 
   /*!
-   * Prints all the messages from the text channel.
+   * Lists all the messages from the text channel.
    */
-  void printMessages() const;
+  void listChannel() const override;
+
+
 };
 
 #endif

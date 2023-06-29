@@ -154,6 +154,13 @@ public:
    * \param id The participant id to be added.
    */
   void addParticipantID(const int id);
+
+  /*!
+   * Adds a channel to the list of the server.
+   *
+   * \param channel The channel to be added.
+   */
+  void addChannel(Channel* channel);
 };
 
 #endif

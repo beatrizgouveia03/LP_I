@@ -22,17 +22,17 @@ vector<Server> System::getAllServers() const
   return this->allServers;
 };
 
-User System::getUserLogged() const
+int System::getUserLoggedID() const
 {
-  return this->userLogged;
+  return this->userLoggedID;
 };
 
-Server System::getServerLogged() const
+Server* System::getServerLogged() const
 {
   return this->serverLogged;
 };
 
-Channel System::getChannelLoged() const
+Channel* System::getChannelLoged() const
 {
   return this->channelLoged;
 };
@@ -49,18 +49,18 @@ void System::setAllServers(const vector<Server> allServers)
   this->allServers = allServers;
 };
 
-void System::setUserLogged(const User userLogged)
+void System::setUserLoggedID(const int userLoggedID)
 {
   this->userIsLogged = true;
-  this->userLogged = userLogged;
+  this->userLoggedID = userLoggedID;
 };
 
-void System::setServerLogged(const Server serverLogged)
+void System::setServerLogged(Server *serverLogged)
 {
   this->serverLogged = serverLogged;
 };
 
-void System::setChannelLoged(const Channel channelLoged)
+void System::setChannelLoged(Channel *channelLoged)
 {
   this->channelLoged = channelLoged;
 };

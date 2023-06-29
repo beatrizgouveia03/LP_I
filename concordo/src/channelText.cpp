@@ -43,7 +43,7 @@ Message *ChannelText::findMessage(const Message message)
   return nullptr;
 };
 
-void ChannelText::printMessages() const
+void ChannelText::listChannel() const
 {
   for(Message m : messages){
     cout << m.getDateHour() << " ";

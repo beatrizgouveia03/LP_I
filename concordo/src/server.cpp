@@ -96,3 +96,7 @@ void Server::addParticipantID(const int id){
   }
   participantIDs.push_back(id);
 };
+
+void Server::addChannel(Channel* channel){
+  channels.push_back(channel);
+};

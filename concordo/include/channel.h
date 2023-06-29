@@ -46,6 +46,14 @@ public:
    * \param name The name to be set for the channel.
    */
   void setName(const string name);
+
+
+  /* Other methods */
+
+  /*!
+   * Lists the channel in the terminal
+   */
+  virtual void listChannel() const = 0;
 };
 
 #endif

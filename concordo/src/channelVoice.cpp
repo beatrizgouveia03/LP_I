@@ -27,7 +27,7 @@ void ChannelVoice::setLastMessage(const Message lastMessage)
 
 /* Other methods */
 
-void ChannelVoice::printLastMessage() const
+void ChannelVoice::listChannel() const
 {
   cout << lastMessage.getDateHour() << " ";
   cout << lastMessage.getSendFrom() << " : ";
