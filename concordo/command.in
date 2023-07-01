@@ -25,6 +25,17 @@ enter-server minha-casa 1456
 list-participants
 list-channels
 create-channel teste texto
+create-channel teste texto
+create-channel teste voz
+enter-channel teste-2
+leave-channel
+enter-channel teste
+enter-channel teste
+list-messages
+send-message Testando mensagens!
+list-messages
+leave-channel
+leave-channel
 list-channels
 leave-server
 list-participants

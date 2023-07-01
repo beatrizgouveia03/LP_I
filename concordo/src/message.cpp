@@ -4,7 +4,7 @@
 
 Message::Message(){/* Empty */};
 
-Message::Message(const string dateHour, const int sendFrom, const string content)
+Message::Message(const string dateHour, const string sendFrom, const string content)
 {
   this->dateHour = dateHour;
   this->sendFrom = sendFrom;
@@ -20,7 +20,7 @@ string Message::getDateHour() const
   return this->dateHour;
 };
 
-int Message::getSendFrom() const
+string Message::getSendFrom() const
 {
   return this->sendFrom;
 };
@@ -37,7 +37,7 @@ void Message::setDateHour(const string dateHour)
   this->dateHour = dateHour;
 };
 
-void Message::setSendFrom(const int sendFrom)
+void Message::setSendFrom(const string sendFrom)
 {
   this->sendFrom = sendFrom;
 };

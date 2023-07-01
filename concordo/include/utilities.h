@@ -1,4 +1,7 @@
+#include <ctime>
+#include <chrono>
 #include <iostream>
+
 #include "system.h"
 #include "channelText.h"
 #include "channelVoice.h"
@@ -354,3 +357,82 @@ void leaveChannel(System &system)
     cout << "\"Você não está visualizando nenhum servidor\"\n";
   }
 }
+
+string formatDateTime(const chrono::system_clock::time_point &timePoint, const string &format)
+{
+  time_t currentTime = chrono::system_clock::to_time_t(timePoint);
+  tm *timeinfo = localtime(&currentTime);
+
+  const int bufferSize = 100;
+  char buffer[bufferSize];
+
+  strftime(buffer, bufferSize, format.c_str(), timeinfo);
+
+  return string(buffer);
+}
+
+void sendMessage(System &system, string content){
+  Server* s = system.getServerLogged();
+  Channel* c = system.getChannelLogged();
+  int userID = system.getUserLoggedID();
+  string sendFrom = system.findUser(userID)->getName();
+
+  if (s == nullptr)
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+    return;
+  }
+  if(c == nullptr){
+    cout << "\"Você não está visualizando nenhum canal!\"\n";
+    return;
+  }
+  chrono::system_clock::time_point now = chrono::system_clock::now();
+  string dateHour = formatDateTime(now, "<%d/%m/%Y - %H:%M>");
+
+  Message newMessage(dateHour, sendFrom, content);
+
+  if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c))
+  {
+    ct->setLastMessage(newMessage);
+  }
+  else
+  {
+    ChannelText *cv = dynamic_cast<ChannelText *>(c);
+    cv->addMessage(newMessage);
+  }
+}
+
+void listMessages(System &system){
+  Server *s = system.getServerLogged();
+  Channel *c = system.getChannelLogged();
+
+  if (s == nullptr)
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+    return;
+  }
+  if (c == nullptr)
+  {
+    cout << "\"Você não está visualizando nenhum canal!\"\n";
+    return;
+  }
+
+  if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c)){
+    if(ct->getLastMessage() != Message()){
+      ct->listChannel();
+    }
+    else{
+      cout << "\"Sem mensagem para exibir\"\n";
+    }
+  }else{
+    ChannelText *cv = dynamic_cast<ChannelText *>(c);
+    if(!(cv->getMessages().empty())){
+      cv->listChannel();
+    }
+    else
+    {
+      cout << "\"Sem mensagens para exibir\"\n";
+    }
+  }
+}
+

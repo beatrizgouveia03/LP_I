@@ -9,7 +9,7 @@ class Message
 {
 private:
   string dateHour;
-  int sendFrom;
+  string sendFrom;
   string content;
 public:
   /* Constructors and destructor */
@@ -27,7 +27,7 @@ public:
    * \param sentFrom The user id that sent the message.
    * \param content The content of the message.
    */
-  Message(const string dateHour, const int sendFrom, const string content);
+  Message(const string dateHour, const string sendFrom, const string content);
 
   /*!
    * Default destructor.
@@ -48,7 +48,7 @@ public:
    *
    * \return The user id that sent the message.
    */
-  int getSendFrom() const;
+  string getSendFrom() const;
 
   /*!
    * Retrieves the content of the message.
@@ -71,7 +71,7 @@ public:
    *
    * \param sendFrom The user id that sent the message.
    */
-  void setSendFrom(const int sendFrom);
+  void setSendFrom(const string sendFrom);
 
   /*!
    * Sets content of the message.

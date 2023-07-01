@@ -46,8 +46,8 @@ Message *ChannelText::findMessage(const Message message)
 void ChannelText::listChannel() const
 {
   for(Message m : messages){
-    cout << m.getDateHour() << " ";
-    cout << m.getSendFrom() << " : ";
+    cout << m.getSendFrom();
+    cout << m.getDateHour() << ": ";
     cout << m.getContent()  << endl;
   }
 };

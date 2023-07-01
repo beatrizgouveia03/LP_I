@@ -227,6 +227,33 @@ int main(){
         cout << "\"Não está conectado\"\n";
       }
     }
+    else if (command == "send-message")
+    {
+      if (system.isLogged())
+      {
+        string content;
+
+        getline(ss, content);
+        content.erase(0, 1);
+        
+        sendMessage(system, content);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "list-messages")
+    {
+      if (system.isLogged())
+      {
+        listMessages(system);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
 
     if (quit)
     {
