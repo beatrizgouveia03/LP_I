@@ -36,7 +36,7 @@ void login(System &system, string email, string password){
     if(user->getPassword() == password){
       system.setUserLoggedID(user->getID());
       system.setServerLogged();
-      system.setChannelLoged();
+      system.setChannelLogged();
       cout << "\"Logado como " << email << "\"\n";
     }
     else{
@@ -263,10 +263,10 @@ void createChannel(System &system, string name, string type){
             cout << "\"Canal de texto \'" << name << "\' já existe!\"\n";
             return;
           }
-          delete ct;
         }
       }
-      server->addChannel(new ChannelText(name));
+      ChannelText newChannel(name);
+      server->addChannel(newChannel);
       cout << "\"Canal de texto \'" << name << "\' criado\"\n";
     }
     else if (type == "voz")
@@ -282,7 +282,8 @@ void createChannel(System &system, string name, string type){
           }
         }
       }
-      server->addChannel(new ChannelVoice(name));
+      ChannelVoice newChannel(name);
+      server->addChannel(newChannel);
       cout << "\"Canal de voz \'" << name << "\' criado\"\n";
     }
     else{
@@ -295,3 +296,61 @@ void createChannel(System &system, string name, string type){
   }
 }
 
+/*!
+ * Enters a channel of the server being visualized.
+ *
+ * \param system The adress of the system.
+ * \param name The name of the channel.
+ */
+void enterChannel(System &system, string name)
+{
+  if (system.getServerLogged() != nullptr)
+  {
+    if(system.getChannelLogged() == nullptr){
+      Server *server = system.findServer(system.getServerLogged()->getName());
+    
+      for (Channel *c : server->getChannels())
+      {
+        if (c->getName() == name)
+        {
+          system.setChannelLogged(c);
+          cout << "\"Entrou no canal \'" << name << "\'\"\n";
+          return;
+        }
+      } 
+      cout << "\"Canal \'" << name << "\' não existe\"\n";
+    }
+    else{
+      cout << "\"Você já está visualizando um canal!\"\n";
+    }
+  }
+  else
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+  }
+}
+
+/*!
+ * Leaves the channel being visualized.
+ *
+ * \param system The adress of the system.
+ */
+void leaveChannel(System &system)
+{
+  if (system.getServerLogged() != nullptr)
+  {
+    if (system.getChannelLogged() != nullptr)
+    {
+      system.setChannelLogged(nullptr);
+      cout << "\"Saindo do canal\"\n";
+    }
+    else
+    {
+      cout << "\"Você não está visualizando nenhum canal!\"\n";
+    }
+  }
+  else
+  {
+    cout << "\"Você não está visualizando nenhum servidor\"\n";
+  }
+}

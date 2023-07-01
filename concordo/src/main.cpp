@@ -201,6 +201,32 @@ int main(){
         cout << "\"Não está conectado\"\n";
       }
     }
+    else if (command == "enter-channel")
+    {
+      if (system.isLogged())
+      {
+        string name;
+
+        ss >> name;
+
+        enterChannel(system, name);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
+    else if (command == "leave-channel")
+    {
+      if (system.isLogged())
+      {
+        leaveChannel(system);
+      }
+      else
+      {
+        cout << "\"Não está conectado\"\n";
+      }
+    }
 
     if (quit)
     {
