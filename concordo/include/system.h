@@ -13,7 +13,7 @@ private:
   bool userIsLogged = false;
   int userLoggedID;
   Server* serverLogged;
-  Channel* channelLoged;
+  Channel* channelLogged;
 public:
   /* Constructors and destructor*/
 
@@ -70,7 +70,7 @@ public:
    *
    * \return The channel that is being visualised in the system.
    */
-  Channel* getChannelLoged() const;  
+  Channel* getChannelLogged() const;  
 
   /* Set methods */
 
@@ -91,23 +91,23 @@ public:
   /*!
    * Sets the logged user ID in the system.
    *
-   * \param userLoged The logged user ID in the system.
+   * \param userLogged The logged user ID in the system.
    */
   void setUserLoggedID(const int userLoggedID);
 
   /*!
    * Sets the server that is being visualized in the system.
    *
-   * \param serverLoged The server that is being visualized in the system.
+   * \param serverLogged The server that is being visualized in the system.
    */
   void setServerLogged(Server *serverLogged = nullptr);
 
   /*!
    * Sets the channel that is being visualized in the system.
    *
-   * \param channelLoged The channel that is being visualized in the system.
+   * \param channelLogged The channel that is being visualized in the system.
    */
-  void setChannelLoged(Channel *channelLoged = nullptr); 
+  void setChannelLogged(Channel *channelLogged = nullptr); 
 
   /* Other methods */
 

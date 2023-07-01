@@ -32,9 +32,9 @@ Server* System::getServerLogged() const
   return this->serverLogged;
 };
 
-Channel* System::getChannelLoged() const
+Channel* System::getChannelLogged() const
 {
-  return this->channelLoged;
+  return this->channelLogged;
 };
 
 /* Set methods */
@@ -60,9 +60,9 @@ void System::setServerLogged(Server *serverLogged)
   this->serverLogged = serverLogged;
 };
 
-void System::setChannelLoged(Channel *channelLoged)
+void System::setChannelLogged(Channel *channelLogged)
 {
-  this->channelLoged = channelLoged;
+  this->channelLogged = channelLogged;
 };
 
 /* Other methods */
