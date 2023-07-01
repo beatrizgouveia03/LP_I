@@ -3,6 +3,8 @@
 
 #include <vector>
 #include "channel.h"
+#include "channelText.h"
+#include "channelVoice.h"
 
 using namespace std;
 
@@ -156,11 +158,18 @@ public:
   void addParticipantID(const int id);
 
   /*!
-   * Adds a channel to the list of the server.
+   * Adds a text channel to the list of the server.
    *
-   * \param channel The channel to be added.
+   * \param channelT The text channel to be added.
    */
-  void addChannel(Channel* channel);
+  void addChannel(const ChannelText channelT);
+
+  /*!
+   * Adds a voice channel to the list of the server.
+   *
+   * \param channelV The voice channel to be added.
+   */
+  void addChannel(const ChannelVoice channelV);
 };
 
 #endif
