@@ -24,7 +24,7 @@ public:
    * the user id that sent the message and its content.
    *
    * \param dateHour The date/hours of the message.
-   * \param sentFrom The user id that sent the message.
+   * \param sentFrom The name of the user that sent the message.
    * \param content The content of the message.
    */
   Message(const string dateHour, const string sendFrom, const string content);
@@ -41,21 +41,21 @@ public:
    *
    * \return The date/hour of the message.
    */
-  string getDateHour() const;
+  string get_date_hour() const;
 
   /*!
-   * Retrieves the user id that sent the message.
+   * Retrieves the name of the user that sent the message.
    *
-   * \return The user id that sent the message.
+   * \return The name of the user that sent the message.
    */
-  string getSendFrom() const;
+  string get_send_from() const;
 
   /*!
    * Retrieves the content of the message.
    *
    * \return The content of the message.
    */
-  string getContent() const;
+  string get_content() const;
 
   /* Set methods */
 
@@ -64,21 +64,21 @@ public:
    *
    * \param dateHour The date/hour of the message.
    */
-  void setDateHour(const string dateHour);
+  void set_date_hour(const string dateHour);
 
   /*!
-   * Sets the user id that sent the message.
+   * Sets the name of the user that sent the message.
    *
-   * \param sendFrom The user id that sent the message.
+   * \param sendFrom The name of the user that sent the message.
    */
-  void setSendFrom(const string sendFrom);
+  void set_send_from(const string sendFrom);
 
   /*!
    * Sets content of the message.
    *
    * \param dateHour The content of the message.
    */
-  void setContent(const string content);
+  void set_content(const string content);
 
   /* Other methods */
 

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['findmessage_9',['findMessage',['../df/dad/classChannelText.html#aa69630d4dd579a4213054c91c702cba4',1,'ChannelText']]],
-  ['findserver_10',['findServer',['../dd/d2d/classSystem.html#a48ec209baff0b2dec25b8ee14b962c39',1,'System']]],
-  ['finduser_11',['findUser',['../dd/d2d/classSystem.html#a81ca7b08e339836b06a7c88978f06bf4',1,'System::findUser(const string email)'],['../dd/d2d/classSystem.html#a1eebe117f9a3ca5e8dc2a4ca7671f11f',1,'System::findUser(const int id)']]]
+  ['find_5fmessage_10',['find_message',['../df/dad/classChannelText.html#aef13a47d101f1e9f180a32486f8f611f',1,'ChannelText']]],
+  ['find_5fserver_11',['find_server',['../dd/d2d/classSystem.html#aea05ef69ee00fc0ea3b495774f41ced9',1,'System']]],
+  ['find_5ftext_5fchannel_12',['find_text_channel',['../dd/d2d/classSystem.html#acf8a03e628d016b030468df3ada6f3e5',1,'System']]],
+  ['find_5fuser_13',['find_user',['../dd/d2d/classSystem.html#accb49d0f81ece575ce2c99e31f1307db',1,'System::find_user(const string email)'],['../dd/d2d/classSystem.html#a6cf32fffeaf8ad79876973660d636ddd',1,'System::find_user(const int id)']]],
+  ['find_5fvoice_5fchannel_14',['find_voice_channel',['../dd/d2d/classSystem.html#a6724b53041c0a8b0bf85452190ebad56',1,'System']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Concordo: Concordo - Clone do Discord</title>
+<title>Concordo: Concordo - Discord Clone</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Concordo
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -63,100 +63,119 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Concordo - Clone do Discord </div>  </div>
+<div class="title">Concordo - Discord Clone </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> Concordo é um sistema inspirado no Discord, porém funciona apenas em modo texto, sem recursos de rede. O projeto foi implementado em C++ e utiliza os seguintes recursos:</p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> Concordo is a system inspired by Discord, but it operates only in text mode without networking capabilities. The project is implemented in C++ and utilizes the following features:</p>
 <ul>
-<li>Herança e Classes abstratas</li>
-<li>Manipulação de Arquivos</li>
-<li>Standard Template Library (STL) com uso do vector</li>
+<li>Inheritance and abstract classes</li>
+<li>File manipulation</li>
+<li>Standard Template Library (STL) with the use of vectors</li>
 </ul>
-<p>Feito por: Beatriz Gouveia Gadelha Matrícula: 20220040029 Matéria/turma: DIM0120 - T01</p>
+<p>Created by: Beatriz Gouveia Gadelha Registration number: 20220040029 Subject/class: DIM0120 - T01</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Funcionalidades Implementadas</h1>
-<p>O sistema Concordo possui as seguintes entidades:</p>
+Implemented Features</h1>
+<p>The Concordo system includes the following entities:</p>
 <ul>
-<li>Usuários: contém informações de uma conta no sistema.</li>
-<li>Servidores: com vários canais.<ul>
-<li>CanalTexto: herda de Canal e contém várias mensagens.<ul>
-<li>Mensagens: escritas por usuários, com data/hora.</li>
+<li>Users: contains information about a user account in the system.</li>
+<li>Servers: with multiple channels.<ul>
+<li>TextChannel: inherits from <a class="el" href="d2/d48/classChannel.html">Channel</a> and contains multiple messages.<ul>
+<li>Messages: written by users, with date/time information.</li>
 </ul>
 </li>
-<li>CanalVoz: herda de Canal e guarda apenas a última mensagem postada.</li>
+<li>VoiceChannel: inherits from <a class="el" href="d2/d48/classChannel.html">Channel</a> and stores only the last posted message.</li>
 </ul>
 </li>
 </ul>
-<p>O sistema é operado através de comandos de uma única linha, compostos por um comando seguido de parâmetros. Cada comando é interpretado, processado e gera uma saída de acordo com o resultado do processamento.</p>
-<p>O projeto está dividido em três partes, cada uma com suas funcionalidades específicas.</p>
+<p>The system is operated through single-line commands, composed of a command followed by parameters. Each command is interpreted, processed, and generates an output according to the processing result.</p>
+<p>The project is divided into three parts, each with its specific functionalities.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
-Parte 1</h2>
-<p>Na primeira parte do projeto, foram implementados os comandos relacionados a Usuários, Servidores e a criação de Canais. Nessa parte, ainda não é possível entrar em um canal, nem enviar/ler mensagens dentro dele.</p>
+Part 1</h2>
+<p>In the first part of the project, the commands related to Users, Servers, and <a class="el" href="d2/d48/classChannel.html">Channel</a> creation were implemented. In this part, it is not yet possible to join a channel or send/read messages within it.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
-Comandos da Parte 1:</h2>
-<p><b>A1 - Se não estiver logado (Assim que entra no sistema)</b></p>
+Part 1 Commands:</h2>
+<p><b>A1 - If not logged in (Upon entering the system)</b></p>
 <ul>
-<li>A1.1 - Sair do sistema: <code>quit</code></li>
-<li>A1.2 - Criar usuário: <code>create-user &lt;email&gt; &lt;senha_sem_espaços&gt; &lt;nome com espaços&gt;</code></li>
-<li>A1.3 - Entrar no sistema: <code>login &lt;email&gt; &lt;senha&gt;</code></li>
+<li>A1.1 - Quit the system: <code>quit</code></li>
+<li>A1.2 - Create user: <code>create-user &lt;email&gt; &lt;password_without_spaces&gt; &lt;name with spaces&gt;</code></li>
+<li>A1.3 - Log in: <code>login &lt;email&gt; &lt;password&gt;</code></li>
 </ul>
-<p><b>A2 - Interações básicas com Servidores (Se estiver logado)</b></p>
+<p><b>A2 - Basic Interactions with Servers (When logged in)</b></p>
 <ul>
-<li>A2.1 - Desconectar do Concordo: <code>disconnect</code></li>
-<li>A2.2 - Criar servidores: <code>create-server &lt;nome&gt;</code></li>
-<li>A2.3 - Mudar a descrição do servidor: <code>set-server-desc &lt;nome&gt; "&lt;descrição&gt;"</code></li>
-<li>A2.4 - Setar código de convite para o servidor: <code>set-server-invitecode &lt;nome&gt; &lt;codigo&gt;</code></li>
-<li>A2.5 - Listar servidores: <code>list-servers</code></li>
-<li>A2.6 - Remover servidor: <code>remove-server &lt;nome&gt;</code></li>
-<li>A2.7 - Entrar em um servidor: <code>enter-server &lt;nome&gt;</code></li>
-<li>A2.8 - Sair de um servidor: <code>leave-server</code></li>
-<li>A2.9 - Listar pessoas no servidor: <code>list-participants</code></li>
+<li>A2.1 - Disconnect from Concordo: <code>disconnect</code></li>
+<li>A2.2 - Create servers: <code>create-server &lt;name&gt;</code></li>
+<li>A2.3 - Change server description: <code>set-server-desc &lt;name&gt; "&lt;description&gt;"</code></li>
+<li>A2.4 - Set invite code for the server: <code>set-server-invitecode &lt;name&gt; &lt;code&gt;</code></li>
+<li>A2.5 - List servers: <code>list-servers</code></li>
+<li>A2.6 - Remove server: <code>remove-server &lt;name&gt;</code></li>
+<li>A2.7 - Join a server: <code>enter-server &lt;name&gt;</code></li>
+<li>A2.8 - Leave a server: <code>leave-server</code></li>
+<li>A2.9 - List participants in the server: <code>list-participants</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Pré-requisitos</h1>
-<p>Antes de começar, certifique-se de ter instalado algum dos seguintes componentes em seu sistema:</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Part 2</h2>
+<p>In the second part of the project, the commands related to the resources of hte channels and messages were implemented. In this part, it is now possible to join a channel or send/read messages within it.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Part 2 Commands:</h2>
+<p><b>B1 - <a class="el" href="d2/d48/classChannel.html">Channel</a> Management (when inside a server)</b></p>
 <ul>
-<li>Compilador C++ (como o g++ ou clang++)</li>
-<li>CMake (somente se estiver utilizando o CMake para compilar)</li>
+<li>B1.1 - List server channels: <code>list-channels</code></li>
+<li>B1.2 - Create a channel in the server: <code>create-channel &lt;name&gt; &lt;type&gt;</code></li>
+<li>B1.3 - Enter a channel in the server: <code>enter-channel &lt;name&gt;</code></li>
+<li>B1.4 - Leave the channel: <code>leave-channel</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Compilação e execução usando CMake</h1>
+<p><b>B2 - <a class="el" href="d6/d28/classMessage.html">Message</a> Management (when inside a server and in some channel)</b></p>
+<ul>
+<li>B2.1 - Send a message to the channel: <code>send-message &lt;message&gt;</code></li>
+<li>B2.2 - View messages in the channel: <code>list-messages</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Prerequisites</h1>
+<p>Before you start, make sure you have installed one of the following components on your system:</p>
+<ul>
+<li>C++ compiler (such as g++ or clang++)</li>
+<li>CMake (only if you are using CMake to compile)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Compilation and Execution using CMake</h1>
 <ol type="1">
-<li>Acesse o diretório raiz do projeto, onde está localizado o arquivo CMakeLists.txt.</li>
-<li>Crie um diretório de compilação (por exemplo, "build") e acesse-o: <div class="fragment"><div class="line">mkdir build</div>
+<li>Navigate to the root directory of the project where the CMakeLists.txt file is located.</li>
+<li>Create a build directory (e.g., "build") and navigate into it: <div class="fragment"><div class="line">mkdir build</div>
 <div class="line">cd build</div>
 </div><!-- fragment --></li>
-<li>Gere os arquivos de configuração do CMake dentro do diretório de compilação: <div class="fragment"><div class="line">cmake ..</div>
+<li>Generate the CMake configuration files inside the build directory: <div class="fragment"><div class="line">cmake ..</div>
 </div><!-- fragment --></li>
-<li>Execute o comando make para compilar o programa: <div class="fragment"><div class="line">make</div>
-</div><!-- fragment --> Isso irá compilar o código fonte e gerar o arquivo executável.</li>
-<li>Após a compilação bem-sucedida, a partir do diretório de compilação, execute o seguinte comando no terminal para iniciar o programa Concordo: <div class="fragment"><div class="line">./concordo</div>
-</div><!-- fragment --> Você poderá interagir com o programa através dos comandos disponíveis.</li>
+<li>Run the make command to compile the program: <div class="fragment"><div class="line">make</div>
+</div><!-- fragment --> This will compile the source code and generate the executable file.</li>
+<li>After a successful compilation, from the build directory, run the following command in the terminal to start the Concordo program: <div class="fragment"><div class="line">./concordo</div>
+</div><!-- fragment --> You can interact with the program using the available commands.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Compilação e execução com Compilador C++</h1>
-<p>Se você não estiver utilizando o CMake para compilar o programa Concordo e estiver lidando diretamente com os arquivos de origem, siga as etapas abaixo:</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Compilation and Execution with C++ Compiler</h1>
+<p>If you are not using CMake to compile the Concordo program and dealing directly with the source files, follow the steps below:</p>
 <ol type="1">
-<li>Acesse o diretório raiz do projeto, onde estão localizados os arquivos de origem.</li>
-<li>Compile o código fonte utilizando o compilador C++. Suponha que o arquivo principal do programa seja <code>main.cpp</code>. Execute o seguinte comando no terminal: <div class="fragment"><div class="line">g++ main.cpp user.cpp server.cpp system.cpp message.cpp channel.cpp channelText.cpp channelVoice.cpp -o concordo</div>
-</div><!-- fragment --> Isso irá compilar o código fonte e gerar um arquivo executável chamado <code>concordo</code>.</li>
-<li>Após a compilação bem-sucedida, a partir do diretório onde o arquivo executável <code>concordo</code> foi gerado, execute o seguinte comando no terminal: <div class="fragment"><div class="line">./concordo</div>
-</div><!-- fragment --> Isso iniciará a execução do programa Concordo, e você poderá interagir com ele através dos comandos disponíveis.</li>
+<li><p class="startli">Navigate to the root directory of the project where the source files are</p>
+<p class="startli">located.</p>
+</li>
+<li>Compile the source code using the C++ compiler. Suppose the main program file is <code>main.cpp</code>. Execute the following command in the terminal: <div class="fragment"><div class="line">g++ main.cpp user.cpp server.cpp system.cpp message.cpp channel.cpp channelText.cpp channelVoice.cpp -o concordo</div>
+</div><!-- fragment --> This will compile the source code and generate an executable file named <code>concordo</code>.</li>
+<li>After a successful compilation, from the directory where the <code>concordo</code> executable file was generated, run the following command in the terminal: <div class="fragment"><div class="line">./concordo</div>
+</div><!-- fragment --> This will start the execution of the Concordo program, and you can interact with it using the available commands.</li>
 </ol>
-<p>Certifique-se de seguir a documentação fornecida com os detalhes de todos os comandos disponíveis e sua sintaxe correta para realizar as operações desejadas dentro do programa Concordo.</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
-Testando o Executável com o Arquivo de Teste</h1>
+<p>Make sure to refer to the provided documentation for details on all available commands and their correct syntax to perform the desired operations within the Concordo program.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Testing the Executable with the Test File</h1>
 <ol type="1">
-<li>Certifique-se de ter compilado o programa Concordo conforme as instruções mencionadas anteriormente, seja utilizando o CMake ou compilando diretamente sem o CMake.</li>
-<li>No diretório onde o executável <code>concordo</code> foi gerado, verifique se há um arquivo chamado <code>command.in</code>. Esse arquivo contém uma série de comandos que podem ser usados para testar o programa.</li>
-<li>Abra um terminal e navegue até o diretório onde o executável <code>concordo</code> está localizado.</li>
-<li>Execute o seguinte comando para redirecionar a entrada do arquivo <code>command.in</code> para o programa Concordo: <div class="fragment"><div class="line">./concordo &lt; ../command.in</div>
-</div><!-- fragment --> Isso redirecionará o conteúdo do arquivo <code>command.in</code> como entrada para o programa Concordo. O programa executará os comandos presentes no arquivo e exibirá os resultados correspondentes no terminal.</li>
-<li>Observe a saída gerada pelo programa Concordo e verifique se está correta de acordo com os comandos presentes no arquivo <code>command.in</code>.</li>
+<li>Make sure you have compiled the Concordo program following the instructions mentioned above, either using CMake or compiling directly without CMake.</li>
+<li>In the directory where the <code>concordo</code> executable file is located, check if there is a file named <code>command.in</code>. This file contains a series of commands that can be used to test the program.</li>
+<li>Open a terminal and navigate to the directory where the <code>concordo</code> executable is located.</li>
+<li>Execute the following command to redirect the input from the <code>command.in</code> file to the Concordo program: <div class="fragment"><div class="line">./concordo &lt; ../command.in</div>
+</div><!-- fragment --> This will redirect the content of the <code>command.in</code> file as input to the Concordo program. The program will execute the commands present in the file and display the corresponding results in the terminal.</li>
+<li>Observe the output generated by the Concordo program and verify if it is correct according to the commands present in the <code>command.in</code> file.</li>
 </ol>
-<p>O arquivo <code>command.in</code> pode ser personalizado de acordo com os testes que você deseja realizar. Cada linha do arquivo representa um comando que pode ser reconhecido pelo programa Concordo.</p>
-<p>Certifique-se de utilizar a sintaxe correta dos comandos e seguir a documentação fornecida com o programa Concordo para entender a estrutura e os detalhes de cada comando suportado.</p>
-<p>Lembrando que o arquivo <code>command.in</code> é apenas uma opção conveniente para automatizar os testes e não é estritamente necessário. Você também pode interagir com o programa diretamente no terminal, fornecendo comandos manualmente. </p>
+<p>The <code>command.in</code> file can be customized according to the tests you want to perform. Each line of the file represents a command that can be recognized by the Concordo program.</p>
+<p>Make sure to use the correct syntax of the commands and refer to the documentation provided with the Concordo program to understand the structure and details of each supported command.</p>
+<p>Note that the <code>command.in</code> file is just a convenient option to automate the tests and is not strictly required. You can also interact with the program directly in the terminal by providing commands manually. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

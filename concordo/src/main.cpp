@@ -24,7 +24,7 @@ int main(){
     }
     else if (command == "create-user")
     { 
-      if(!system.isLogged())
+      if(!system.is_logged())
       {
         string email;
         string senha;
@@ -34,7 +34,7 @@ int main(){
         getline(ss, name);
         name.erase(0,1);
 
-        createUser(system, email, senha, name);
+        create_user(system, email, senha, name);
       }
       else
       {
@@ -43,7 +43,7 @@ int main(){
     }
     else if (command == "login")
     {
-      if (!system.isLogged())
+      if (!system.is_logged())
       {
         string email;
         string senha;
@@ -59,27 +59,27 @@ int main(){
       }
     }
     else if(command == "disconnect"){
-      if(system.isLogged()){
+      if(system.is_logged()){
         system.disconnect();
-        cout << "\"Desconectando usuário " << system.findUser(system.getUserLoggedID())->getEmail() << "\"\n";
+        cout << "\"Desconectando usuário " << system.find_user(system.get_user_logged_ID())->get_email() << "\"\n";
       }
       else{
         cout << "\"Não está conectado\"\n";
       }
     }
     else if(command == "create-server"){
-      if(system.isLogged()){
+      if(system.is_logged()){
         string name;
         ss >> name;
         
-        createServer(system, name);
+        create_server(system, name);
       }
       else{
         cout << "\"Não está conectado\"\n";
       }
     }
     else if (command == "set-server-desc"){
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string name;
         string description;
@@ -88,7 +88,7 @@ int main(){
         getline(ss, description);
         description.erase(0, 1);
 
-        setDescription(system, name, description);
+        set_description(system, name, description);
       }
       else
       {
@@ -96,14 +96,14 @@ int main(){
       }
     }
     else if(command == "set-server-invite-code"){
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string name;
         string code;
 
         ss >> name >> code;
 
-        setCode(system, name, code);
+        set_code(system, name, code);
       }
       else
       {
@@ -111,9 +111,9 @@ int main(){
       }
     }
     else if(command == "list-servers"){
-      if(system.isLogged()){
-        for(Server s : system.getAllServers()){
-          cout << s.getName() << endl;
+      if(system.is_logged()){
+        for(Server s : system.get_all_servers()){
+          cout << s.get_name() << endl;
         }
       }
       else
@@ -123,13 +123,13 @@ int main(){
     }
     else if (command == "remove-server")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string name;
 
         ss >> name;
 
-        removeServer(system, name);
+        remove_server(system, name);
       }
       else
       {
@@ -138,14 +138,14 @@ int main(){
     }
     else if (command == "enter-server")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string name;
         string code;
 
         ss >> name >> code;
 
-        enterServer(system, name, code);
+        enter_server(system, name, code);
       }
       else
       {
@@ -154,9 +154,9 @@ int main(){
     }
     else if (command == "leave-server")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
-        leaveServer(system);
+        leave_server(system);
       }
       else
       {
@@ -165,9 +165,9 @@ int main(){
     }
     else if (command == "list-participants")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
-        listParticipants(system);
+        list_participants(system);
       }
       else
       {
@@ -176,9 +176,9 @@ int main(){
     }
     else if (command == "list-channels")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
-        listChannels(system);
+        list_channels(system);
       }
       else
       {
@@ -187,14 +187,14 @@ int main(){
     }
     else if (command == "create-channel")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string name;
         string type;
 
         ss >> name >> type;
 
-        createChannel(system, name, type);
+        create_channel(system, name, type);
       }
       else
       {
@@ -203,13 +203,13 @@ int main(){
     }
     else if (command == "enter-channel")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string name;
 
         ss >> name;
 
-        enterChannel(system, name);
+        enter_channel(system, name);
       }
       else
       {
@@ -218,9 +218,9 @@ int main(){
     }
     else if (command == "leave-channel")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
-        leaveChannel(system);
+        leave_channel(system);
       }
       else
       {
@@ -229,14 +229,14 @@ int main(){
     }
     else if (command == "send-message")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
         string content;
 
         getline(ss, content);
         content.erase(0, 1);
         
-        sendMessage(system, content);
+        send_message(system, content);
       }
       else
       {
@@ -245,9 +245,9 @@ int main(){
     }
     else if (command == "list-messages")
     {
-      if (system.isLogged())
+      if (system.is_logged())
       {
-        listMessages(system);
+        list_messages(system);
       }
       else
       {

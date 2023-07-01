@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['islogged_108',['isLogged',['../dd/d2d/classSystem.html#a6ae8fc4756c2da98fa0b2df4acb3e3a7',1,'System']]]
+  ['is_5flogged_119',['is_logged',['../dd/d2d/classSystem.html#a422957ce4bb3bc3926cba84c13b0c8d7',1,'System']]]
 ];

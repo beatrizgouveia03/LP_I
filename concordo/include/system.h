@@ -46,49 +46,49 @@ public:
    *
    * \return A vector containing the users from the system.
    */
-  vector<User> getAllUsers() const;
+  vector<User> get_all_users() const;
 
   /*!
    * Retrieves the servers from the system.
    *
    * \return A vector containing the servers from the system.
    */
-  vector<Server> getAllServers() const;
+  vector<Server> get_all_servers() const;
 
   /*!
    * Retrieves the text channels from the system.
    *
    * \return A vector containing the text channels from the system.
    */
-  vector<ChannelText> getAllTextChannels() const;
+  vector<ChannelText> get_all_text_channels() const;
 
   /*!
    * Retrieves the voice channels from the system.
    *
    * \return A vector containing the voice channels from the system.
    */
-  vector<ChannelVoice> getAllVoiceChannels() const;
+  vector<ChannelVoice> get_all_voice_channels() const;
 
   /*!
    * Retrieves the logged user ID in the system.
    *
    * \return The logged user ID in the system.
    */
-  int getUserLoggedID() const;
+  int get_user_logged_ID() const;
 
   /*!
    * Retrieves the server that is being visualized in the system.
    *
    * \return The server that is being visualized in the system.
    */
-  Server* getServerLogged() const;
+  Server* get_server_logged() const;
 
   /*!
    * Retrieves the channel that is being visualised in the system.
    *
    * \return The channel that is being visualised in the system.
    */
-  Channel* getChannelLogged() const;  
+  Channel* get_channel_logged() const;  
 
   /* Set methods */
 
@@ -97,49 +97,49 @@ public:
    *
    * \param allUsers A vector containing the users to be set for the system.
    */
-  void setAllUsers(const vector<User> allUsers);
+  void set_all_users(const vector<User> allUsers);
 
   /*!
    * Sets the servers of the system.
    *
    * \param allServers A vector containing the servers to be set for the system.
    */
-  void setAllServers(const vector<Server> allServers);
+  void set_all_servers(const vector<Server> allServers);
 
   /*!
    * Sets the text channels of the system.
    *
    * \param allTextChannels A vector containing the text channels to be set for the system.
    */
-  void setAllTextChannels(const vector<ChannelText> allTextChannels);
+  void set_all_text_channels(const vector<ChannelText> allTextChannels);
 
   /*!
    * Sets the voice channels of the system.
    *
    * \param allVoiceChannels A vector containing the voice channels to be set for the system.
    */
-  void setAllVoiceChannels(const vector<ChannelVoice> allVoiceChannels);
+  void set_all_voice_channels(const vector<ChannelVoice> allVoiceChannels);
 
   /*!
    * Sets the logged user ID in the system.
    *
    * \param userLogged The logged user ID in the system.
    */
-  void setUserLoggedID(const int userLoggedID);
+  void set_user_logged_ID(const int userLoggedID);
 
   /*!
    * Sets the server that is being visualized in the system.
    *
    * \param serverLogged The server that is being visualized in the system.
    */
-  void setServerLogged(Server *serverLogged = nullptr);
+  void set_server_logged(Server *serverLogged = nullptr);
 
   /*!
    * Sets the channel that is being visualized in the system.
    *
    * \param channelLogged The channel that is being visualized in the system.
    */
-  void setChannelLogged(Channel *channelLogged = nullptr); 
+  void set_channel_logged(Channel *channelLogged = nullptr); 
 
   /* Other methods */
 
@@ -148,7 +148,7 @@ public:
    *
    * \return True if the user is logged in, false otherwise.
    */
-  bool isLogged();
+  bool is_logged();
 
   /*!
    * Disconnects the user from the system.
@@ -160,42 +160,42 @@ public:
    *
    * \param user The user to be added.
    */
-  void addUser(const User user);
+  void add_user(const User user);
 
   /*!
    * Adds a server to the list of the system.
    *
    * \param server The server to be added.
    */
-  void addServer(const Server server);
+  void add_server(const Server server);
 
   /*!
    * Adds a text channel to the list of the system.
    *
    * \param channelT The text channel to be added.
    */
-  void addChannel(const ChannelText channelT);
+  void add_channel(const ChannelText channelT);
 
   /*!
    * Adds a voice channel to the list of the system.
    *
    * \param channelV The voice channel to be added.
    */
-  void addChannel(const ChannelVoice channelV);
+  void add_channel(const ChannelVoice channelV);
 
   /*!
    * Removes a user from the list of the system.
    *
    * \param user The user to be removed.
    */
-  void remUser(const User user);
+  void rem_user(const User user);
 
   /*!
    * Removes a server from the list of the system.
    *
    * \param server The server to be removed.
    */
-  void remServer(const Server server);
+  void rem_server(const Server server);
 
   /*!
    * Finds a user from the system.
@@ -203,7 +203,7 @@ public:
    * \param email The email of the user to be found.
    * \return A pointer to the found user, or nullptr if not found.
    */
-  User *findUser(const string email);
+  User *find_user(const string email);
 
   /*!
    * Finds a user from the system.
@@ -211,7 +211,7 @@ public:
    * \param id The id of the user to be found.
    * \return A pointer to the found user, or nullptr if not found.
    */
-  User *findUser(const int id);
+  User *find_user(const int id);
 
   /*!
    * Finds a server from the system.
@@ -219,7 +219,7 @@ public:
    * \param name The name of the server to be found.
    * \return A pointer to the found server, or nullptr if not found.
    */
-  Server *findServer(const string name);
+  Server *find_server(const string name);
 
   /*!
    * Finds a text channel from the system.
@@ -227,7 +227,7 @@ public:
    * \param name The name of the text channel to be found.
    * \return A pointer to the found channel, or nullptr if not found.
    */
-  ChannelText *findTextChannel(const string name);
+  ChannelText *find_text_channel(const string name);
 
   /*!
    * Finds a voice channel from the system.
@@ -235,7 +235,7 @@ public:
    * \param name The name of the voice channel to be found.
    * \return A pointer to the found channel, or nullptr if not found.
    */
-  ChannelVoice *findVoiceChannel(const string name);
+  ChannelVoice *find_voice_channel(const string name);
 };
 
 #endif

@@ -13,14 +13,14 @@ Channel::~Channel(){/* Empty */};
 
 /* Get method */
 
-string Channel::getName() const
+string Channel::get_name() const
 {
   return this->name;
 };
 
 /* Set method */
 
-void Channel::setName(const string name)
+void Channel::set_name(const string name)
 {
   this->name = name;
 };

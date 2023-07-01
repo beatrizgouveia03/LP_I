@@ -6,31 +6,31 @@ ChannelVoice::ChannelVoice(){/* Empty */};
 
 ChannelVoice::ChannelVoice(const string name)
 {
-  this->setName(name);
+  this->set_name(name);
 };
 
 ChannelVoice::~ChannelVoice(){/* Empty */};
 
 /* Get method */
 
-Message ChannelVoice::getLastMessage() const
+Message ChannelVoice::get_last_message() const
 { 
   return this->lastMessage;
 };
 
 /* Set method */
 
-void ChannelVoice::setLastMessage(const Message lastMessage)
+void ChannelVoice::set_last_message(const Message lastMessage)
 {
   this->lastMessage = lastMessage;
 };
 
 /* Other methods */
 
-void ChannelVoice::listChannel() const
+void ChannelVoice::list_channel() const
 {
-  cout << lastMessage.getSendFrom();
-  cout << lastMessage.getDateHour() << ": ";
-  cout << lastMessage.getContent()  << endl;
+  cout << lastMessage.get_send_from();
+  cout << lastMessage.get_date_hour() << ": ";
+  cout << lastMessage.get_content()  << endl;
 
 };

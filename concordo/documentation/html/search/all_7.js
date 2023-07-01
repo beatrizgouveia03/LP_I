@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d_3d_34',['operator==',['../d6/d28/classMessage.html#a38d45116ff6908c054596c5e26544bc9',1,'Message::operator==()'],['../db/d00/classServer.html#af349ad1e2e70940f4cdcb32c04469d1c',1,'Server::operator==()'],['../d9/dc0/classUser.html#aff4cc680e3227346ae215cfb40845523',1,'User::operator==()']]]
+  ['message_39',['Message',['../d6/d28/classMessage.html',1,'Message'],['../d6/d28/classMessage.html#a4fc4f717b634e66070366cb7722d7761',1,'Message::Message()'],['../d6/d28/classMessage.html#a9f75ead374d28d0a74f4afa46565de00',1,'Message::Message(const string dateHour, const string sendFrom, const string content)']]]
 ];

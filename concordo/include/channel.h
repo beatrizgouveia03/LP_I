@@ -36,7 +36,7 @@ public:
    *
    * \return The name of the channel.
    */
-  string getName() const;
+  string get_name() const;
 
   /* Set method */
 
@@ -45,7 +45,7 @@ public:
    *
    * \param name The name to be set for the channel.
    */
-  void setName(const string name);
+  void set_name(const string name);
 
 
   /* Other methods */
@@ -53,7 +53,7 @@ public:
   /*!
    * Lists the channel in the terminal
    */
-  virtual void listChannel() const = 0;
+  virtual void list_channel() const = 0;
 };
 
 #endif

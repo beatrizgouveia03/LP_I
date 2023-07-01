@@ -12,10 +12,10 @@
  * \param password The password of the user.
  * \param name The name of the user.
  */
-void createUser(System &system, string email, string password, string name){
-  if(system.findUser(email) == nullptr){
-    User newUser(name, email, password, system.getAllUsers().size()+1);
-    system.addUser(newUser);
+void create_user(System &system, string email, string password, string name){
+  if(system.find_user(email) == nullptr){
+    User newUser(name, email, password, system.get_all_users().size()+1);
+    system.add_user(newUser);
 
     cout << "\"Usuário criado\"\n";
   }
@@ -32,12 +32,12 @@ void createUser(System &system, string email, string password, string name){
  * \param password The password of the user.
  */
 void login(System &system, string email, string password){
-  if(system.findUser(email) != nullptr){
-    User *user = system.findUser(email);
-    if(user->getPassword() == password){
-      system.setUserLoggedID(user->getID());
-      system.setServerLogged();
-      system.setChannelLogged();
+  if(system.find_user(email) != nullptr){
+    User *user = system.find_user(email);
+    if(user->get_password() == password){
+      system.set_user_logged_ID(user->get_ID());
+      system.set_server_logged();
+      system.set_channel_logged();
       cout << "\"Logado como " << email << "\"\n";
     }
     else{
@@ -55,12 +55,12 @@ void login(System &system, string email, string password){
  * \param system The adress of the system.
  * \param name The name of the server.
  */
-void createServer(System &system, string name){
-  if(system.findServer(name) == nullptr){
+void create_server(System &system, string name){
+  if(system.find_server(name) == nullptr){
     Server newServer(name);
-    newServer.setOwnerID(system.getUserLoggedID());
-    newServer.addParticipantID(system.getUserLoggedID());
-    system.addServer(newServer);
+    newServer.set_owner_ID(system.get_user_logged_ID());
+    newServer.add_participant_ID(system.get_user_logged_ID());
+    system.add_server(newServer);
 
     cout << "\"Servidor criado\"\n";
   }
@@ -77,11 +77,11 @@ void createServer(System &system, string name){
  * \param name The name of the server.
  * \param description The new description for the server.
  */
-void setDescription(System &system, string name, string description){
-  if(system.findServer(name) != nullptr){
-    Server* server = system.findServer(name);
-    if(server->getOwnerID() == system.getUserLoggedID()){
-      server->setDescription(description);
+void set_description(System &system, string name, string description){
+  if(system.find_server(name) != nullptr){
+    Server* server = system.find_server(name);
+    if(server->get_owner_ID() == system.get_user_logged_ID()){
+      server->set_description(description);
 
       cout << "\"Descrição do servidor \'" << name << "\' modificada!\"\n";
     }
@@ -101,13 +101,13 @@ void setDescription(System &system, string name, string description){
  * \param name The name of the server.
  * \param code The new invitation code for the server.
  */
-void setCode(System &system, string name, string code){
-  if (system.findServer(name) != nullptr)
+void set_code(System &system, string name, string code){
+  if (system.find_server(name) != nullptr)
   {
-    Server *server = system.findServer(name);
-    if (server->getOwnerID() == system.getUserLoggedID())
+    Server *server = system.find_server(name);
+    if (server->get_owner_ID() == system.get_user_logged_ID())
     {
-      server->setCodeInvite(code);
+      server->set_code_invite(code);
       if(code != ""){
         cout << "\"Código de convite do servidor \'" << name << "\' modificado!\"\n";
       }
@@ -132,13 +132,13 @@ void setCode(System &system, string name, string code){
  * \param system The adress of the system.
  * \param name The name of the server.
  */
-void removeServer(System &system, string name){
-  if (system.findServer(name) != nullptr)
+void remove_server(System &system, string name){
+  if (system.find_server(name) != nullptr)
   {
-    Server *server = system.findServer(name);
-    if (server->getOwnerID() == system.getUserLoggedID())
+    Server *server = system.find_server(name);
+    if (server->get_owner_ID() == system.get_user_logged_ID())
     {
-      system.remServer(*server);
+      system.rem_server(*server);
       cout << "\"Servidor \'" << name << "\' removido\"\n";
     }
     else
@@ -159,13 +159,13 @@ void removeServer(System &system, string name){
  * \param name The name of the server.
  * \param code The invite code for the server.
  */
-void enterServer(System &system, string name, string code){
-  if(system.findServer(name) != nullptr){
-    Server* server = system.findServer(name);
-    if(server->getCodeInvite() == code || server->getOwnerID() == system.getUserLoggedID()){
-      server->addParticipantID(system.getUserLoggedID());
-      server->setUserID(system.getUserLoggedID());
-      system.setServerLogged(server);
+void enter_server(System &system, string name, string code){
+  if(system.find_server(name) != nullptr){
+    Server* server = system.find_server(name);
+    if(server->get_code_invite() == code || server->get_owner_ID() == system.get_user_logged_ID()){
+      server->add_participant_ID(system.get_user_logged_ID());
+      server->set_user_ID(system.get_user_logged_ID());
+      system.set_server_logged(server);
       cout << "\"Entrou no servidor com sucesso\"\n";
     }
     else{
@@ -183,12 +183,12 @@ void enterServer(System &system, string name, string code){
  *
  * \param system The adress of the system.
  */
-void leaveServer(System &system){
-  if(system.getServerLogged() != nullptr){
-    Server *server = system.findServer(system.getServerLogged()->getName());
-    server->setUserID(-1);
-    system.setServerLogged();
-    cout << "\"Saindo do servidor \'" <<  server->getName() << "\'\"\n";
+void leave_server(System &system){
+  if(system.get_server_logged() != nullptr){
+    Server *server = system.find_server(system.get_server_logged()->get_name());
+    server->set_user_ID(-1);
+    system.set_server_logged();
+    cout << "\"Saindo do servidor \'" <<  server->get_name() << "\'\"\n";
   }
   else
   {
@@ -201,14 +201,14 @@ void leaveServer(System &system){
  *
  * \param system The adress of the system.
  */
-void listParticipants(System &system){
-  if (system.getServerLogged() != nullptr)
+void list_participants(System &system){
+  if (system.get_server_logged() != nullptr)
   {
-    Server* server = system.getServerLogged();
-    for (int partID : server->getParticipantIDs())
+    Server* server = system.get_server_logged();
+    for (int partID : server->get_participant_IDs())
     {
-      User *part = system.findUser(partID);
-      cout << part->getName() << endl;
+      User *part = system.find_user(partID);
+      cout << part->get_name() << endl;
     }
   }
   else 
@@ -222,25 +222,25 @@ void listParticipants(System &system){
  *
  * \param system The adress of the system.
  */
-void listChannels(System &system)
+void list_channels(System &system)
 {
-  if (system.getServerLogged() !=  nullptr)
+  if (system.get_server_logged() !=  nullptr)
   {
-    Server* server = system.getServerLogged();
+    Server* server = system.get_server_logged();
     cout << "#canais de texto\n";
-    for (Channel* c : server->getChannels())
+    for (Channel* c : server->get_channels())
     {
       if (ChannelText *ct = dynamic_cast<ChannelText *>(c))
       {
-        cout << ct->getName() << endl;
+        cout << ct->get_name() << endl;
       }
     }
     cout << "#canais de audio\n";
-    for (Channel *c : server->getChannels())
+    for (Channel *c : server->get_channels())
     {
       if (ChannelVoice *cv = dynamic_cast<ChannelVoice *>(c))
       {
-        cout << cv->getName() << endl;
+        cout << cv->get_name() << endl;
       }
     }
   }
@@ -250,35 +250,42 @@ void listChannels(System &system)
   }
 }
 
-void createChannel(System &system, string name, string type){
-  if (system.getServerLogged() != nullptr)
+/*!
+ * Creates a channel on the server being visualized.
+ *
+ * \param system The adress of the system.
+ * \param name The name of the channel to be created.
+ * \param type The type of the channel to be created.
+ */
+void create_channel(System &system, string name, string type){
+  if (system.get_server_logged() != nullptr)
   {
-    Server* server = system.findServer(system.getServerLogged()->getName());
+    Server* server = system.find_server(system.get_server_logged()->get_name());
 
     if(type == "texto"){
-      for (Channel *c : server->getChannels())
+      for (Channel *c : server->get_channels())
       {
         if (ChannelText *ct = dynamic_cast<ChannelText *>(c))
         {
-          if (ct->getName() == name){
+          if (ct->get_name() == name){
             cout << "\"Canal de texto \'" << name << "\' já existe!\"\n";
             return;
           }
         }
       }
       ChannelText newChannel(name);
-      system.addChannel(newChannel);
-      server->addChannel(system.findTextChannel(name));
+      system.add_channel(newChannel);
+      server->add_channel(system.find_text_channel(name));
 
       cout << "\"Canal de texto \'" << name << "\' criado\"\n";
     }
     else if (type == "voz")
     {
-      for (Channel *c : server->getChannels())
+      for (Channel *c : server->get_channels())
       {
         if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c))
         {
-          if (ct->getName() == name)
+          if (ct->get_name() == name)
           {
             cout << "\"Canal de voz \'" << name << "\' já existe!\"\n";
             return;
@@ -286,8 +293,8 @@ void createChannel(System &system, string name, string type){
         }
       }
       ChannelVoice newChannel(name);
-      system.addChannel(newChannel);
-      server->addChannel(system.findVoiceChannel(name));
+      system.add_channel(newChannel);
+      server->add_channel(system.find_voice_channel(name));
 
       cout << "\"Canal de voz \'" << name << "\' criado\"\n";
     }
@@ -307,23 +314,39 @@ void createChannel(System &system, string name, string type){
  * \param system The adress of the system.
  * \param name The name of the channel.
  */
-void enterChannel(System &system, string name)
+void enter_channel(System &system, string name)
 {
-  if (system.getServerLogged() != nullptr)
+  if (system.get_server_logged() != nullptr)
   {
-    if(system.getChannelLogged() == nullptr){
-      Server *server = system.findServer(system.getServerLogged()->getName());
-    
-      for (Channel *c : server->getChannels())
-      {
-        if (c->getName() == name)
-        {
-          system.setChannelLogged(c);
+    if(system.get_channel_logged() == nullptr){
+      Server *server = system.find_server(system.get_server_logged()->get_name());
+      ChannelText *ct = system.find_text_channel(name);
+      ChannelVoice *cv = system.find_voice_channel(name);
+
+        if(ct == nullptr && cv != nullptr){
+          system.set_channel_logged(cv);
           cout << "\"Entrou no canal \'" << name << "\'\"\n";
           return;
         }
-      } 
-      cout << "\"Canal \'" << name << "\' não existe\"\n";
+        else if(cv == nullptr && ct != nullptr){
+          system.set_channel_logged(ct);
+          cout << "\"Entrou no canal \'" << name << "\'\"\n";
+          return;
+        } 
+        else if(cv != nullptr && ct != nullptr ){
+          string type;
+          cout << "Existem dois canais com esse nome. Informe o tipo do canal:(texto ou voz)\n";
+          getline(cin, type);
+          if(type == "texto"){
+            system.set_channel_logged(ct);
+          } else{
+            system.set_channel_logged(cv);
+          }
+          cout << "\"Entrou no canal \'" << name << "\'\"\n";
+        }
+        else{
+          cout << "\"Canal \'" << name << "\' não existe\"\n";
+        }
     }
     else{
       cout << "\"Você já está visualizando um canal!\"\n";
@@ -340,13 +363,13 @@ void enterChannel(System &system, string name)
  *
  * \param system The adress of the system.
  */
-void leaveChannel(System &system)
+void leave_channel(System &system)
 {
-  if (system.getServerLogged() != nullptr)
+  if (system.get_server_logged() != nullptr)
   {
-    if (system.getChannelLogged() != nullptr)
+    if (system.get_channel_logged() != nullptr)
     {
-      system.setChannelLogged(nullptr);
+      system.set_channel_logged();
       cout << "\"Saindo do canal\"\n";
     }
     else
@@ -360,6 +383,12 @@ void leaveChannel(System &system)
   }
 }
 
+/*!
+ * Formats the time to the format wanted.
+ *
+ * \param timePoint The time to be formated.
+ * \param format The format wanted.
+ */
 string formatDateTime(const chrono::system_clock::time_point &timePoint, const string &format)
 {
   time_t currentTime = chrono::system_clock::to_time_t(timePoint);
@@ -373,11 +402,17 @@ string formatDateTime(const chrono::system_clock::time_point &timePoint, const s
   return string(buffer);
 }
 
-void sendMessage(System &system, string content){
-  Server* s = system.getServerLogged();
-  Channel* c = system.getChannelLogged();
-  int userID = system.getUserLoggedID();
-  string sendFrom = system.findUser(userID)->getName();
+/*!
+ * Sends a message on the channel logged.
+ *
+ * \param system The adress of the system.
+ * \param content The content of the message sent.
+ */
+void send_message(System &system, string content){
+  Server* s = system.get_server_logged();
+  Channel* c = system.get_channel_logged();
+  int userID = system.get_user_logged_ID();
+  string sendFrom = system.find_user(userID)->get_name();
 
   if (s == nullptr)
   {
@@ -395,18 +430,23 @@ void sendMessage(System &system, string content){
 
   if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c))
   {
-    ct->setLastMessage(newMessage);
+    ct->set_last_message(newMessage);
   }
   else
   {
     ChannelText *cv = dynamic_cast<ChannelText *>(c);
-    cv->addMessage(newMessage);
+    cv->add_message(newMessage);
   }
 }
 
-void listMessages(System &system){
-  Server *s = system.getServerLogged();
-  Channel *c = system.getChannelLogged();
+/*!
+ * Lists the messages of the channel logged.
+ *
+ * \param system The adress of the system.
+ */
+void list_messages(System &system){
+  Server *s = system.get_server_logged();
+  Channel *c = system.get_channel_logged();
 
   if (s == nullptr)
   {
@@ -420,16 +460,16 @@ void listMessages(System &system){
   }
 
   if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c)){
-    if(ct->getLastMessage() != Message()){
-      ct->listChannel();
+    if(ct->get_last_message() != Message()){
+      ct->list_channel();
     }
     else{
       cout << "\"Sem mensagem para exibir\"\n";
     }
   }else{
     ChannelText *cv = dynamic_cast<ChannelText *>(c);
-    if(!(cv->getMessages().empty())){
-      cv->listChannel();
+    if(!(cv->get_messages().empty())){
+      cv->list_channel();
     }
     else
     {

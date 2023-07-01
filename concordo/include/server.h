@@ -45,49 +45,49 @@ public:
    *
    * \return The server owner id.
    */
-  int getOwnerID() const;
+  int get_owner_ID() const;
 
   /*!
    * Retrieves the user id that is visualizing the server.
    *
    * \return The user id that is visualizing the server.
    */
-  int getUserID() const;
+  int get_user_ID() const;
 
   /*!
    * Retrieves the name of the server.
    *
    * \return The name of the server.
    */
-  string getName() const;
+  string get_name() const;
 
   /*!
    * Retrieves the description of the server.
    *
    * \return The description of the server.
    */
-  string getDescription() const;
+  string get_description() const;
 
   /*!
    * Retrieves the invitation code of the server.
    *
    * \return The invitation code of the server.
    */
-  string getCodeInvite() const;
+  string get_code_invite() const;
 
   /*!
    * Retrieves the channels of the server.
    *
-   * \return A vector containing the channels of the server.
+   * \return A vector containing the pointers to the channels of the server.
    */
-  vector<Channel *> getChannels() const;
+  vector<Channel *> get_channels() const;
 
   /*!
    * Retrieves the participant ids from the server.
    *
    * \return A vector containing the participant ids from the server.
    */
-  vector<int> getParticipantIDs() const;
+  vector<int> get_participant_IDs() const;
 
   /* Set methods */
 
@@ -96,49 +96,49 @@ public:
    *
    * \param userID The server owner's name to be set for the channel.
    */
-  void setOwnerID(const int userID);
+  void set_owner_ID(const int userID);
 
   /*!
-   * Sets the server owner id of the channel.
+   * Sets the server user id of the channel.
    *
-   * \param userID The server owner id to be set for the channel.
+   * \param userID The server user id to be set for the channel.
    */
-  void setUserID(const int userID);
+  void set_user_ID(const int userID);
 
   /*!
    * Sets the name of the server.
    *
    * \param name The name to be set for the server.
    */
-  void setName(const string name);
+  void set_name(const string name);
 
   /*!
    * Sets the description of the server.
    *
    * \param description The description to be set for the server.
    */
-  void setDescription(const string description);
+  void set_description(const string description);
 
   /*!
    * Sets the invitation code of the server.
    *
    * \param codeInvite The invitation code to be set for the server.
    */
-  void setCodeInvite(const string codeInvite);
+  void set_code_invite(const string codeInvite);
 
   /*!
    * Sets the channels of the server.
    *
-   * \param channels A vector containing the channels to be set for the server.
+   * \param channels A vector containing pointers to the channels to be set for the server.
    */
-  void setChannels(const vector<Channel *> channels);
+  void set_channels(const vector<Channel *> channels);
 
   /*!
    * Sets the participant ids of the server.
    *
    * \param participantIDs A vector containing the participant ids to be set for the server.
    */
-  void setParticipantIDs(const vector<int> participantIDs);
+  void set_participant_IDs(const vector<int> participantIDs);
 
   /* Other methods */
 
@@ -155,14 +155,14 @@ public:
    *
    * \param id The participant id to be added.
    */
-  void addParticipantID(const int id);
+  void add_participant_ID(const int id);
 
   /*!
    * Adds a channel to the list of the server.
    *
-   * \param channel The channel to be added.
+   * \param channel The pointer to the channel to be added.
    */
-  void addChannel(Channel* channelT);
+  void add_channel(Channel* channelT);
 };
 
 #endif

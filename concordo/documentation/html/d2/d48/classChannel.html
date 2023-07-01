@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Concordo
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -65,7 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Channel Class Reference</div>  </div>
+<div class="title">Channel Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -82,10 +82,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a38cdc80401bafa28e36fa5d6aac3526c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f15ebd302464069f1a9e3f0ded14482"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d48/classChannel.html#a5f15ebd302464069f1a9e3f0ded14482">~Channel</a> ()</td></tr>
 <tr class="separator:a5f15ebd302464069f1a9e3f0ded14482"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea7d24dec353411ad3c0938079a0951c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d48/classChannel.html#aea7d24dec353411ad3c0938079a0951c">getName</a> () const</td></tr>
-<tr class="separator:aea7d24dec353411ad3c0938079a0951c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc613228bb14a445f5632f679efafca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d48/classChannel.html#accc613228bb14a445f5632f679efafca">setName</a> (const string name)</td></tr>
-<tr class="separator:accc613228bb14a445f5632f679efafca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3d82d039f8610a7dac2ae1b5fc883e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d48/classChannel.html#a7a3d82d039f8610a7dac2ae1b5fc883e">get_name</a> () const</td></tr>
+<tr class="separator:a7a3d82d039f8610a7dac2ae1b5fc883e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f246f2f3128c7fc6926f1629b23f09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d48/classChannel.html#ad5f246f2f3128c7fc6926f1629b23f09">set_name</a> (const string name)</td></tr>
+<tr class="separator:ad5f246f2f3128c7fc6926f1629b23f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacd03bb1d0f031037ab4c758e6f75e0b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d48/classChannel.html#aacd03bb1d0f031037ab4c758e6f75e0b">list_channel</a> () const =0</td></tr>
+<tr class="separator:aacd03bb1d0f031037ab4c758e6f75e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af2b4b16288cbb2c592b1e0f6486c2430"></a>
@@ -150,14 +152,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aea7d24dec353411ad3c0938079a0951c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea7d24dec353411ad3c0938079a0951c">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="a7a3d82d039f8610a7dac2ae1b5fc883e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3d82d039f8610a7dac2ae1b5fc883e">&#9670;&nbsp;</a></span>get_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string Channel::getName </td>
+          <td class="memname">string Channel::get_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -169,14 +171,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="accc613228bb14a445f5632f679efafca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accc613228bb14a445f5632f679efafca">&#9670;&nbsp;</a></span>setName()</h2>
+<a id="aacd03bb1d0f031037ab4c758e6f75e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd03bb1d0f031037ab4c758e6f75e0b">&#9670;&nbsp;</a></span>list_channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Channel::list_channel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Lists the channel in the terminal </p>
+
+<p>Implemented in <a class="el" href="../../db/da0/classChannelVoice.html#ae4c52e2c71c14afeabab7ed13b46fa1b">ChannelVoice</a>, and <a class="el" href="../../df/dad/classChannelText.html#ac8616f6401ea4e029f8c733dba9287da">ChannelText</a>.</p>
+
+</div>
+</div>
+<a id="ad5f246f2f3128c7fc6926f1629b23f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f246f2f3128c7fc6926f1629b23f09">&#9670;&nbsp;</a></span>set_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Channel::setName </td>
+          <td class="memname">void Channel::set_name </td>
           <td>(</td>
           <td class="paramtype">const string&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>

@@ -13,73 +13,73 @@ Server::~Server(){/* Empty */};
 
 /* Get methods */
 
-int Server::getOwnerID() const
+int Server::get_owner_ID() const
 {
   return this->ownerID;
 };
 
-int Server::getUserID() const
+int Server::get_user_ID() const
 {
   return this->userID;
 };
 
-string Server::getName() const
+string Server::get_name() const
 {
   return this->name;
 };
 
-string Server::getDescription() const
+string Server::get_description() const
 {
   return this->description;
 };
 
-string Server::getCodeInvite() const
+string Server::get_code_invite() const
 {
   return this->codeInvite;
 };
 
-vector<Channel *> Server::getChannels() const
+vector<Channel *> Server::get_channels() const
 {
   return this->channels;
 };
 
-vector<int> Server::getParticipantIDs() const
+vector<int> Server::get_participant_IDs() const
 {
   return this->participantIDs;
 };
 
 /* Set methods */
 
-void Server::setOwnerID(const int userID)
+void Server::set_owner_ID(const int userID)
 {
   this->ownerID = userID;
 };
 
-void Server::setUserID(const int userID){
+void Server::set_user_ID(const int userID){
   this->userID = userID;
 };
 
-void Server::setName(const string name)
+void Server::set_name(const string name)
 {
   this->name = name;
 };
 
-void Server::setDescription(const string description)
+void Server::set_description(const string description)
 {
   this->description = description;
 };
 
-void Server::setCodeInvite(const string codeInvite)
+void Server::set_code_invite(const string codeInvite)
 {
   this->codeInvite = codeInvite;
 };
 
-void Server::setChannels(const vector<Channel *> channels)
+void Server::set_channels(const vector<Channel *> channels)
 {
   this->channels = channels;
 };
 
-void Server::setParticipantIDs(const vector<int> participantIDs)
+void Server::set_participant_IDs(const vector<int> participantIDs)
 {
   this->participantIDs = participantIDs;
 };
@@ -90,13 +90,13 @@ bool Server::operator==(const Server other){
   return name == other.name && description == other.description;
 };
 
-void Server::addParticipantID(const int id){
+void Server::add_participant_ID(const int id){
   for(int participantid : participantIDs){
     if(participantid == id) return;
   }
   participantIDs.push_back(id);
 };
 
-void Server::addChannel(Channel *channel){
+void Server::add_channel(Channel *channel){
   channels.push_back(channel);
 };

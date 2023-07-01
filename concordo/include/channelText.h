@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+
 #include "channel.h"
 #include "message.h"
 
@@ -37,7 +38,7 @@ public:
    *
    * \return A vector containing the messages from the text channel.
    */
-  vector<Message> getMessages() const;
+  vector<Message> get_messages() const;
 
   /* Set method */
 
@@ -46,7 +47,7 @@ public:
    *
    * \param messages The vector of messages to be set for the text channel.
    */
-  void setMessages(const vector<Message> messages);
+  void set_messages(const vector<Message> messages);
 
   /* Other methods */
 
@@ -55,14 +56,14 @@ public:
    *
    * \param message The message to be added.
    */
-  void addMessage(const Message message);
+  void add_message(const Message message);
 
   /*!
    * Removes a message from the text channel.
    *
    * \param message The message to be removed.
    */
-  void remMessage(const Message message);
+  void rem_message(const Message message);
 
   /*!
    * Finds a message from the text channel.
@@ -70,12 +71,12 @@ public:
    * \param message The message to be found.
    * \return A pointer to the found message, or nullptr if not found.
    */
-  Message* findMessage(const Message message);
+  Message* find_message(const Message message);
 
   /*!
    * Lists all the messages from the text channel.
    */
-  void listChannel() const override;
+  void list_channel() const override;
 
 
 };

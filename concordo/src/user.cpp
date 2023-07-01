@@ -16,44 +16,44 @@ User::~User(){/* Empty */};
 
 /* Get methods */
 
-int User::getID() const 
+int User::get_ID() const 
 {
   return this->id;
 };
 
-string User::getName() const
+string User::get_name() const
 {
   return this->name;
 };
 
-string User::getEmail() const
+string User::get_email() const
 {
   return this->email;
 };
 
-string User::getPassword() const
+string User::get_password() const
 {
   return this->password;
 };
 
 /* Set methods */
 
-void User::setID(const int id)
+void User::set_ID(const int id)
 {
   this->id = id;
 };
 
-void User::setName(const string name)
+void User::set_name(const string name)
 {
   this->name = name;
 };
 
-void User::setEmail(const string email)
+void User::set_email(const string email)
 {
   this->email = email;
 };
 
-void User::setPassword(const string password)
+void User::set_password(const string password)
 {
   this->password = password;
 };

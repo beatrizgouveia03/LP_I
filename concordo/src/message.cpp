@@ -15,34 +15,34 @@ Message::~Message(){/* Empty */};
 
 /* Get methods */
 
-string Message::getDateHour() const
+string Message::get_date_hour() const
 {
   return this->dateHour;
 };
 
-string Message::getSendFrom() const
+string Message::get_send_from() const
 {
   return this->sendFrom;
 };
 
-string Message::getContent() const
+string Message::get_content() const
 {
   return this->content;
 };
 
 /* Set methods */
 
-void Message::setDateHour(const string dateHour)
+void Message::set_date_hour(const string dateHour)
 {
   this->dateHour = dateHour;
 };
 
-void Message::setSendFrom(const string sendFrom)
+void Message::set_send_from(const string sendFrom)
 {
   this->sendFrom = sendFrom;
 };
 
-void Message::setContent(const string content)
+void Message::set_content(const string content)
 {
   this->content = content;
 };

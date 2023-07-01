@@ -43,28 +43,28 @@ public:
    *
    * \return The id of the user.
    */
-  int getID() const;
+  int get_ID() const;
 
   /*!
    * Retrieves the name of the user.
    *
    * \return The name of the user.
    */
-  string getName() const;
+  string get_name() const;
 
   /*!
    * Retrieves the email of the user.
    *
    * \return The email of the user.
    */
-  string getEmail() const;
+  string get_email() const;
 
   /*!
    * Retrieves the password of the user.
    *
    * \return The password of the user.
    */
-  string getPassword() const;
+  string get_password() const;
 
   /* Set methods */
 
@@ -73,28 +73,28 @@ public:
    *
    * \param id The id to be set for the user.
    */
-  void setID(const int id);
+  void set_ID(const int id);
 
   /*!
    * Sets the name of the user.
    *
    * \param name The name to be set for the user.
    */
-  void setName(const string name);
+  void set_name(const string name);
 
   /*!
    * Sets the email of the user.
    *
    * \param email The email to be set for the user.
    */
-  void setEmail(const string email);
+  void set_email(const string email);
 
   /*!
    * Sets the password of the user.
    *
    * \param password The password to be set for the user.
    */
-  void setPassword(const string password);
+  void set_password(const string password);
 
   /* Other methods */
 

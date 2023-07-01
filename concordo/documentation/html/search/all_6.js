@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['message_33',['Message',['../d6/d28/classMessage.html',1,'Message'],['../d6/d28/classMessage.html#a4fc4f717b634e66070366cb7722d7761',1,'Message::Message()'],['../d6/d28/classMessage.html#a53c7c3d7f0bcbbee807945028cb2ed75',1,'Message::Message(const string dateHour, const int sendFrom, const string content)']]]
+  ['list_5fchannel_38',['list_channel',['../d2/d48/classChannel.html#aacd03bb1d0f031037ab4c758e6f75e0b',1,'Channel::list_channel()'],['../df/dad/classChannelText.html#ac8616f6401ea4e029f8c733dba9287da',1,'ChannelText::list_channel()'],['../db/da0/classChannelVoice.html#ae4c52e2c71c14afeabab7ed13b46fa1b',1,'ChannelVoice::list_channel()']]]
 ];

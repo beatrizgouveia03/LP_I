@@ -1,120 +1,141 @@
-# Concordo - Clone do Discord
+# Concordo - Discord Clone
 
-Concordo é um sistema inspirado no Discord, porém funciona apenas em modo texto, sem recursos de rede. O projeto foi implementado em C++ e utiliza os seguintes recursos:
+Concordo is a system inspired by Discord, but it operates only in text mode without networking capabilities. The project is implemented in C++ and utilizes the following features:
 
-- Herança e Classes abstratas
-- Manipulação de Arquivos
-- Standard Template Library (STL) com uso do vector
+- Inheritance and abstract classes
+- File manipulation
+- Standard Template Library (STL) with the use of vectors
 
-Feito por: Beatriz Gouveia Gadelha
-Matrícula: 20220040029
-Matéria/turma: DIM0120 - T01
+Created by: Beatriz Gouveia Gadelha
+Registration number: 20220040029
+Subject/class: DIM0120 - T01
 
-## Funcionalidades Implementadas
+## Implemented Features
 
-O sistema Concordo possui as seguintes entidades:
+The Concordo system includes the following entities:
 
-- Usuários: contém informações de uma conta no sistema.
-- Servidores: com vários canais.
-  - CanalTexto: herda de Canal e contém várias mensagens.
-    - Mensagens: escritas por usuários, com data/hora.
-  - CanalVoz: herda de Canal e guarda apenas a última mensagem postada.
+- Users: contains information about a user account in the system.
+- Servers: with multiple channels.
+  - TextChannel: inherits from Channel and contains multiple messages.
+    - Messages: written by users, with date/time information.
+  - VoiceChannel: inherits from Channel and stores only the last posted message.
   
-O sistema é operado através de comandos de uma única linha, compostos por um comando seguido de parâmetros. Cada comando é interpretado, processado e gera uma saída de acordo com o resultado do processamento.
+The system is operated through single-line commands, composed of a command followed by parameters. Each command is interpreted, processed, and generates an output according to the processing result.
 
-O projeto está dividido em três partes, cada uma com suas funcionalidades específicas.
+The project is divided into three parts, each with its specific functionalities.
 
-### Parte 1
+### Part 1
 
-Na primeira parte do projeto, foram implementados os comandos relacionados a Usuários, Servidores e a criação de Canais. Nessa parte, ainda não é possível entrar em um canal, nem enviar/ler mensagens dentro dele.
+In the first part of the project, the commands related to Users, Servers, and Channel creation were implemented. In this part, it is not yet possible to join a channel or send/read messages within it.
 
-### Comandos da Parte 1:
+### Part 1 Commands:
 
-**A1 - Se não estiver logado (Assim que entra no sistema)**
+**A1 - If not logged in (Upon entering the system)**
 
-- A1.1 - Sair do sistema: `quit`
-- A1.2 - Criar usuário: `create-user <email> <senha_sem_espaços> <nome com espaços>`
-- A1.3 - Entrar no sistema: `login <email> <senha>`
+- A1.1 - Quit the system: `quit`
+- A1.2 - Create user: `create-user <email> <password_without_spaces> <name with spaces>`
+- A1.3 - Log in: `login <email> <password>`
 
-**A2 - Interações básicas com Servidores (Se estiver logado)**
+**A2 - Basic Interactions with Servers (When logged in)**
 
-- A2.1 - Desconectar do Concordo: `disconnect`
-- A2.2 - Criar servidores: `create-server <nome>`
-- A2.3 - Mudar a descrição do servidor: `set-server-desc <nome> "<descrição>"`
-- A2.4 - Setar código de convite para o servidor: `set-server-invitecode <nome> <codigo>`
-- A2.5 - Listar servidores: `list-servers`
-- A2.6 - Remover servidor: `remove-server <nome>`
-- A2.7 - Entrar em um servidor: `enter-server <nome>`
-- A2.8 - Sair de um servidor: `leave-server`
-- A2.9 - Listar pessoas no servidor: `list-participants`
+- A2.1 - Disconnect from Concordo: `disconnect`
+- A2.2 - Create servers: `create-server <name>`
+- A2.3 - Change server description: `set-server-desc <name> "<description>"`
+- A2.4 - Set invite code for the server: `set-server-invitecode <name> <code>`
+- A2.5 - List servers: `list-servers`
+- A2.6 - Remove server: `remove-server <name>`
+- A2.7 - Join a server: `enter-server <name>`
+- A2.8 - Leave a server: `leave-server`
+- A2.9 - List participants in the server: `list-participants`
 
-## Pré-requisitos
-Antes de começar, certifique-se de ter instalado algum dos seguintes componentes em seu sistema:
+### Part 2
 
-- Compilador C++ (como o g++ ou clang++)
-- CMake (somente se estiver utilizando o CMake para compilar)
+In the second part of the project, the commands related to the resources of hte channels and messages were implemented. In this part, it is now possible to join a channel or send/read messages within it.
 
-## Compilação e execução usando CMake
+### Part 2 Commands:
 
-1. Acesse o diretório raiz do projeto, onde está localizado o arquivo CMakeLists.txt.
-2. Crie um diretório de compilação (por exemplo, "build") e acesse-o:
+**B1 - Channel Management (when inside a server)**
+
+- B1.1 - List server channels: `list-channels`
+- B1.2 - Create a channel in the server: `create-channel <name> <type>`
+- B1.3 - Enter a channel in the server: `enter-channel <name>`
+- B1.4 - Leave the channel: `leave-channel`
+
+
+**B2 - Message Management (when inside a server and in some channel)**
+
+- B2.1 - Send a message to the channel: `send-message <message>`
+- B2.2 - View messages in the channel:  `list-messages`
+
+## Prerequisites
+Before you start, make sure you have installed one of the following components on your system:
+
+- C++ compiler (such as g++ or clang++)
+- CMake (only if you are using CMake to compile)
+
+## Compilation and Execution using CMake
+
+1. Navigate to the root directory of the project where the CMakeLists.txt file is located.
+2. Create a build directory (e.g., "build") and navigate into it:
    ```
    mkdir build
    cd build
    ```
-3. Gere os arquivos de configuração do CMake dentro do diretório de compilação:
+3. Generate the CMake configuration files inside the build directory:
    ```
    cmake ..
    ```
-4. Execute o comando make para compilar o programa:
+4. Run the make command to compile the program:
    ```
    make
    ```
-   Isso irá compilar o código fonte e gerar o arquivo executável.
+   This will compile the source code and generate the executable file.
    
-5. Após a compilação bem-sucedida, a partir do diretório de compilação, execute o seguinte comando no terminal para iniciar o programa Concordo:
+5. After a successful compilation, from the build directory, run the following command in the terminal to start the Concordo program:
    ```
    ./concordo
    ```
-   Você poderá interagir com o programa através dos comandos disponíveis.
+   You can interact with the program using the available commands.
 
-## Compilação e execução com Compilador C++
+## Compilation and Execution with C++ Compiler
 
-Se você não estiver utilizando o CMake para compilar o programa Concordo e estiver lidando diretamente com os arquivos de origem, siga as etapas abaixo:
+If you are not using CMake to compile the Concordo program and dealing directly with the source files, follow the steps below:
 
-1. Acesse o diretório raiz do projeto, onde estão localizados os arquivos de origem.
-2. Compile o código fonte utilizando o compilador C++. Suponha que o arquivo principal do programa seja `main.cpp`. Execute o seguinte comando no terminal:
+1. Navigate to the root directory of the project where the source files are
+
+ located.
+2. Compile the source code using the C++ compiler. Suppose the main program file is `main.cpp`. Execute the following command in the terminal:
    ```
    g++ main.cpp user.cpp server.cpp system.cpp message.cpp channel.cpp channelText.cpp channelVoice.cpp -o concordo
    ```
-   Isso irá compilar o código fonte e gerar um arquivo executável chamado `concordo`.
+   This will compile the source code and generate an executable file named `concordo`.
 
-3. Após a compilação bem-sucedida, a partir do diretório onde o arquivo executável `concordo` foi gerado, execute o seguinte comando no terminal:
+3. After a successful compilation, from the directory where the `concordo` executable file was generated, run the following command in the terminal:
    ```
    ./concordo
    ```
-   Isso iniciará a execução do programa Concordo, e você poderá interagir com ele através dos comandos disponíveis.
+   This will start the execution of the Concordo program, and you can interact with it using the available commands.
 
-Certifique-se de seguir a documentação fornecida com os detalhes de todos os comandos disponíveis e sua sintaxe correta para realizar as operações desejadas dentro do programa Concordo. 
+Make sure to refer to the provided documentation for details on all available commands and their correct syntax to perform the desired operations within the Concordo program.
 
-## Testando o Executável com o Arquivo de Teste
+## Testing the Executable with the Test File
 
-1. Certifique-se de ter compilado o programa Concordo conforme as instruções mencionadas anteriormente, seja utilizando o CMake ou compilando diretamente sem o CMake.
+1. Make sure you have compiled the Concordo program following the instructions mentioned above, either using CMake or compiling directly without CMake.
 
-2. No diretório onde o executável `concordo` foi gerado, verifique se há um arquivo chamado `command.in`. Esse arquivo contém uma série de comandos que podem ser usados para testar o programa.
+2. In the directory where the `concordo` executable file is located, check if there is a file named `command.in`. This file contains a series of commands that can be used to test the program.
 
-3. Abra um terminal e navegue até o diretório onde o executável `concordo` está localizado.
+3. Open a terminal and navigate to the directory where the `concordo` executable is located.
 
-4. Execute o seguinte comando para redirecionar a entrada do arquivo `command.in` para o programa Concordo:
+4. Execute the following command to redirect the input from the `command.in` file to the Concordo program:
    ```
    ./concordo < ../command.in
    ```
-   Isso redirecionará o conteúdo do arquivo `command.in` como entrada para o programa Concordo. O programa executará os comandos presentes no arquivo e exibirá os resultados correspondentes no terminal.
+   This will redirect the content of the `command.in` file as input to the Concordo program. The program will execute the commands present in the file and display the corresponding results in the terminal.
 
-5. Observe a saída gerada pelo programa Concordo e verifique se está correta de acordo com os comandos presentes no arquivo `command.in`.
+5. Observe the output generated by the Concordo program and verify if it is correct according to the commands present in the `command.in` file.
 
-O arquivo `command.in` pode ser personalizado de acordo com os testes que você deseja realizar. Cada linha do arquivo representa um comando que pode ser reconhecido pelo programa Concordo.
+The `command.in` file can be customized according to the tests you want to perform. Each line of the file represents a command that can be recognized by the Concordo program.
 
-Certifique-se de utilizar a sintaxe correta dos comandos e seguir a documentação fornecida com o programa Concordo para entender a estrutura e os detalhes de cada comando suportado.
+Make sure to use the correct syntax of the commands and refer to the documentation provided with the Concordo program to understand the structure and details of each supported command.
 
-Lembrando que o arquivo `command.in` é apenas uma opção conveniente para automatizar os testes e não é estritamente necessário. Você também pode interagir com o programa diretamente no terminal, fornecendo comandos manualmente.
+Note that the `command.in` file is just a convenient option to automate the tests and is not strictly required. You can also interact with the program directly in the terminal by providing commands manually.

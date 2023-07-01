@@ -2,6 +2,7 @@
 #define CHANNELVOICE_H
 
 #include <iostream>
+
 #include "channel.h"
 #include "message.h"
 
@@ -36,7 +37,7 @@ public:
    *
    * \return The last message from the voice channel.
    */
-  Message getLastMessage() const;
+  Message get_last_message() const;
 
   /* Set method */
 
@@ -45,14 +46,14 @@ public:
    *
    * \param lastMessage The message to be set for the voice channel.
    */
-  void setLastMessage(const Message lastMessage);
+  void set_last_message(const Message lastMessage);
 
   /* Other methods */
 
   /*!
    * lists the last message from the voice channel.
    */
-  void listChannel() const override;
+  void list_channel() const override;
 };
 
 #endif

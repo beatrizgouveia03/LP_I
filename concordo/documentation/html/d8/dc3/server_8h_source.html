@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Concordo
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">2.0</span>
    </div>
   </td>
  </tr>
@@ -75,88 +75,94 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;channel.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;channelText.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;channelVoice.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d00/classServer.html">Server</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">int</span> ownerID;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">int</span> userID;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">string</span> description;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">string</span> codeInvite;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  vector&lt;Channel *&gt; channels;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  vector&lt;int&gt; participantIDs;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">/* Constructors and destructor */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">   25</a></span>&#160;  <a class="code" href="../../db/d00/classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a87500e00996a5eab10e91d3c5a09f9ee">   32</a></span>&#160;  <a class="code" href="../../db/d00/classServer.html#a87500e00996a5eab10e91d3c5a09f9ee">Server</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">   37</a></span>&#160;  <a class="code" href="../../db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">/* Get methods */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d00/classServer.html">Server</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">int</span> ownerID;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordtype">int</span> userID;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">string</span> name;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordtype">string</span> description;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">string</span> codeInvite;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  vector&lt;Channel *&gt; channels;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  vector&lt;int&gt; participantIDs;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">/* Constructors and destructor */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">   27</a></span>&#160;  <a class="code" href="../../db/d00/classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a87500e00996a5eab10e91d3c5a09f9ee">   34</a></span>&#160;  <a class="code" href="../../db/d00/classServer.html#a87500e00996a5eab10e91d3c5a09f9ee">Server</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">   39</a></span>&#160;  <a class="code" href="../../db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a82b6839ed7adce161e1f4a0202080d7f">   46</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../db/d00/classServer.html#a82b6839ed7adce161e1f4a0202080d7f">getOwnerID</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#afe7b0dd76610b9176a34ea4bce7302ac">   53</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../db/d00/classServer.html#afe7b0dd76610b9176a34ea4bce7302ac">getUserID</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#ad7c180851101793b964d1ebafb1e437b">   60</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../db/d00/classServer.html#ad7c180851101793b964d1ebafb1e437b">getName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a42650b55417f0daf0b0f0755e5f8b44e">   67</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../db/d00/classServer.html#a42650b55417f0daf0b0f0755e5f8b44e">getDescription</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a95d906eb4ab199508996114238be6c3b">   74</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../db/d00/classServer.html#a95d906eb4ab199508996114238be6c3b">getCodeInvite</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a42231271710c98f2a07b70e07a38ee25">   81</a></span>&#160;  vector&lt;Channel *&gt; <a class="code" href="../../db/d00/classServer.html#a42231271710c98f2a07b70e07a38ee25">getChannels</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#ab54a1ffd1ea9e507cca8f792705da0b8">   88</a></span>&#160;  vector&lt;int&gt; <a class="code" href="../../db/d00/classServer.html#ab54a1ffd1ea9e507cca8f792705da0b8">getParticipantIDs</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">/* Set methods */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">/* Get methods */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a1311603b791eb587a6263fa4880fdf87">   48</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../db/d00/classServer.html#a1311603b791eb587a6263fa4880fdf87">get_owner_ID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a585b28e4be5bd9e13d0292e0087735e5">   55</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../db/d00/classServer.html#a585b28e4be5bd9e13d0292e0087735e5">get_user_ID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a66b0e0b70c8204857c775a065106c840">   62</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../db/d00/classServer.html#a66b0e0b70c8204857c775a065106c840">get_name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#aac0c3b6a1dad700db8e37151cacfc95a">   69</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../db/d00/classServer.html#aac0c3b6a1dad700db8e37151cacfc95a">get_description</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a6d32287e0dda6a18a21d8839c59e8e6a">   76</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../db/d00/classServer.html#a6d32287e0dda6a18a21d8839c59e8e6a">get_code_invite</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#af5be055550f209bb9e212d225d00a025">   83</a></span>&#160;  vector&lt;Channel *&gt; <a class="code" href="../../db/d00/classServer.html#af5be055550f209bb9e212d225d00a025">get_channels</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a0fd2bb832b2c01216f3df66ff5cbc82f">   90</a></span>&#160;  vector&lt;int&gt; <a class="code" href="../../db/d00/classServer.html#a0fd2bb832b2c01216f3df66ff5cbc82f">get_participant_IDs</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a604ac2501ed04c117c88f9b8e488e2df">   97</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a604ac2501ed04c117c88f9b8e488e2df">setOwnerID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> userID);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a1596f219845e3f6f99faa6e94cac5159">  104</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a1596f219845e3f6f99faa6e94cac5159">setUserID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> userID);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a75607d0dd821152c84780a382de59c17">  111</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a75607d0dd821152c84780a382de59c17">setName</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a76cc28690223f66ae7ff457d01fdea83">  118</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a76cc28690223f66ae7ff457d01fdea83">setDescription</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> description);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a4cf08cf8b195982076ad78fc45594d6e">  125</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a4cf08cf8b195982076ad78fc45594d6e">setCodeInvite</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> codeInvite);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#aa6a6d5a70508d3242f5ab24b324f9e46">  132</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#aa6a6d5a70508d3242f5ab24b324f9e46">setChannels</a>(<span class="keyword">const</span> vector&lt;Channel *&gt; channels);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a9221c66e3dea3dba7fd21b65b0885fe2">  139</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a9221c66e3dea3dba7fd21b65b0885fe2">setParticipantIDs</a>(<span class="keyword">const</span> vector&lt;int&gt; participantIDs);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="comment">/* Other methods */</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">/* Set methods */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a8f1e70ffe4c1c607f89c12a1011e03ef">   99</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a8f1e70ffe4c1c607f89c12a1011e03ef">set_owner_ID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> userID);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#ae418500273c5502eefe6596bbb1d5478">  106</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#ae418500273c5502eefe6596bbb1d5478">set_user_ID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> userID);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#afcc450c16805f524bf1707ed1cbc38ae">  113</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#afcc450c16805f524bf1707ed1cbc38ae">set_name</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#ada7f833dce479bc58eed709267a34ba5">  120</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#ada7f833dce479bc58eed709267a34ba5">set_description</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> description);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a96771d1c0f9e2794d3d511621baafc9a">  127</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a96771d1c0f9e2794d3d511621baafc9a">set_code_invite</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> codeInvite);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a211df3afa8dbeaeba025790a37cb699a">  134</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a211df3afa8dbeaeba025790a37cb699a">set_channels</a>(<span class="keyword">const</span> vector&lt;Channel *&gt; channels);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a8c3376ce22c2152ca66e1d30da0a882f">  141</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a8c3376ce22c2152ca66e1d30da0a882f">set_participant_IDs</a>(<span class="keyword">const</span> vector&lt;int&gt; participantIDs);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#af349ad1e2e70940f4cdcb32c04469d1c">  149</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../db/d00/classServer.html#af349ad1e2e70940f4cdcb32c04469d1c">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../db/d00/classServer.html">Server</a> other);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a6eafda1be9705b39857cf5631e09e641">  156</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a6eafda1be9705b39857cf5631e09e641">addParticipantID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="../../db/d00/classServer.html">Server</a></div><div class="ttdef"><b>Definition:</b> server.h:10</div></div>
-<div class="ttc" id="aclassServer_html_a1596f219845e3f6f99faa6e94cac5159"><div class="ttname"><a href="../../db/d00/classServer.html#a1596f219845e3f6f99faa6e94cac5159">Server::setUserID</a></div><div class="ttdeci">void setUserID(const int userID)</div></div>
-<div class="ttc" id="aclassServer_html_a42231271710c98f2a07b70e07a38ee25"><div class="ttname"><a href="../../db/d00/classServer.html#a42231271710c98f2a07b70e07a38ee25">Server::getChannels</a></div><div class="ttdeci">vector&lt; Channel * &gt; getChannels() const</div></div>
-<div class="ttc" id="aclassServer_html_a42650b55417f0daf0b0f0755e5f8b44e"><div class="ttname"><a href="../../db/d00/classServer.html#a42650b55417f0daf0b0f0755e5f8b44e">Server::getDescription</a></div><div class="ttdeci">string getDescription() const</div></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">/* Other methods */</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#af349ad1e2e70940f4cdcb32c04469d1c">  151</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../db/d00/classServer.html#af349ad1e2e70940f4cdcb32c04469d1c">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../db/d00/classServer.html">Server</a> other);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#abc53beb4e6f2f122c9a0e64a8d6db1a3">  158</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#abc53beb4e6f2f122c9a0e64a8d6db1a3">add_participant_ID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="../../db/d00/classServer.html#a62bca3ef905ac332aef28daade0f3779">  165</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../db/d00/classServer.html#a62bca3ef905ac332aef28daade0f3779">add_channel</a>(<a class="code" href="../../d2/d48/classChannel.html">Channel</a>* channelT);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;};</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassChannel_html"><div class="ttname"><a href="../../d2/d48/classChannel.html">Channel</a></div><div class="ttdef"><b>Definition:</b> channel.h:9</div></div>
+<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="../../db/d00/classServer.html">Server</a></div><div class="ttdef"><b>Definition:</b> server.h:12</div></div>
+<div class="ttc" id="aclassServer_html_a0fd2bb832b2c01216f3df66ff5cbc82f"><div class="ttname"><a href="../../db/d00/classServer.html#a0fd2bb832b2c01216f3df66ff5cbc82f">Server::get_participant_IDs</a></div><div class="ttdeci">vector&lt; int &gt; get_participant_IDs() const</div></div>
+<div class="ttc" id="aclassServer_html_a1311603b791eb587a6263fa4880fdf87"><div class="ttname"><a href="../../db/d00/classServer.html#a1311603b791eb587a6263fa4880fdf87">Server::get_owner_ID</a></div><div class="ttdeci">int get_owner_ID() const</div></div>
+<div class="ttc" id="aclassServer_html_a211df3afa8dbeaeba025790a37cb699a"><div class="ttname"><a href="../../db/d00/classServer.html#a211df3afa8dbeaeba025790a37cb699a">Server::set_channels</a></div><div class="ttdeci">void set_channels(const vector&lt; Channel * &gt; channels)</div></div>
 <div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="../../db/d00/classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div></div>
-<div class="ttc" id="aclassServer_html_a4cf08cf8b195982076ad78fc45594d6e"><div class="ttname"><a href="../../db/d00/classServer.html#a4cf08cf8b195982076ad78fc45594d6e">Server::setCodeInvite</a></div><div class="ttdeci">void setCodeInvite(const string codeInvite)</div></div>
-<div class="ttc" id="aclassServer_html_a604ac2501ed04c117c88f9b8e488e2df"><div class="ttname"><a href="../../db/d00/classServer.html#a604ac2501ed04c117c88f9b8e488e2df">Server::setOwnerID</a></div><div class="ttdeci">void setOwnerID(const int userID)</div></div>
-<div class="ttc" id="aclassServer_html_a6eafda1be9705b39857cf5631e09e641"><div class="ttname"><a href="../../db/d00/classServer.html#a6eafda1be9705b39857cf5631e09e641">Server::addParticipantID</a></div><div class="ttdeci">void addParticipantID(const int id)</div></div>
-<div class="ttc" id="aclassServer_html_a75607d0dd821152c84780a382de59c17"><div class="ttname"><a href="../../db/d00/classServer.html#a75607d0dd821152c84780a382de59c17">Server::setName</a></div><div class="ttdeci">void setName(const string name)</div></div>
-<div class="ttc" id="aclassServer_html_a76cc28690223f66ae7ff457d01fdea83"><div class="ttname"><a href="../../db/d00/classServer.html#a76cc28690223f66ae7ff457d01fdea83">Server::setDescription</a></div><div class="ttdeci">void setDescription(const string description)</div></div>
-<div class="ttc" id="aclassServer_html_a82b6839ed7adce161e1f4a0202080d7f"><div class="ttname"><a href="../../db/d00/classServer.html#a82b6839ed7adce161e1f4a0202080d7f">Server::getOwnerID</a></div><div class="ttdeci">int getOwnerID() const</div></div>
+<div class="ttc" id="aclassServer_html_a585b28e4be5bd9e13d0292e0087735e5"><div class="ttname"><a href="../../db/d00/classServer.html#a585b28e4be5bd9e13d0292e0087735e5">Server::get_user_ID</a></div><div class="ttdeci">int get_user_ID() const</div></div>
+<div class="ttc" id="aclassServer_html_a62bca3ef905ac332aef28daade0f3779"><div class="ttname"><a href="../../db/d00/classServer.html#a62bca3ef905ac332aef28daade0f3779">Server::add_channel</a></div><div class="ttdeci">void add_channel(Channel *channelT)</div></div>
+<div class="ttc" id="aclassServer_html_a66b0e0b70c8204857c775a065106c840"><div class="ttname"><a href="../../db/d00/classServer.html#a66b0e0b70c8204857c775a065106c840">Server::get_name</a></div><div class="ttdeci">string get_name() const</div></div>
+<div class="ttc" id="aclassServer_html_a6d32287e0dda6a18a21d8839c59e8e6a"><div class="ttname"><a href="../../db/d00/classServer.html#a6d32287e0dda6a18a21d8839c59e8e6a">Server::get_code_invite</a></div><div class="ttdeci">string get_code_invite() const</div></div>
 <div class="ttc" id="aclassServer_html_a87500e00996a5eab10e91d3c5a09f9ee"><div class="ttname"><a href="../../db/d00/classServer.html#a87500e00996a5eab10e91d3c5a09f9ee">Server::Server</a></div><div class="ttdeci">Server(const string name)</div></div>
-<div class="ttc" id="aclassServer_html_a9221c66e3dea3dba7fd21b65b0885fe2"><div class="ttname"><a href="../../db/d00/classServer.html#a9221c66e3dea3dba7fd21b65b0885fe2">Server::setParticipantIDs</a></div><div class="ttdeci">void setParticipantIDs(const vector&lt; int &gt; participantIDs)</div></div>
-<div class="ttc" id="aclassServer_html_a95d906eb4ab199508996114238be6c3b"><div class="ttname"><a href="../../db/d00/classServer.html#a95d906eb4ab199508996114238be6c3b">Server::getCodeInvite</a></div><div class="ttdeci">string getCodeInvite() const</div></div>
-<div class="ttc" id="aclassServer_html_aa6a6d5a70508d3242f5ab24b324f9e46"><div class="ttname"><a href="../../db/d00/classServer.html#aa6a6d5a70508d3242f5ab24b324f9e46">Server::setChannels</a></div><div class="ttdeci">void setChannels(const vector&lt; Channel * &gt; channels)</div></div>
-<div class="ttc" id="aclassServer_html_ab54a1ffd1ea9e507cca8f792705da0b8"><div class="ttname"><a href="../../db/d00/classServer.html#ab54a1ffd1ea9e507cca8f792705da0b8">Server::getParticipantIDs</a></div><div class="ttdeci">vector&lt; int &gt; getParticipantIDs() const</div></div>
+<div class="ttc" id="aclassServer_html_a8c3376ce22c2152ca66e1d30da0a882f"><div class="ttname"><a href="../../db/d00/classServer.html#a8c3376ce22c2152ca66e1d30da0a882f">Server::set_participant_IDs</a></div><div class="ttdeci">void set_participant_IDs(const vector&lt; int &gt; participantIDs)</div></div>
+<div class="ttc" id="aclassServer_html_a8f1e70ffe4c1c607f89c12a1011e03ef"><div class="ttname"><a href="../../db/d00/classServer.html#a8f1e70ffe4c1c607f89c12a1011e03ef">Server::set_owner_ID</a></div><div class="ttdeci">void set_owner_ID(const int userID)</div></div>
+<div class="ttc" id="aclassServer_html_a96771d1c0f9e2794d3d511621baafc9a"><div class="ttname"><a href="../../db/d00/classServer.html#a96771d1c0f9e2794d3d511621baafc9a">Server::set_code_invite</a></div><div class="ttdeci">void set_code_invite(const string codeInvite)</div></div>
+<div class="ttc" id="aclassServer_html_aac0c3b6a1dad700db8e37151cacfc95a"><div class="ttname"><a href="../../db/d00/classServer.html#aac0c3b6a1dad700db8e37151cacfc95a">Server::get_description</a></div><div class="ttdeci">string get_description() const</div></div>
+<div class="ttc" id="aclassServer_html_abc53beb4e6f2f122c9a0e64a8d6db1a3"><div class="ttname"><a href="../../db/d00/classServer.html#abc53beb4e6f2f122c9a0e64a8d6db1a3">Server::add_participant_ID</a></div><div class="ttdeci">void add_participant_ID(const int id)</div></div>
 <div class="ttc" id="aclassServer_html_ad5ec9462b520e59f7ea831e157ee5e59"><div class="ttname"><a href="../../db/d00/classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server::Server</a></div><div class="ttdeci">Server()</div></div>
-<div class="ttc" id="aclassServer_html_ad7c180851101793b964d1ebafb1e437b"><div class="ttname"><a href="../../db/d00/classServer.html#ad7c180851101793b964d1ebafb1e437b">Server::getName</a></div><div class="ttdeci">string getName() const</div></div>
+<div class="ttc" id="aclassServer_html_ada7f833dce479bc58eed709267a34ba5"><div class="ttname"><a href="../../db/d00/classServer.html#ada7f833dce479bc58eed709267a34ba5">Server::set_description</a></div><div class="ttdeci">void set_description(const string description)</div></div>
+<div class="ttc" id="aclassServer_html_ae418500273c5502eefe6596bbb1d5478"><div class="ttname"><a href="../../db/d00/classServer.html#ae418500273c5502eefe6596bbb1d5478">Server::set_user_ID</a></div><div class="ttdeci">void set_user_ID(const int userID)</div></div>
 <div class="ttc" id="aclassServer_html_af349ad1e2e70940f4cdcb32c04469d1c"><div class="ttname"><a href="../../db/d00/classServer.html#af349ad1e2e70940f4cdcb32c04469d1c">Server::operator==</a></div><div class="ttdeci">bool operator==(const Server other)</div></div>
-<div class="ttc" id="aclassServer_html_afe7b0dd76610b9176a34ea4bce7302ac"><div class="ttname"><a href="../../db/d00/classServer.html#afe7b0dd76610b9176a34ea4bce7302ac">Server::getUserID</a></div><div class="ttdeci">int getUserID() const</div></div>
+<div class="ttc" id="aclassServer_html_af5be055550f209bb9e212d225d00a025"><div class="ttname"><a href="../../db/d00/classServer.html#af5be055550f209bb9e212d225d00a025">Server::get_channels</a></div><div class="ttdeci">vector&lt; Channel * &gt; get_channels() const</div></div>
+<div class="ttc" id="aclassServer_html_afcc450c16805f524bf1707ed1cbc38ae"><div class="ttname"><a href="../../db/d00/classServer.html#afcc450c16805f524bf1707ed1cbc38ae">Server::set_name</a></div><div class="ttdeci">void set_name(const string name)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

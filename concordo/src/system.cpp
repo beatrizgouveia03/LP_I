@@ -14,82 +14,82 @@ System::~System(){/* Empty */};
 
 /* Get methods */
 
-vector<User> System::getAllUsers() const
+vector<User> System::get_all_users() const
 {
   return this->allUsers;
 };
 
-vector<Server> System::getAllServers() const
+vector<Server> System::get_all_servers() const
 {
   return this->allServers;
 };
 
-vector<ChannelText> System::getAllTextChannels() const
+vector<ChannelText> System::get_all_text_channels() const
 {
   return this->allTextChannels;
 };
 
-vector<ChannelVoice> System::getAllVoiceChannels() const
+vector<ChannelVoice> System::get_all_voice_channels() const
 {
   return this->allVoiceChannels;
 };
 
-int System::getUserLoggedID() const
+int System::get_user_logged_ID() const
 {
   return this->userLoggedID;
 };
 
-Server* System::getServerLogged() const
+Server* System::get_server_logged() const
 {
   return this->serverLogged;
 };
 
-Channel* System::getChannelLogged() const
+Channel* System::get_channel_logged() const
 {
   return this->channelLogged;
 };
 
 /* Set methods */
 
-void System::setAllUsers(const vector<User> allUsers)
+void System::set_all_users(const vector<User> allUsers)
 {
   this->allUsers = allUsers;
 };
 
-void System::setAllServers(const vector<Server> allServers)
+void System::set_all_servers(const vector<Server> allServers)
 {
   this->allServers = allServers;
 };
 
-void System::setAllTextChannels(const vector<ChannelText> allTextChannels)
+void System::set_all_text_channels(const vector<ChannelText> allTextChannels)
 {
   this->allTextChannels = allTextChannels;
 };
 
-void System::setAllVoiceChannels(const vector<ChannelVoice> allVoiceChannels)
+void System::set_all_voice_channels(const vector<ChannelVoice> allVoiceChannels)
 {
   this->allVoiceChannels = allVoiceChannels;
 };
 
-void System::setUserLoggedID(const int userLoggedID)
+void System::set_user_logged_ID(const int userLoggedID)
 {
   this->userIsLogged = true;
   this->userLoggedID = userLoggedID;
 };
 
-void System::setServerLogged(Server *serverLogged)
+void System::set_server_logged(Server *serverLogged)
 {
   this->serverLogged = serverLogged;
 };
 
-void System::setChannelLogged(Channel *channelLogged)
+void System::set_channel_logged(Channel *channelLogged)
 {
   this->channelLogged = channelLogged;
 };
 
 /* Other methods */
 
-bool System::isLogged()
+bool System::is_logged()
 {
   return this->userIsLogged;
 }
@@ -99,27 +99,27 @@ void System::disconnect()
   this->userIsLogged = false;
 }
 
-void System::addUser(const User user)
+void System::add_user(const User user)
 {
   allUsers.push_back(user);
 };
 
-void System::addServer(const Server server)
+void System::add_server(const Server server)
 {
   allServers.push_back(server);
 };
 
-void System::addChannel(const ChannelText channelT)
+void System::add_channel(const ChannelText channelT)
 {
   allTextChannels.push_back(channelT);
 };
 
-void System::addChannel(const ChannelVoice channelV)
+void System::add_channel(const ChannelVoice channelV)
 {
   allVoiceChannels.push_back(channelV);
 };
 
-void System::remUser(const User user)
+void System::rem_user(const User user)
 {
   for (auto it = allUsers.begin(); it != allUsers.end(); ++it)
   {
@@ -131,7 +131,7 @@ void System::remUser(const User user)
   }
 };
 
-void System::remServer(const Server server)
+void System::rem_server(const Server server)
 {
   for(auto it = allServers.begin(); it != allServers.end(); ++it){
     if(*it == server){
@@ -141,50 +141,50 @@ void System::remServer(const Server server)
   }
 };
 
-User *System::findUser(const string email)
+User *System::find_user(const string email)
 {
   for(auto& u : allUsers){
-    if(u.getEmail() == email) return &u;
+    if(u.get_email() == email) return &u;
   }
   return nullptr;
 };
 
-User *System::findUser(const int id)
+User *System::find_user(const int id)
 {
   for (auto &u : allUsers)
   {
-    if (u.getID() == id)
+    if (u.get_ID() == id)
       return &u;
   }
   return nullptr;
 };
 
-Server *System::findServer(const string name)
+Server *System::find_server(const string name)
 {
   for (auto& s : allServers)
   {
-    if (s.getName() == name)
+    if (s.get_name() == name)
       return &s;
   }
   return nullptr;
 };
 
-ChannelText *System::findTextChannel(const string name)
+ChannelText *System::find_text_channel(const string name)
 {
   for (auto &c : allTextChannels)
   {
-    if (c.getName() == name)
+    if (c.get_name() == name)
       return &c;
   }
 
   return nullptr;
 };
 
-ChannelVoice *System::findVoiceChannel(const string name)
+ChannelVoice *System::find_voice_channel(const string name)
 {
   for (auto &c : allVoiceChannels)
   {
-    if (c.getName() == name)
+    if (c.get_name() == name)
       return &c;
   }
 
