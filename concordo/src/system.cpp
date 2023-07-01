@@ -2,10 +2,12 @@
 
 System::System(){/* Empty */};
 
-System::System(vector<User> allUsers, vector<Server> allServers)
+System::System(vector<User> allUsers, vector<Server> allServers, vector<ChannelText> allTextChannels, vector<ChannelVoice> allVoiceChannels)
 {
   this->allUsers = allUsers;
   this->allServers = allServers;    
+  this->allTextChannels = allTextChannels;
+  this->allVoiceChannels = allVoiceChannels;
 };
 
 System::~System(){/* Empty */};
@@ -20,6 +22,16 @@ vector<User> System::getAllUsers() const
 vector<Server> System::getAllServers() const
 {
   return this->allServers;
+};
+
+vector<ChannelText> System::getAllTextChannels() const
+{
+  return this->allTextChannels;
+};
+
+vector<ChannelVoice> System::getAllVoiceChannels() const
+{
+  return this->allVoiceChannels;
 };
 
 int System::getUserLoggedID() const
@@ -47,6 +59,16 @@ void System::setAllUsers(const vector<User> allUsers)
 void System::setAllServers(const vector<Server> allServers)
 {
   this->allServers = allServers;
+};
+
+void System::setAllTextChannels(const vector<ChannelText> allTextChannels)
+{
+  this->allTextChannels = allTextChannels;
+};
+
+void System::setAllVoiceChannels(const vector<ChannelVoice> allVoiceChannels)
+{
+  this->allVoiceChannels = allVoiceChannels;
 };
 
 void System::setUserLoggedID(const int userLoggedID)
@@ -85,6 +107,16 @@ void System::addUser(const User user)
 void System::addServer(const Server server)
 {
   allServers.push_back(server);
+};
+
+void System::addChannel(const ChannelText channelT)
+{
+  allTextChannels.push_back(channelT);
+};
+
+void System::addChannel(const ChannelVoice channelV)
+{
+  allVoiceChannels.push_back(channelV);
 };
 
 void System::remUser(const User user)
@@ -134,5 +166,27 @@ Server *System::findServer(const string name)
     if (s.getName() == name)
       return &s;
   }
+  return nullptr;
+};
+
+ChannelText *System::findTextChannel(const string name)
+{
+  for (auto &c : allTextChannels)
+  {
+    if (c.getName() == name)
+      return &c;
+  }
+
+  return nullptr;
+};
+
+ChannelVoice *System::findVoiceChannel(const string name)
+{
+  for (auto &c : allVoiceChannels)
+  {
+    if (c.getName() == name)
+      return &c;
+  }
+
   return nullptr;
 };

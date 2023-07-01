@@ -1,14 +1,16 @@
 #ifndef SYSTEM_M
 #define SYSTEM_H
 
-#include "server.h"
 #include "user.h"
+#include "server.h"
 
 class System
 {
 private:
   vector<User> allUsers;
   vector<Server> allServers;
+  vector<ChannelText> allTextChannels;
+  vector<ChannelVoice> allVoiceChannels;
   int nextID = 1;
   bool userIsLogged = false;
   int userLoggedID;
@@ -27,8 +29,10 @@ public:
    *
    * \param allUsers The vector of users of the system
    * \param allServers The vector of servers of the system
+   * \param allTextChannels The vector of text channels of the system
+   * \param allVoiceChannels The vector of voice channels of the system
    */
-  System(vector<User> allUsers, vector<Server> allServers);
+  System(vector<User> allUsers, vector<Server> allServers, vector<ChannelText> allTextChannels, vector<ChannelVoice> allVoiceChannels);
 
   /*!
    * Default destructor.
@@ -50,6 +54,20 @@ public:
    * \return A vector containing the servers from the system.
    */
   vector<Server> getAllServers() const;
+
+  /*!
+   * Retrieves the text channels from the system.
+   *
+   * \return A vector containing the text channels from the system.
+   */
+  vector<ChannelText> getAllTextChannels() const;
+
+  /*!
+   * Retrieves the voice channels from the system.
+   *
+   * \return A vector containing the voice channels from the system.
+   */
+  vector<ChannelVoice> getAllVoiceChannels() const;
 
   /*!
    * Retrieves the logged user ID in the system.
@@ -87,6 +105,20 @@ public:
    * \param allServers A vector containing the servers to be set for the system.
    */
   void setAllServers(const vector<Server> allServers);
+
+  /*!
+   * Sets the text channels of the system.
+   *
+   * \param allTextChannels A vector containing the text channels to be set for the system.
+   */
+  void setAllTextChannels(const vector<ChannelText> allTextChannels);
+
+  /*!
+   * Sets the voice channels of the system.
+   *
+   * \param allVoiceChannels A vector containing the voice channels to be set for the system.
+   */
+  void setAllVoiceChannels(const vector<ChannelVoice> allVoiceChannels);
 
   /*!
    * Sets the logged user ID in the system.
@@ -138,6 +170,20 @@ public:
   void addServer(const Server server);
 
   /*!
+   * Adds a text channel to the list of the system.
+   *
+   * \param channelT The text channel to be added.
+   */
+  void addChannel(const ChannelText channelT);
+
+  /*!
+   * Adds a voice channel to the list of the system.
+   *
+   * \param channelV The voice channel to be added.
+   */
+  void addChannel(const ChannelVoice channelV);
+
+  /*!
    * Removes a user from the list of the system.
    *
    * \param user The user to be removed.
@@ -175,6 +221,21 @@ public:
    */
   Server *findServer(const string name);
 
+  /*!
+   * Finds a text channel from the system.
+   *
+   * \param name The name of the text channel to be found.
+   * \return A pointer to the found channel, or nullptr if not found.
+   */
+  ChannelText *findTextChannel(const string name);
+
+  /*!
+   * Finds a voice channel from the system.
+   *
+   * \param name The name of the voice channel to be found.
+   * \return A pointer to the found channel, or nullptr if not found.
+   */
+  ChannelVoice *findVoiceChannel(const string name);
 };
 
 #endif

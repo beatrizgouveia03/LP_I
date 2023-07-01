@@ -3,8 +3,6 @@
 #include <iostream>
 
 #include "system.h"
-#include "channelText.h"
-#include "channelVoice.h"
 
 /*!
  * Creates a new user in the system.
@@ -269,7 +267,9 @@ void createChannel(System &system, string name, string type){
         }
       }
       ChannelText newChannel(name);
-      server->addChannel(newChannel);
+      system.addChannel(newChannel);
+      server->addChannel(system.findTextChannel(name));
+
       cout << "\"Canal de texto \'" << name << "\' criado\"\n";
     }
     else if (type == "voz")
@@ -286,7 +286,9 @@ void createChannel(System &system, string name, string type){
         }
       }
       ChannelVoice newChannel(name);
-      server->addChannel(newChannel);
+      system.addChannel(newChannel);
+      server->addChannel(system.findVoiceChannel(name));
+
       cout << "\"Canal de voz \'" << name << "\' criado\"\n";
     }
     else{
