@@ -5,6 +5,7 @@
 #include "server.h"
 
 #include <fstream>
+#include <sstream>
 
 class System
 {
@@ -246,8 +247,10 @@ class System
     /* Saves all the info of the server */
     void save();
 
+    /* Laods all the info to the server */
+    void load();
 
-  //=== Private methods
+    //=== Private methods
   private:
 
     /* Saves all the users of the server with all their info */
@@ -256,6 +259,8 @@ class System
     /* Saves all the servers of the server with all their info */
     void saveServers();
 
+    /* Loads all the users of the server with all their info */
+    void loadUsers();
 };
 
 #endif

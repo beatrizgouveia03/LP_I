@@ -269,3 +269,50 @@ void System::save()
   saveServers();
 }
 
+void System::loadUsers()
+{
+  allUsers = vector<User>();
+
+  ifstream archive("../data/users.txt");
+
+  if (archive.is_open())
+  { 
+    int amount_of_users;
+    string line;
+
+    getline(archive, line);
+    istringstream ss(line);
+    ss >> amount_of_users;
+
+    for(int i=0; i<amount_of_users; i++ )
+    {
+      int id;
+      string name, email, password;
+
+      getline(archive, line);
+      istringstream sa(line);
+      sa >> id;
+
+      getline(archive, line);
+      istringstream sb(line);
+      name = sb.str();
+
+      getline(archive, line);
+      istringstream sc(line);
+      sc >> email;
+
+      getline(archive, line);
+      istringstream sd(line);
+      sd >> password;
+
+      User newUser(name, email, password, id);
+      add_user(newUser);
+    }
+  }
+}
+
+void System::load()
+{
+  loadUsers();
+  //loadServers();
+}

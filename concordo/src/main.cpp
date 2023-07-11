@@ -12,17 +12,19 @@ int main(){
     string entry;
     string command;
 
+    system.load();
+
     getline(cin, entry);
 
     istringstream ss(entry);
     ss >> command;
-
+    
     if (command == "quit")
     {
       quit = true;
     }
     else if (command == "create-user")
-    { 
+    {
       if(!system.is_logged())
       {
         string email;
@@ -52,7 +54,7 @@ int main(){
 
         login(system, email, senha);
       }
-    
+
       else
       {
         cout << "\"Usuário já logado\"\n";
@@ -71,7 +73,7 @@ int main(){
       if(system.is_logged()){
         string name;
         ss >> name;
-        
+
         create_server(system, name);
         system.save();
       }
@@ -240,7 +242,7 @@ int main(){
 
         getline(ss, content);
         content.erase(0, 1);
-        
+
         send_message(system, content);
         system.save();
       }
@@ -260,12 +262,13 @@ int main(){
         cout << "\"Não está conectado\"\n";
       }
     }
-
+     
     if (quit)
     {
       cout << "\"Saindo do concordo\"\n";
       break;
     }
+   
   }
   return 0;
 }
