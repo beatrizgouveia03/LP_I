@@ -244,25 +244,37 @@ class System
     ChannelVoice *find_voice_channel(const string name);
 
 
-    /* Saves all the info of the server */
+    /*!
+    * Saves all the info of the server 
+    */
     void save();
 
-    /* Laods all the info to the server */
+    /*!
+    * Laods all the info to the server 
+    */
     void load();
 
     //=== Private methods
   private:
 
-    /* Saves all the users of the server with all their info */
+    /*!
+    * Saves all the users of the server with all their info 
+    */
     void saveUsers();
 
-    /* Saves all the servers of the server with all their info */
+    /*!
+    * Saves all the servers of the server with all their info 
+    */
     void saveServers();
 
-    /* Loads all the users of the server with all their info */
+    /*!
+    * Loads all the users of the server with all their info 
+    */
     void loadUsers();
 
-    /* Loads all the servers of the server with all their info */
+    /*!
+    * Loads all the servers of the server with all their info 
+    */
     void loadServers();
 };
 
