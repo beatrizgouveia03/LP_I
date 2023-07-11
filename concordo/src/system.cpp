@@ -17,12 +17,12 @@ System::~System(){/* Empty */};
 vector<User> System::get_all_users() const
 {
   return this->allUsers;
-};
+}
 
 vector<Server> System::get_all_servers() const
 {
   return this->allServers;
-};
+}
 
 vector<ChannelText> System::get_all_text_channels() const
 {
@@ -42,7 +42,7 @@ int System::get_user_logged_ID() const
 Server* System::get_server_logged() const
 {
   return this->serverLogged;
-};
+}
 
 Channel* System::get_channel_logged() const
 {
@@ -102,12 +102,12 @@ void System::disconnect()
 void System::add_user(const User user)
 {
   allUsers.push_back(user);
-};
+}
 
 void System::add_server(const Server server)
 {
   allServers.push_back(server);
-};
+}
 
 void System::add_channel(const ChannelText channelT)
 {
@@ -129,7 +129,7 @@ void System::rem_user(const User user)
       return;
     }
   }
-};
+}
 
 void System::rem_server(const Server server)
 {
@@ -139,7 +139,7 @@ void System::rem_server(const Server server)
       return;
     }
   }
-};
+}
 
 User *System::find_user(const string email)
 {
@@ -147,7 +147,7 @@ User *System::find_user(const string email)
     if(u.get_email() == email) return &u;
   }
   return nullptr;
-};
+}
 
 User *System::find_user(const int id)
 {
@@ -157,7 +157,7 @@ User *System::find_user(const int id)
       return &u;
   }
   return nullptr;
-};
+}
 
 Server *System::find_server(const string name)
 {
@@ -167,7 +167,7 @@ Server *System::find_server(const string name)
       return &s;
   }
   return nullptr;
-};
+}
 
 ChannelText *System::find_text_channel(const string name)
 {
@@ -178,7 +178,7 @@ ChannelText *System::find_text_channel(const string name)
   }
 
   return nullptr;
-};
+}
 
 ChannelVoice *System::find_voice_channel(const string name)
 {
@@ -189,4 +189,50 @@ ChannelVoice *System::find_voice_channel(const string name)
   }
 
   return nullptr;
-};
+}
+
+void System::saveUsers()
+{
+  ofstream archive("../data/users.txt");
+
+  if (archive.is_open())
+  {
+    archive << allUsers.size() << endl;
+    for (User u : allUsers)
+    {
+      archive << u.get_ID() << endl;
+      archive << u.get_name() << endl;
+      archive << u.get_email() << endl;
+      archive << u.get_password() << endl;
+    }
+    archive.close();
+  }
+}
+
+void System::saveServers()
+{
+  ofstream archive("../data/servers.txt");
+
+  if (archive.is_open())
+  {
+    archive << allServers.size() << endl;
+    for (Server s : allServers)
+    {
+      archive << s.get_owner_ID() << endl;
+      archive << s.get_name() << endl;
+      archive << s.get_description() << endl;
+      archive << s.get_code_invite() << endl;
+      archive << s.get_participant_IDs().size() << endl;
+      for(int id : s.get_participant_IDs())
+      {
+        archive << id << endl;
+      }
+      archive <<  s.get_channels().size() << endl;
+      for(Channel* c : s.get_channels())
+      { 
+        archive << c->get_name() << endl;
+      }
+    }
+    archive.close();
+  }
+}

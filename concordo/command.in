@@ -45,15 +45,12 @@ leave-server
 list-participants
 leave-server
 create-server minha-casa-2
-set-server-desc minha-casa “Este servidor serve como minha casa,
-sempre estarei nele”
+set-server-desc minha-casa “Este servidor serve como minha casa, sempre estarei nele”
 set-server-invite-code minha-casa 4567
-remove-server minha-casa
 list-servers
 disconnect
 create-server minha-casa
-set-server-desc minha-casa “Este servidor serve como minha casa,
-sempre estarei nele”
+set-server-desc minha-casa “Este servidor serve como minha casa, sempre estarei nele”
 set-server-invite-code minha-casa 4567
 list-servers
 remove-server minha-casa

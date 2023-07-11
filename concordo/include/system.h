@@ -4,8 +4,11 @@
 #include "user.h"
 #include "server.h"
 
+#include <fstream>
+
 class System
 {
+
 private:
   vector<User> allUsers;
   vector<Server> allServers;
@@ -236,6 +239,11 @@ public:
    * \return A pointer to the found channel, or nullptr if not found.
    */
   ChannelVoice *find_voice_channel(const string name);
+
+  void saveUsers();
+
+  void saveServers();
+
 };
 
 #endif

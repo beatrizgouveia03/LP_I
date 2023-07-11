@@ -2,7 +2,6 @@
 #include <sstream>
 #include "utilities.h"
 
-
 using namespace std;
 
 int main(){
@@ -261,6 +260,8 @@ int main(){
       break;
     }
 
+    system.saveUsers();
+    system.saveServers();
   }
   return 0;
 }
