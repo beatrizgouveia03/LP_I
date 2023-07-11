@@ -34,6 +34,7 @@ int main(){
         name.erase(0,1);
 
         create_user(system, email, senha, name);
+        system.save();
       }
       else
       {
@@ -72,6 +73,7 @@ int main(){
         ss >> name;
         
         create_server(system, name);
+        system.save();
       }
       else{
         cout << "\"Não está conectado\"\n";
@@ -88,6 +90,7 @@ int main(){
         description.erase(0, 1);
 
         set_description(system, name, description);
+        system.save();
       }
       else
       {
@@ -103,6 +106,7 @@ int main(){
         ss >> name >> code;
 
         set_code(system, name, code);
+        system.save();
       }
       else
       {
@@ -129,6 +133,7 @@ int main(){
         ss >> name;
 
         remove_server(system, name);
+        system.save();
       }
       else
       {
@@ -194,6 +199,7 @@ int main(){
         ss >> name >> type;
 
         create_channel(system, name, type);
+        system.save();
       }
       else
       {
@@ -236,6 +242,7 @@ int main(){
         content.erase(0, 1);
         
         send_message(system, content);
+        system.save();
       }
       else
       {
@@ -259,8 +266,6 @@ int main(){
       cout << "\"Saindo do concordo\"\n";
       break;
     }
-
-    system.save();
   }
   return 0;
 }
