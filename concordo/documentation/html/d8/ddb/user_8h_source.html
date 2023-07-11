@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Concordo
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
   </td>
  </tr>
@@ -79,46 +79,49 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dc0/classUser.html">User</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keywordtype">int</span> id;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">string</span> email;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keywordtype">string</span> password;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">/* Constructors and destructor */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a4a0137053e591fbb79d9057dd7d2283d">   21</a></span>&#160;  <a class="code" href="../../d9/dc0/classUser.html#a4a0137053e591fbb79d9057dd7d2283d">User</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a926301b805fd2bee71701297875ed9c5">   32</a></span>&#160;  <a class="code" href="../../d9/dc0/classUser.html#a926301b805fd2bee71701297875ed9c5">User</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name, <span class="keyword">const</span> <span class="keywordtype">string</span> email, <span class="keyword">const</span> <span class="keywordtype">string</span> password, <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#ac00b72ad64eb4149f7b21b9f5468c2b2">   37</a></span>&#160;  <a class="code" href="../../d9/dc0/classUser.html#ac00b72ad64eb4149f7b21b9f5468c2b2">~User</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">/* Get methods */</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a3a70f4b2dbe2e36191e72316ba1a8ce6">   46</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../d9/dc0/classUser.html#a3a70f4b2dbe2e36191e72316ba1a8ce6">get_ID</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a4eda26eb1e04e40d6aa05610ee3dd681">   53</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../d9/dc0/classUser.html#a4eda26eb1e04e40d6aa05610ee3dd681">get_name</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a27230aea1f57419ea5f1419e5cb604e9">   60</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../d9/dc0/classUser.html#a27230aea1f57419ea5f1419e5cb604e9">get_email</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#ace6c05c0e8a3d78a0d5524b76a5e5854">   67</a></span>&#160;  <span class="keywordtype">string</span> <a class="code" href="../../d9/dc0/classUser.html#ace6c05c0e8a3d78a0d5524b76a5e5854">get_password</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">/* Set methods */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a9ccd97f8141fb3b0fdf85a30a61f974e">   76</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#a9ccd97f8141fb3b0fdf85a30a61f974e">set_ID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#ad74e43da1de58c75987e017ff500f52f">   83</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#ad74e43da1de58c75987e017ff500f52f">set_name</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a5fe93807d6cdc2bbf22bf2263a0b35a3">   90</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#a5fe93807d6cdc2bbf22bf2263a0b35a3">set_email</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> email);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a523893967fd2766dd2e9c96cd634584c">   97</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#a523893967fd2766dd2e9c96cd634584c">set_password</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> password);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="comment">/* Other methods */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#aff4cc680e3227346ae215cfb40845523">  107</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="../../d9/dc0/classUser.html#aff4cc680e3227346ae215cfb40845523">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dc0/classUser.html">User</a> other);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="comment">//=== Private members</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">string</span> name;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">string</span> email;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">string</span> password;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//=== Public methods</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/* Constructors and destructor */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a4a0137053e591fbb79d9057dd7d2283d">   24</a></span>&#160;    <a class="code" href="../../d9/dc0/classUser.html#a4a0137053e591fbb79d9057dd7d2283d">User</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a926301b805fd2bee71701297875ed9c5">   35</a></span>&#160;    <a class="code" href="../../d9/dc0/classUser.html#a926301b805fd2bee71701297875ed9c5">User</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name, <span class="keyword">const</span> <span class="keywordtype">string</span> email, <span class="keyword">const</span> <span class="keywordtype">string</span> password, <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#ac00b72ad64eb4149f7b21b9f5468c2b2">   40</a></span>&#160;    <a class="code" href="../../d9/dc0/classUser.html#ac00b72ad64eb4149f7b21b9f5468c2b2">~User</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/* Get methods */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a3a70f4b2dbe2e36191e72316ba1a8ce6">   49</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d9/dc0/classUser.html#a3a70f4b2dbe2e36191e72316ba1a8ce6">get_ID</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a4eda26eb1e04e40d6aa05610ee3dd681">   56</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d9/dc0/classUser.html#a4eda26eb1e04e40d6aa05610ee3dd681">get_name</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a27230aea1f57419ea5f1419e5cb604e9">   63</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d9/dc0/classUser.html#a27230aea1f57419ea5f1419e5cb604e9">get_email</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#ace6c05c0e8a3d78a0d5524b76a5e5854">   70</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="../../d9/dc0/classUser.html#ace6c05c0e8a3d78a0d5524b76a5e5854">get_password</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">/* Set methods */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a9ccd97f8141fb3b0fdf85a30a61f974e">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#a9ccd97f8141fb3b0fdf85a30a61f974e">set_ID</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#ad74e43da1de58c75987e017ff500f52f">   86</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#ad74e43da1de58c75987e017ff500f52f">set_name</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a5fe93807d6cdc2bbf22bf2263a0b35a3">   93</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#a5fe93807d6cdc2bbf22bf2263a0b35a3">set_email</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> email);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#a523893967fd2766dd2e9c96cd634584c">  100</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dc0/classUser.html#a523893967fd2766dd2e9c96cd634584c">set_password</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> password);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/* Other methods */</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d9/dc0/classUser.html#aff4cc680e3227346ae215cfb40845523">  110</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d9/dc0/classUser.html#aff4cc680e3227346ae215cfb40845523">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d9/dc0/classUser.html">User</a> other);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassUser_html"><div class="ttname"><a href="../../d9/dc0/classUser.html">User</a></div><div class="ttdef"><b>Definition:</b> user.h:9</div></div>
 <div class="ttc" id="aclassUser_html_a27230aea1f57419ea5f1419e5cb604e9"><div class="ttname"><a href="../../d9/dc0/classUser.html#a27230aea1f57419ea5f1419e5cb604e9">User::get_email</a></div><div class="ttdeci">string get_email() const</div></div>
 <div class="ttc" id="aclassUser_html_a3a70f4b2dbe2e36191e72316ba1a8ce6"><div class="ttname"><a href="../../d9/dc0/classUser.html#a3a70f4b2dbe2e36191e72316ba1a8ce6">User::get_ID</a></div><div class="ttdeci">int get_ID() const</div></div>

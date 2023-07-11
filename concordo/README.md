@@ -67,6 +67,10 @@ In the second part of the project, the commands related to the resources of hte 
 - B2.1 - Send a message to the channel: `send-message <message>`
 - B2.2 - View messages in the channel:  `list-messages`
 
+### Part 3
+
+In the last part of the project, there isn't any new command. In this part was implemented the saving and loading information part, so that during the use of the "Concordo" no information gets lost. And also if you end the aplication and run it again what was done before continues, such as messages sent, users, server and channels created and so on.  
+
 ## Prerequisites
 Before you start, make sure you have installed one of the following components on your system:
 

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Concordo
-   &#160;<span id="projectnumber">2.0</span>
+   &#160;<span id="projectnumber">3.0</span>
    </div>
   </td>
  </tr>
@@ -81,39 +81,42 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/dad/classChannelText.html">ChannelText</a> : <span class="keyword">public</span> <a class="code" href="../../d2/d48/classChannel.html">Channel</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  vector&lt;Message&gt; messages; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">/* Constructors and destructor */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a2cc73f828e63d67651ee3ab09868297e">   20</a></span>&#160;  <a class="code" href="../../df/dad/classChannelText.html#a2cc73f828e63d67651ee3ab09868297e">ChannelText</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a90f308ccbf66efa9de0ec414d4bae54e">   27</a></span>&#160;  <a class="code" href="../../df/dad/classChannelText.html#a90f308ccbf66efa9de0ec414d4bae54e">ChannelText</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a96e1c820bf2601adefbf03febed3a757">   32</a></span>&#160;  <a class="code" href="../../df/dad/classChannelText.html#a96e1c820bf2601adefbf03febed3a757">~ChannelText</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">/* Get method */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a879b4cbd8ee554f4ecbc8da291c81a6a">   41</a></span>&#160;  vector&lt;Message&gt; <a class="code" href="../../df/dad/classChannelText.html#a879b4cbd8ee554f4ecbc8da291c81a6a">get_messages</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">/* Set method */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a7ce040b5c5c8542a21e849f413a9bfad">   50</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#a7ce040b5c5c8542a21e849f413a9bfad">set_messages</a>(<span class="keyword">const</span> vector&lt;Message&gt; messages);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">/* Other methods */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a822f60d1b159c0a9d28ab5715ceb1f03">   59</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#a822f60d1b159c0a9d28ab5715ceb1f03">add_message</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d28/classMessage.html">Message</a> message);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#ae49f1bac8b6aa72ac52bbe6464b6e838">   66</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#ae49f1bac8b6aa72ac52bbe6464b6e838">rem_message</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d28/classMessage.html">Message</a> message);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#aef13a47d101f1e9f180a32486f8f611f">   74</a></span>&#160;  <a class="code" href="../../d6/d28/classMessage.html">Message</a>* <a class="code" href="../../df/dad/classChannelText.html#aef13a47d101f1e9f180a32486f8f611f">find_message</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d28/classMessage.html">Message</a> message);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#ac8616f6401ea4e029f8c733dba9287da">   79</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#ac8616f6401ea4e029f8c733dba9287da">list_channel</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="comment">//=== Private members</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    vector&lt;Message&gt; messages;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">//=== Public methods</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/* Constructors and destructor */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a2cc73f828e63d67651ee3ab09868297e">   23</a></span>&#160;    <a class="code" href="../../df/dad/classChannelText.html#a2cc73f828e63d67651ee3ab09868297e">ChannelText</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a90f308ccbf66efa9de0ec414d4bae54e">   30</a></span>&#160;    <a class="code" href="../../df/dad/classChannelText.html#a90f308ccbf66efa9de0ec414d4bae54e">ChannelText</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> name);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a96e1c820bf2601adefbf03febed3a757">   35</a></span>&#160;    <a class="code" href="../../df/dad/classChannelText.html#a96e1c820bf2601adefbf03febed3a757">~ChannelText</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/* Get method */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a879b4cbd8ee554f4ecbc8da291c81a6a">   44</a></span>&#160;    vector&lt;Message&gt; <a class="code" href="../../df/dad/classChannelText.html#a879b4cbd8ee554f4ecbc8da291c81a6a">get_messages</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">/* Set method */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a7ce040b5c5c8542a21e849f413a9bfad">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#a7ce040b5c5c8542a21e849f413a9bfad">set_messages</a>(<span class="keyword">const</span> vector&lt;Message&gt; messages);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/* Other methods */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#a822f60d1b159c0a9d28ab5715ceb1f03">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#a822f60d1b159c0a9d28ab5715ceb1f03">add_message</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d28/classMessage.html">Message</a> message);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#ae49f1bac8b6aa72ac52bbe6464b6e838">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#ae49f1bac8b6aa72ac52bbe6464b6e838">rem_message</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d28/classMessage.html">Message</a> message);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#aef13a47d101f1e9f180a32486f8f611f">   77</a></span>&#160;    <a class="code" href="../../d6/d28/classMessage.html">Message</a>* <a class="code" href="../../df/dad/classChannelText.html#aef13a47d101f1e9f180a32486f8f611f">find_message</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d28/classMessage.html">Message</a> message);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../df/dad/classChannelText.html#ac8616f6401ea4e029f8c733dba9287da">   82</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../df/dad/classChannelText.html#ac8616f6401ea4e029f8c733dba9287da">list_channel</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassChannelText_html"><div class="ttname"><a href="../../df/dad/classChannelText.html">ChannelText</a></div><div class="ttdef"><b>Definition:</b> channelText.h:11</div></div>
 <div class="ttc" id="aclassChannelText_html_a2cc73f828e63d67651ee3ab09868297e"><div class="ttname"><a href="../../df/dad/classChannelText.html#a2cc73f828e63d67651ee3ab09868297e">ChannelText::ChannelText</a></div><div class="ttdeci">ChannelText()</div></div>
 <div class="ttc" id="aclassChannelText_html_a7ce040b5c5c8542a21e849f413a9bfad"><div class="ttname"><a href="../../df/dad/classChannelText.html#a7ce040b5c5c8542a21e849f413a9bfad">ChannelText::set_messages</a></div><div class="ttdeci">void set_messages(const vector&lt; Message &gt; messages)</div></div>
