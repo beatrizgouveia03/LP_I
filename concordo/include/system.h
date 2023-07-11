@@ -250,7 +250,7 @@ class System
     void save();
 
     /*!
-    * Laods all the info to the server 
+    * Loads all the info to the server 
     */
     void load();
 
