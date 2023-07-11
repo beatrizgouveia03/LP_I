@@ -427,7 +427,7 @@ void send_message(System &system, string content){
   chrono::system_clock::time_point now = chrono::system_clock::now();
   string dateHour = formatDateTime(now, "<%d/%m/%Y - %H:%M>");
 
-  Message newMessage(dateHour, sendFrom, content);
+  Message newMessage(dateHour, sendFrom, content, userID);
 
   if (ChannelVoice *ct = dynamic_cast<ChannelVoice *>(c))
   {

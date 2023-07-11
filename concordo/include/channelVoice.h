@@ -8,52 +8,55 @@
 
 class ChannelVoice : public Channel
 {
-private:
-  Message lastMessage;
-public:
-  /*Constructors and destructor */
+  //=== Private members
+  private:
+    Message lastMessage;
 
-  /*!
-   * Default constructor that creates an empty voice channel.
-   */
-  ChannelVoice();
+  //=== Public methods
+  public:
+    /*Constructors and destructor */
 
-  /*!
-   * Constructor that initializes the voice channel with a name.
-   *
-   * \param name  The name of the voice channel
-   */
-  ChannelVoice(const string name);
+    /*!
+    * Default constructor that creates an empty voice channel.
+    */
+    ChannelVoice();
 
-  /*!
-   * Default destructor.
-   */
-  ~ChannelVoice();
+    /*!
+    * Constructor that initializes the voice channel with a name.
+    *
+    * \param name  The name of the voice channel
+    */
+    ChannelVoice(const string name);
 
-  /* Get method */
+    /*!
+    * Default destructor.
+    */
+    ~ChannelVoice();
 
-  /*!
-   * Retrieves the last message from the voice channel.
-   *
-   * \return The last message from the voice channel.
-   */
-  Message get_last_message() const;
+    /* Get method */
 
-  /* Set method */
+    /*!
+    * Retrieves the last message from the voice channel.
+    *
+    * \return The last message from the voice channel.
+    */
+    Message get_last_message() const;
 
-  /*!
-   * Sets the last message from the voice channel.
-   *
-   * \param lastMessage The message to be set for the voice channel.
-   */
-  void set_last_message(const Message lastMessage);
+    /* Set method */
 
-  /* Other methods */
+    /*!
+    * Sets the last message from the voice channel.
+    *
+    * \param lastMessage The message to be set for the voice channel.
+    */
+    void set_last_message(const Message lastMessage);
 
-  /*!
-   * lists the last message from the voice channel.
-   */
-  void list_channel() const override;
-};
+    /* Other methods */
+
+    /*!
+    * lists the last message from the voice channel.
+    */
+    void list_channel() const override;
+  };
 
 #endif

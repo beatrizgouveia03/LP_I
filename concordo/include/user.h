@@ -7,104 +7,107 @@ using namespace std;
 
 class User
 {
-private:
-  int id;
-  string name;
-  string email;
-  string password;
-public:
-  /* Constructors and destructor */
+  //=== Private members
+  private:
+    int id;
+    string name;
+    string email;
+    string password;
 
-  /*!
-   * Default constructor that creates an empty user.
-   */
-  User();
+  //=== Public methods
+  public:
+    /* Constructors and destructor */
 
-  /*!
-   * Constructor that initializes the user with
-   * its name, its email, its password and its id in the system.
-   *
-   * \param name  The name of the user
-   * \param email  The email of the user
-   * \param password  The password of the user
-   * \param id  The id of the user
-   */
-  User(const string name, const string email, const string password, const int id);
+    /*!
+    * Default constructor that creates an empty user.
+    */
+    User();
 
-  /*!
-   * Default destructor.
-   */
-  ~User();
+    /*!
+    * Constructor that initializes the user with
+    * its name, its email, its password and its id in the system.
+    *
+    * \param name  The name of the user
+    * \param email  The email of the user
+    * \param password  The password of the user
+    * \param id  The id of the user
+    */
+    User(const string name, const string email, const string password, const int id);
 
-  /* Get methods */
+    /*!
+    * Default destructor.
+    */
+    ~User();
 
-  /*!
-   * Retrieves the id of the user.
-   *
-   * \return The id of the user.
-   */
-  int get_ID() const;
+    /* Get methods */
 
-  /*!
-   * Retrieves the name of the user.
-   *
-   * \return The name of the user.
-   */
-  string get_name() const;
+    /*!
+    * Retrieves the id of the user.
+    *
+    * \return The id of the user.
+    */
+    int get_ID() const;
 
-  /*!
-   * Retrieves the email of the user.
-   *
-   * \return The email of the user.
-   */
-  string get_email() const;
+    /*!
+    * Retrieves the name of the user.
+    *
+    * \return The name of the user.
+    */
+    string get_name() const;
 
-  /*!
-   * Retrieves the password of the user.
-   *
-   * \return The password of the user.
-   */
-  string get_password() const;
+    /*!
+    * Retrieves the email of the user.
+    *
+    * \return The email of the user.
+    */
+    string get_email() const;
 
-  /* Set methods */
+    /*!
+    * Retrieves the password of the user.
+    *
+    * \return The password of the user.
+    */
+    string get_password() const;
 
-  /*!
-   * Sets the id of the user.
-   *
-   * \param id The id to be set for the user.
-   */
-  void set_ID(const int id);
+    /* Set methods */
 
-  /*!
-   * Sets the name of the user.
-   *
-   * \param name The name to be set for the user.
-   */
-  void set_name(const string name);
+    /*!
+    * Sets the id of the user.
+    *
+    * \param id The id to be set for the user.
+    */
+    void set_ID(const int id);
 
-  /*!
-   * Sets the email of the user.
-   *
-   * \param email The email to be set for the user.
-   */
-  void set_email(const string email);
+    /*!
+    * Sets the name of the user.
+    *
+    * \param name The name to be set for the user.
+    */
+    void set_name(const string name);
 
-  /*!
-   * Sets the password of the user.
-   *
-   * \param password The password to be set for the user.
-   */
-  void set_password(const string password);
+    /*!
+    * Sets the email of the user.
+    *
+    * \param email The email to be set for the user.
+    */
+    void set_email(const string email);
 
-  /* Other methods */
+    /*!
+    * Sets the password of the user.
+    *
+    * \param password The password to be set for the user.
+    */
+    void set_password(const string password);
 
-  /*!
-   * Equality operator for comparing users.
-   *
-   * \param other The user to compare with.
-   * \return True if the users are equal, false otherwise.
-   */
-  bool operator==(const User other);
+    /* Other methods */
+
+    /*!
+    * Equality operator for comparing users.
+    *
+    * \param other The user to compare with.
+    * \return True if the users are equal, false otherwise.
+    */
+    bool operator==(const User other);
 };
 
 #endif

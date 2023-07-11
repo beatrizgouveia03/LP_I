@@ -7,53 +7,56 @@ using namespace std;
 
 class Channel
 {
-private:
-  string name;
-public:
-  /*Constructors and destructor*/
+  //=== Private members
+  private:
+    string name;
 
-  /*!
-   * Default constructor that creates an empty channel.
-   */
-  Channel();
+  //=== Public methods
+  public:
+    /*Constructors and destructor*/
 
-  /*!
-   * Constructor that initializes the channel with a name.
-   *
-   * \param name The name of the channel.
-   */
-  Channel(const string name);
+    /*!
+    * Default constructor that creates an empty channel.
+    */
+    Channel();
 
-  /*!
-   * Default destructor.
-   */
-  ~Channel();
+    /*!
+    * Constructor that initializes the channel with a name.
+    *
+    * \param name The name of the channel.
+    */
+    Channel(const string name);
 
-  /* Get method */
+    /*!
+    * Default destructor.
+    */
+    ~Channel();
 
-  /*!
-   * Retrieves the name of the channel.
-   *
-   * \return The name of the channel.
-   */
-  string get_name() const;
+    /* Get method */
 
-  /* Set method */
+    /*!
+    * Retrieves the name of the channel.
+    *
+    * \return The name of the channel.
+    */
+    string get_name() const;
 
-  /*!
-   * Sets the name of the channel.
-   *
-   * \param name The name to be set for the channel.
-   */
-  void set_name(const string name);
+    /* Set method */
+
+    /*!
+    * Sets the name of the channel.
+    *
+    * \param name The name to be set for the channel.
+    */
+    void set_name(const string name);
 
 
-  /* Other methods */
+    /* Other methods */
 
-  /*!
-   * Lists the channel in the terminal
-   */
-  virtual void list_channel() const = 0;
+    /*!
+    * Lists the channel in the terminal
+    */
+    virtual void list_channel() const = 0;
 };
 
 #endif

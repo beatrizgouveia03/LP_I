@@ -231,8 +231,41 @@ void System::saveServers()
       for(Channel* c : s.get_channels())
       { 
         archive << c->get_name() << endl;
+        if (ChannelText *ct = dynamic_cast<ChannelText *>(c))
+        {
+          archive << "TEXTO" << endl;
+          archive << ct->get_messages().size() << endl;
+          for(Message m : ct->get_messages())
+          {
+            archive << m.get_id_send_from() << endl;
+            archive << m.get_date_hour() << endl;
+            archive << m.get_content() << endl;
+          }
+        }
+        else{
+          ChannelVoice *cv = dynamic_cast<ChannelVoice *>(c);
+          archive << "VOZ" << endl;
+          Message m = cv->get_last_message();
+          if( m.get_content() != "" )
+          {
+            archive << "1" << endl;
+            archive << m.get_id_send_from() << endl;
+            archive << m.get_date_hour() << endl;
+            archive << m.get_content() << endl;
+          }
+          else{
+            archive << "0" << endl;
+          }
+        }
       }
     }
     archive.close();
   }
 }
+
+void System::save()
+{
+  saveUsers();
+  saveServers();
+}
+

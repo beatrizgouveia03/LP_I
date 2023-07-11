@@ -260,8 +260,7 @@ int main(){
       break;
     }
 
-    system.saveUsers();
-    system.saveServers();
+    system.save();
   }
   return 0;
 }

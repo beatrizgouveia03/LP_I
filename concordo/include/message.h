@@ -7,88 +7,106 @@ using namespace std;
 
 class Message
 {
-private:
-  string dateHour;
-  string sendFrom;
-  string content;
-public:
-  /* Constructors and destructor */
+  //=== Private members
+  private:
+    string dateHour;
+    int idSendFrom;
+    string sendFrom;
+    string content;
 
-  /*!
-   * Default constructor that creates an empty message.
-   */
-  Message();
+  //=== Public methods
+  public:
+    /* Constructors and destructor */
 
-  /*!
-   * Constructor that initializes the with a date/hour, 
-   * the user id that sent the message and its content.
-   *
-   * \param dateHour The date/hours of the message.
-   * \param sentFrom The name of the user that sent the message.
-   * \param content The content of the message.
-   */
-  Message(const string dateHour, const string sendFrom, const string content);
+    /*!
+    * Default constructor that creates an empty message.
+    */
+    Message();
 
-  /*!
-   * Default destructor.
-   */
-  ~Message();
+    /*!
+    * Constructor that initializes the with a date/hour, 
+    * the user id that sent the message and its content.
+    *
+    * \param dateHour The date/hours of the message.
+    * \param sentFrom The name of the user that sent the message.
+    * \param content The content of the message.
+    */
+    Message(const string dateHour, const string sendFrom, const string content, const int idSendFrom);
 
-  /* Get methods */
+    /*!
+    * Default destructor.
+    */
+    ~Message();
 
-  /*!
-   * Retrieves the date/hour of the message.
-   *
-   * \return The date/hour of the message.
-   */
-  string get_date_hour() const;
+    /* Get methods */
 
-  /*!
-   * Retrieves the name of the user that sent the message.
-   *
-   * \return The name of the user that sent the message.
-   */
-  string get_send_from() const;
+    /*!
+    * Retrieves the date/hour of the message.
+    *
+    * \return The date/hour of the message.
+    */
+    string get_date_hour() const;
 
-  /*!
-   * Retrieves the content of the message.
-   *
-   * \return The content of the message.
-   */
-  string get_content() const;
+    /*!
+    * Retrieves the name of the user that sent the message.
+    *
+    * \return The name of the user that sent the message.
+    */
+    string get_send_from() const;
 
-  /* Set methods */
+    /*!
+    * Retrieves the id of the user that sent the message.
+    *
+    * \return The id of the user that sent the message.
+    */
+    int get_id_send_from() const;
 
-  /*!
-   * Sets date/hour of the message.
-   *
-   * \param dateHour The date/hour of the message.
-   */
-  void set_date_hour(const string dateHour);
+    /*!
+    * Retrieves the content of the message.
+    *
+    * \return The content of the message.
+    */
+    string get_content() const;
 
-  /*!
-   * Sets the name of the user that sent the message.
-   *
-   * \param sendFrom The name of the user that sent the message.
-   */
-  void set_send_from(const string sendFrom);
+    /* Set methods */
 
-  /*!
-   * Sets content of the message.
-   *
-   * \param dateHour The content of the message.
-   */
-  void set_content(const string content);
+    /*!
+    * Sets date/hour of the message.
+    *
+    * \param dateHour The date/hour of the message.
+    */
+    void set_date_hour(const string dateHour);
 
-  /* Other methods */
+    /*!
+    * Sets the name of the user that sent the message.
+    *
+    * \param sendFrom The name of the user that sent the message.
+    */
+    void set_send_from(const string sendFrom);
 
-  /*!
-   * Equality operator for comparing messages.
-   *
-   * \param other The message to compare with.
-   * \return True if the messages are equal, false otherwise.
-   */
-  bool operator==(const Message other);
+    /*!
+    * Sets the id of the user that sent the message.
+    *
+    * \param sendFrom The id of the user that sent the message.
+    */
+    void set_send_from(const int IDsendFrom);
+
+    /*!
+    * Sets content of the message.
+    *
+    * \param dateHour The content of the message.
+    */
+    void set_content(const string content);
+
+    /* Other methods */
+
+    /*!
+    * Equality operator for comparing messages.
+    *
+    * \param other The message to compare with.
+    * \return True if the messages are equal, false otherwise.
+    */
+    bool operator==(const Message other);
 };
 
 #endif
