@@ -311,8 +311,188 @@ void System::loadUsers()
   }
 }
 
+void System::loadServers()
+{
+  string server_logged, channel_logged, type_of_channel;
+  if(serverLogged != nullptr)  
+  {
+   server_logged = serverLogged->get_name();
+  }
+  if(channelLogged != nullptr)
+  {
+    channel_logged = channelLogged->get_name();
+    if (ChannelVoice *cv = dynamic_cast<ChannelVoice *>(channelLogged))
+    {
+      type_of_channel = "VOZ";
+    }
+    else
+    {
+      type_of_channel = "TEXTO";
+    }
+  }
+    
+  allTextChannels = vector<ChannelText>();
+  allVoiceChannels = vector<ChannelVoice>();
+  allServers = vector<Server>();
+
+  ifstream archive("../data/servers.txt");
+
+  if (archive.is_open())
+  {
+    int amount_of_servers;
+    string line;
+
+    getline(archive, line);
+    istringstream ss(line);
+    ss >> amount_of_servers;
+
+    for (int i = 0; i < amount_of_servers; i++)
+    {
+      int owner_id, amount_of_participants, amount_of_channels;
+      string name, description, code_invite;
+
+      getline(archive, line);
+      istringstream sa(line);
+      sa >> owner_id;
+
+      getline(archive, line);
+      istringstream sb(line);
+      name = sb.str();
+      Server newServer(name);
+      newServer.set_owner_ID(owner_id);
+
+      getline(archive, line);
+      istringstream sc(line);
+      description = sc.str();
+      newServer.set_description(description);
+
+      getline(archive, line);
+      istringstream sd(line);
+      sd >> code_invite;
+      newServer.set_code_invite(code_invite);
+
+      getline(archive, line);
+      istringstream se(line);
+      se >> amount_of_participants;
+
+      for(int j=0; j<amount_of_participants; j++){
+        int participant_id;
+
+        getline(archive, line);
+        istringstream sf(line);
+        sf >> participant_id;
+
+        newServer.add_participant_ID(participant_id);
+      }
+
+      getline(archive, line);
+      istringstream sf(line);
+      sf >> amount_of_channels;
+
+      for (int j = 0; j < amount_of_channels; j++)
+      {
+        string name, type;
+
+        getline(archive, line);
+        istringstream sg(line);
+        name = sg.str();
+
+        getline(archive, line);
+        istringstream sh(line);
+        sh >> type;
+
+        if(type == "TEXTO")
+        {
+          int amount_of_messages;
+          ChannelText newChannel(name);
+
+          getline(archive, line);
+          istringstream si(line);
+          si >> amount_of_messages;
+
+          for(int k=0; k<amount_of_messages; k++){
+            int id_send_from;
+            string content, date_hour, send_from;
+
+            getline(archive, line);
+            istringstream sj(line);
+            sj >> id_send_from;
+
+            getline(archive, line);
+            istringstream sk(line);
+            date_hour = sk.str();
+
+            getline(archive, line);
+            istringstream sl(line);
+            content = sl.str();
+
+            send_from = find_user(id_send_from)->get_name();
+
+            Message message( date_hour, send_from, content, id_send_from);
+            newChannel.add_message(message);
+          }
+
+          add_channel(newChannel);
+          newServer.add_channel(find_text_channel(name));
+        }
+        else
+        {
+          int amount_of_messages;
+          ChannelVoice newChannel(name);
+
+          getline(archive, line);
+          istringstream si(line);
+          si >> amount_of_messages;
+
+          if(amount_of_messages == 1)
+          {
+            int id_send_from;
+            string content, date_hour, send_from;
+
+            getline(archive, line);
+            istringstream sj(line);
+            sj >> id_send_from;
+
+            getline(archive, line);
+            istringstream sk(line);
+            date_hour = sk.str();
+
+            getline(archive, line);
+            istringstream sl(line);
+            content = sl.str();
+
+            send_from = find_user(id_send_from)->get_name();
+
+            Message message(date_hour, send_from, content, id_send_from);
+            newChannel.set_last_message(message);
+
+          }
+          
+          add_channel(newChannel);
+          newServer.add_channel(find_voice_channel(name));
+        }
+      }
+
+      add_server(newServer);
+    }
+  }
+
+  if(server_logged != string()) serverLogged = find_server(server_logged);
+  if(channel_logged != string())
+  {
+    if(type_of_channel == "TEXTO")
+    {
+      channelLogged = find_text_channel(channel_logged);
+    }
+    else
+    {
+      channelLogged = find_voice_channel(channel_logged);
+    }
+  }
+}
+
 void System::load()
 {
   loadUsers();
-  //loadServers();
+  loadServers();
 }

@@ -18,8 +18,8 @@ class System
     int nextID = 1;
     bool userIsLogged = false;
     int userLoggedID;
-    Server* serverLogged;
-    Channel* channelLogged;
+    Server* serverLogged = nullptr;
+    Channel* channelLogged = nullptr;
 
   //=== Public methods
   public:
@@ -261,6 +261,9 @@ class System
 
     /* Loads all the users of the server with all their info */
     void loadUsers();
+
+    /* Loads all the servers of the server with all their info */
+    void loadServers();
 };
 
 #endif

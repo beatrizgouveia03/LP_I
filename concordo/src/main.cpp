@@ -262,7 +262,7 @@ int main(){
         cout << "\"Não está conectado\"\n";
       }
     }
-     
+  
     if (quit)
     {
       cout << "\"Saindo do concordo\"\n";
